@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: 3adc50c955a37434090da637d4f415c8
+timeCreated: 1514913101
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Spawn_Pod_Upper_Left
+    21300002: Spawn_Pod_1
+    21300004: Spawn_Pod_Upper_Right
+    21300006: Spawn_Pod_3
+    21300008: Spawn_Pod_4
+    21300010: Spawn_Pod_5
+    21300012: Spawn_Pod_Beam
+    21300014: Spawn_Pod_7
+    21300016: Spawn_Pod_8
+    21300018: Spawn_Pod_9
+    21300020: Spawn_Pod_10
+    21300022: Spawn_Pod_Base
+    21300024: Spawn_Pod_12
+    21300026: Spawn_Pod_Lower_Left
+    21300028: Spawn_Pod_14
+    21300030: Spawn_Pod_15
+    21300032: Spawn_Pod_Lower_Right
+    21300034: Spawn_Pod_17
+    21300036: Spawn_Pod_18
+    21300038: Spawn_Pod_19
+    21300040: Spawn_Pod_20
+    21300042: Spawn_Pod_21
+    21300044: Spawn_Pod_22
+    21300046: Spawn_Pod_23
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Spawn_Pod_Upper_Left
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 1548
+        width: 175
+        height: 1000
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spawn_Pod_Upper_Right
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1508
+        width: 175
+        height: 1000
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spawn_Pod_Beam
+      rect:
+        serializedVersion: 2
+        x: 1301
+        y: 2010
+        width: 1337
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spawn_Pod_Base
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 115
+        width: 1390
+        height: 1389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spawn_Pod_Lower_Left
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 180
+        width: 175
+        height: 1000
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Spawn_Pod_Lower_Right
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 183
+        width: 175
+        height: 1000
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

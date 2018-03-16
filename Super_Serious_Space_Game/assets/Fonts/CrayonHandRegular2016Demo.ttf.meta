@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 2745b53a3a36c0c40a0ee98018bdcf6c
+timeCreated: 1512771381
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Crayon Hand Regular 2016 Demo
+  fontNames:
+  - Crayon Hand Regular 2016 Demo
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
