@@ -21,11 +21,7 @@ public class BasicTargeting : MonoBehaviour {
 
     // Use this for initialization
     void Start()
-    {
-        if (myStats.name == "Turret")
-        {
-            turret = GetComponent<Turret>();
-        }
+    {       
         retrieveUpgrades = new RetrieveUnitUpgrades();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         enemyBattleManager = GameObject.Find("EnemyBattleManager");
@@ -35,15 +31,23 @@ public class BasicTargeting : MonoBehaviour {
         moveController = gameObject.GetComponent<BasicMovementController>();
         targetsList = new List<GameObject>();
 
-        if (gameObject.tag == "PlayerUnit")
+        if (myStats.name == "Turret")
         {
-            enemyGenerator = GameObject.Find("EnemyGenerator");
-            targetsList.Add(enemyGenerator);
+            turret = GetComponent<Turret>();
         }
-        else
+
+        if (myStats.name != "Turret")
         {
-            enemyGenerator = GameObject.Find("PlayerGenerator");
-            targetsList.Add(enemyGenerator);
+            if (gameObject.tag == "PlayerUnit")
+            {
+                enemyGenerator = GameObject.Find("EnemyGenerator");
+                targetsList.Add(enemyGenerator);
+            }
+            else
+            {
+                enemyGenerator = GameObject.Find("PlayerGenerator");
+                targetsList.Add(enemyGenerator);
+            }
         }
     }
 
@@ -95,8 +99,15 @@ public class BasicTargeting : MonoBehaviour {
         else
         {
             // if the list is empty nobody is in range so reset my current target
-            currentTarget = null;
-            moveController.myAttackTarget = null;
+            if (myStats.name == "Turret")
+            {
+                turret.myAttackTarget = null;
+            }
+            else
+            {
+                currentTarget = null;
+                moveController.myAttackTarget = null;
+            }
         }
     }
 

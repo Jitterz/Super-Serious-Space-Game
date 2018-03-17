@@ -8,6 +8,11 @@ public class PlayerStatsUpgradesStatic : MonoBehaviour {
     // ---------------------------------------------SHIP-----------------------------------------------//
     public static int scannerLevel = 0;
     public static float scannerRange = 0;
+
+    // ------------------------------------------SHIP SPECIAL------------------------------------------//
+    public static int turretDamageUpgrade = 0;
+    public static int turretRangeUpgrade = 0;
+    public static int turretHealthUpgrade = 0;
     // --------------------------------------------RESOURCES-------------------------------------------//
     public static int resourceGoldMaxAmount = 200;
     public static int resourceIronMaxAmount = 200;

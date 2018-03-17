@@ -36,7 +36,9 @@ public class RetrieveUnitUpgrades {
 	
     public int GetUnitDamageBoost(string name)
     {
-        if (name == "Settler")
+        if (name == "Turret")
+            return PlayerStatsUpgradesStatic.turretDamageUpgrade;
+        else if (name == "Settler")
             return PlayerStatsUpgradesStatic.settlerDamageUpgrade;
         else if (name == "Nix")
             return PlayerStatsUpgradesStatic.nixDamageUpgrade;
@@ -50,6 +52,8 @@ public class RetrieveUnitUpgrades {
     {
         if (name == "Nix")
             return PlayerStatsUpgradesStatic.nixRangeIncrease;
+        else if (name == "Turret")
+            return PlayerStatsUpgradesStatic.turretRangeUpgrade;
         else
             return 0;
     }

@@ -163,9 +163,12 @@ MonoBehaviour:
   enemyTurretHead: {fileID: 21300010, guid: e82705d8f8089f2459ce4607359c6c67, type: 3}
   turretProjectile: {fileID: 1598573541367716, guid: 758276461dfa9884585ce63ed9a686cf,
     type: 2}
-  turretHead: {fileID: 0}
-  turretBase: {fileID: 0}
+  turretHead: {fileID: 1679705364809860}
+  turretBase: {fileID: 1390699451636580}
   myAttackTarget: {fileID: 0}
+  playerBattleManager: {fileID: 0}
+  enemyBattleManager: {fileID: 0}
+  isAttacking: 0
 --- !u!114 &114687212972015902
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,14 +182,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   unitCost: 150
-  unitDamage: 30
+  unitDamage: 40
   unitBuildTime: 0
   imDead: 0
   unitMoveSpeed: 0
   unitCurrentMoveSpeed: 0
-  unitTargetRange: 100
-  unitAttackRange: 70
-  unitAttackSpeed: 2.5
+  unitTargetRange: 250
+  unitAttackRange: 200
+  unitAttackSpeed: 1
   unitName: Turret
   unitResourceType: Power
 --- !u!114 &114760090448510438
