@@ -193,6 +193,20 @@ public class PlayerBattleManager : MonoBehaviour {
         }
     }
 
+    public void EnableDisableDefendArea(string enableDisable)
+    {
+        if (enableDisable == "enable")
+        {
+            defendAreaSprite.enabled = true;
+            defendAreaCollider.enabled = true;
+        }
+        else
+        {
+            defendAreaSprite.enabled = false;
+            defendAreaCollider.enabled = false;
+        }
+    }
+
     private void SelectAndMoveUnit()
     {
         if (Input.GetMouseButtonDown(0))
@@ -201,7 +215,7 @@ public class PlayerBattleManager : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
             Physics2D.queriesHitTriggers = true; 
 
-            if (hit.collider != null)
+            if (hit.collider != null && !hit.transform.gameObject.name.Contains("Turret"))
             {
                 if (hit.collider.transform.gameObject.tag == "PlayerUnit")
                 {
@@ -237,7 +251,7 @@ public class PlayerBattleManager : MonoBehaviour {
             }
             else
             {
-                if (selectedUnit != null)
+                if (selectedUnit != null && !hit.transform.gameObject.name.Contains("Turret"))
                 {
                     GameObject childSprite = selectedUnit.transform.GetChild(0).gameObject;
                     SpriteRenderer changeSprite = childSprite.GetComponent<SpriteRenderer>();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Turret : MonoBehaviour {
 
@@ -14,6 +15,8 @@ public class Turret : MonoBehaviour {
     public GameObject myAttackTarget;
     public GameObject playerBattleManager;
     public GameObject enemyBattleManager;
+    public SpriteRenderer turretSelectedSpawnSprite;
+    public BoxCollider2D turretCollider;
 
     public bool isAttacking;
 
@@ -32,6 +35,7 @@ public class Turret : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        turretSelectedSpawnSprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         enemyBattleManager = GameObject.Find("EnemyBattleManager");
@@ -106,7 +110,7 @@ public class Turret : MonoBehaviour {
             newRotation.x = 0.0f;
             newRotation.y = 0.0f;
 
-            turretHead.transform.rotation = Quaternion.Slerp(turretHead.transform.rotation, newRotation, Time.deltaTime * 100);
+            turretHead.transform.rotation = Quaternion.Slerp(turretHead.transform.rotation, newRotation, Time.deltaTime * 10);
         }
     }
 

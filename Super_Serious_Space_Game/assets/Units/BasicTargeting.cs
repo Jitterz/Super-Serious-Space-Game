@@ -31,12 +31,12 @@ public class BasicTargeting : MonoBehaviour {
         moveController = gameObject.GetComponent<BasicMovementController>();
         targetsList = new List<GameObject>();
 
-        if (myStats.name == "Turret")
+        if (myStats.unitName == "Turret")
         {
             turret = GetComponent<Turret>();
         }
 
-        if (myStats.name != "Turret")
+        if (myStats.unitName != "Turret")
         {
             if (gameObject.tag == "PlayerUnit")
             {
@@ -56,7 +56,7 @@ public class BasicTargeting : MonoBehaviour {
     {
         BuildTargetsList();
         // keep checking if I have targets in range if i dont already have one
-        if (myStats.name != "Turret")
+        if (myStats.unitName != "Turret")
         {
             if (moveController.myAttackTarget == null)
             {
@@ -82,7 +82,7 @@ public class BasicTargeting : MonoBehaviour {
             if (targetsList[random] != null)
             {
                 currentTarget = targetsList[random];
-                if (myStats.name != "Turret")
+                if (myStats.unitName != "Turret")
                 {
                     moveController.myAttackTarget = currentTarget;
                 }
@@ -99,7 +99,7 @@ public class BasicTargeting : MonoBehaviour {
         else
         {
             // if the list is empty nobody is in range so reset my current target
-            if (myStats.name == "Turret")
+            if (myStats.unitName == "Turret")
             {
                 turret.myAttackTarget = null;
             }
