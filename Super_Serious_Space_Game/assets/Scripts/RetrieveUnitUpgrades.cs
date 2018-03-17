@@ -6,7 +6,9 @@ public class RetrieveUnitUpgrades {
 
     public int GetUnitResourceDiscount(string name)
     {
-        if (name == "Poko Miner")
+        if (name == "Turret")
+            return PlayerStatsUpgradesStatic.turretResourceDiscount;
+        else if (name == "Poko Miner")
             return PlayerStatsUpgradesStatic.pokoMinerResourceDiscount;
         else if (name == "Settler")
             return PlayerStatsUpgradesStatic.settlerResourceDiscount;

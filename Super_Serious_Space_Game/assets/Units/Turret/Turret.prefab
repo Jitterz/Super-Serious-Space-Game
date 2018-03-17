@@ -96,7 +96,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1565863319747194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: -82, z: 0}
+  m_LocalPosition: {x: 23.02043, y: -57.768528, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children:
   - {fileID: 4042147505193116}
@@ -183,7 +183,7 @@ MonoBehaviour:
   health: 200
   unitCost: 150
   unitDamage: 40
-  unitBuildTime: 0
+  unitBuildTime: 120
   imDead: 0
   unitMoveSpeed: 0
   unitCurrentMoveSpeed: 0

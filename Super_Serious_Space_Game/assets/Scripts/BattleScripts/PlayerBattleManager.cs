@@ -132,6 +132,11 @@ public class PlayerBattleManager : MonoBehaviour {
             resource = 8;
             playerResourcesAmount[resource] -= unitCost;
         }
+        else if (myStats.unitResourceType == "Power")
+        {
+            PlayerInfoStatic.CurrentShipPower -= unitCost;
+        }
+            
     }
 
     private void SelectAndMoveMiner()

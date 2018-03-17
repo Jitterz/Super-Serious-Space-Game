@@ -102,7 +102,7 @@ public class Turret : MonoBehaviour {
     {
         if (myAttackTarget != null)
         {
-            var newRotation = Quaternion.LookRotation(turretHead.transform.position - myAttackTarget.transform.position, Vector3.forward);
+            var newRotation = Quaternion.LookRotation(turretHead.transform.position - myAttackTarget.transform.position, Vector3.up);
             newRotation.x = 0.0f;
             newRotation.y = 0.0f;
 

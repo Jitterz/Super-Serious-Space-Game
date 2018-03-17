@@ -13,6 +13,7 @@ public class PlayerStatsUpgradesStatic : MonoBehaviour {
     public static int turretDamageUpgrade = 0;
     public static int turretRangeUpgrade = 0;
     public static int turretHealthUpgrade = 0;
+    public static int turretResourceDiscount = 0;
     // --------------------------------------------RESOURCES-------------------------------------------//
     public static int resourceGoldMaxAmount = 200;
     public static int resourceIronMaxAmount = 200;

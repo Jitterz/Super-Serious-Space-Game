@@ -50,7 +50,7 @@ public class TurretProjectile : MonoBehaviour {
             float distanceToTarget = Vector3.Distance(transform.position, myTarget.transform.position);
 
             // If i have traveled too far without hitting my target then just despawn
-            if (projectileDistanceTraveled >= 125)
+            if (projectileDistanceTraveled >= 300)
             {
                 Destroy(gameObject);
             }
