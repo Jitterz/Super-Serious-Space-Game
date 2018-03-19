@@ -20,4 +20,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static float CurrentShipCapacity;
     public static Sprite HomePlanetSprite;
     public static Sprite ShipImage;
+
+    public static List<GameObject> PlayerUnitCards;
+    public static List<GameObject> PlayerDeck;
 }
