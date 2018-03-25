@@ -8,8 +8,10 @@ public class UnitStats : MonoBehaviour {
     public int unitCost;
     public int unitDamage;
     public int unitBuildTime;
+    public int unitCapacity;
 
     public bool imDead;
+    public bool isRanged;
 
     public float unitMoveSpeed;
     public float unitCurrentMoveSpeed;
