@@ -16,6 +16,7 @@ TagManager:
   - Planet
   - PlayerProjectile
   - EnemyProjectile
+  - UnitCard
   layers:
   - Default
   - TransparentFX
