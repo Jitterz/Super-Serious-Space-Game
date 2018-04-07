@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 224335353282560434}
   - component: {fileID: 114756521993753976}
   - component: {fileID: 114309956935716460}
-  - component: {fileID: 61174555243216304}
+  - component: {fileID: 114287006306433218}
   m_Layer: 5
   m_Name: UnitCard
   m_TagString: UnitCard
@@ -233,31 +233,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &61174555243216304
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582452596923008}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.13733101, y: -0.34413147}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 123.07979, y: 202.63162}
-  m_EdgeRadius: 0
 --- !u!114 &114053616995682038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -411,6 +386,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!114 &114287006306433218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582452596923008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55826c8ffc01ab04a8d7ec8c1506d069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114297399915684076
 MonoBehaviour:
   m_ObjectHideFlags: 1
