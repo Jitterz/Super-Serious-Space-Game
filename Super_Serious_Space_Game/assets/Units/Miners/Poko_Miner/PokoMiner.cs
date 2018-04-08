@@ -18,7 +18,7 @@ public class PokoMiner : MonoBehaviour {
     private PlayerBattleManager playerBattleManagerScript;
     private EnemyBattleManager enemyBattleManagerScript;
     private UnitStats myStats;
-    private int playerMiningGain = 20;
+    private int playerMiningGain = 120;
     private int enemyMiningGain = 20;
 
     // Use this for initialization

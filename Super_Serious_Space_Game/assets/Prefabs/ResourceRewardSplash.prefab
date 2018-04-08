@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 199825024392505134}
   - component: {fileID: 114273426787122126}
   - component: {fileID: 95122288494695728}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ResourceRewardSplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 224925896265042536}
   - component: {fileID: 222936702028234336}
   - component: {fileID: 114718883340293212}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RewardText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 224865208931971636}
   - component: {fileID: 222151878518296900}
   - component: {fileID: 114190637642204676}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: RewardImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1008,12 +1008,12 @@ Prefab:
     - target: {fileID: 224580821341773242, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224581714390160096, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114783923714863816, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294967263
 --- !u!114 &1297172278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2039,7 +2039,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1297172280
 RectTransform:
@@ -2048,8 +2048,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297172276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 264.95428, y: 145.21632, z: 0.11603093}
-  m_LocalScale: {x: 0.32125, y: 0.32125, z: 0.32125}
+  m_LocalPosition: {x: 200.45428, y: 145.21632, z: 0.11603093}
+  m_LocalScale: {x: 0.3211111, y: 0.3211111, z: 0.3211111}
   m_Children:
   - {fileID: 1479648298}
   - {fileID: 1976573891}
@@ -6282,12 +6282,12 @@ Prefab:
     - target: {fileID: 224580821341773242, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -44
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224581714390160096, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114783923714863816, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
@@ -6770,6 +6770,7 @@ GameObject:
   - component: {fileID: 1903415492}
   - component: {fileID: 1903415495}
   - component: {fileID: 1903415491}
+  - component: {fileID: 1903415496}
   m_Layer: 5
   m_Name: btn_UnitsMenu
   m_TagString: Untagged
@@ -6846,17 +6847,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1903415495}
-        m_MethodName: StopShip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1903415491}
         m_MethodName: OpenUpgradesMenu
         m_Mode: 5
@@ -6866,6 +6856,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 04a_UpgradeMenus
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1903415495}
+        m_MethodName: StopShip
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -6915,6 +6916,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShip: {fileID: 1345937864}
+--- !u!114 &1903415496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1903415489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1903415495}
+          m_MethodName: StopShip
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1956606714
 GameObject:
   m_ObjectHideFlags: 0
