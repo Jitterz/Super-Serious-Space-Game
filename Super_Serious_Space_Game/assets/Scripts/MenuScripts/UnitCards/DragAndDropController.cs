@@ -25,7 +25,7 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
     public void OnBeginDrag(PointerEventData eventData)
     {
         startingParent = transform.parent;
-        canvasParent = GameObject.Find("Canvas").transform;
+        canvasParent = GameObject.Find("CanvasMenu").transform;
         transform.SetParent(canvasParent);
         draggedObject = gameObject;
         startPosition = transform.position;

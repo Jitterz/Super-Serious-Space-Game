@@ -26,4 +26,17 @@ public class LevelManager : MonoBehaviour {
     {
         SceneManager.LoadScene(name);
     }
+
+    public void OpenUpgradesMenu(string name)
+    {
+        SpaceUIManager.pauseSpaceScene = true;
+        SceneManager.LoadScene(name, LoadSceneMode.Additive);
+    }
+
+    public void CloseUpgradesMenu(string name)
+    {
+        SceneManager.UnloadSceneAsync(name);
+        SpaceUIManager.pauseSpaceScene = false;
+        SpaceUIManager.upgradeMenuClosed = true;
+    }
 }

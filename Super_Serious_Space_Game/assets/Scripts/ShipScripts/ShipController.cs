@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ShipController : MonoBehaviour {
     public float shipSpeed = 10f;
@@ -31,7 +32,7 @@ public class ShipController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (planetScanner.isScanning == false)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             if (Input.GetMouseButton(0))
             {

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class SpaceUIManager : MonoBehaviour {
 
+    public static bool pauseSpaceScene;
+    public static bool upgradeMenuClosed;
+
     public GameObject playerShip;
 
     public Slider fuelBar;
@@ -45,6 +48,18 @@ public class SpaceUIManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (pauseSpaceScene == true)
+        {
+            Time.timeScale = 0;
+            shipController.isMoving = false;
+        }
+        else if (upgradeMenuClosed)
+        {
+            upgradeMenuClosed = false;
+            Time.timeScale = 1;
+            shipController.isMoving = false;
+        }
+
         creditsPlayerText.text = PlayerInfoStatic.CurrentCredits.ToString();
         xpPlayerText.text = PlayerInfoStatic.CurrentXP.ToString();
 

@@ -111,7 +111,7 @@ public class PlanetScanner : MonoBehaviour {
 
         scannerSprite.enabled = true;
         
-        playerShipController.isMoving = false;
+        //playerShipController.isMoving = false;
 
         scannerSprite.color = new Color(scannerSprite.color.r, scannerSprite.color.g, scannerSprite.color.b, 0.2f);
         GetPossiblePlanetsToScan("enter");
