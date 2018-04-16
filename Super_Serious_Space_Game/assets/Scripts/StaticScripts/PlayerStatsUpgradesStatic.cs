@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatsUpgradesStatic : MonoBehaviour {
+    //-------------------------------------------PLAYER SPECIFIC---------------------------------------//
+    public static float luck = 1;
     //--------------------------------------------PLAYER BATTLE----------------------------------------//
     public static int startingMiners = 1;
     // ---------------------------------------------SHIP-----------------------------------------------//
@@ -10,6 +12,7 @@ public class PlayerStatsUpgradesStatic : MonoBehaviour {
     public static float scannerRange = 0;
 
     // ------------------------------------------SHIP SPECIAL------------------------------------------//
+    //--------TURRET SPECIAL----------------------//
     public static int turretDamageUpgrade = 0;
     public static int turretRangeUpgrade = 0;
     public static int turretHealthUpgrade = 0;
