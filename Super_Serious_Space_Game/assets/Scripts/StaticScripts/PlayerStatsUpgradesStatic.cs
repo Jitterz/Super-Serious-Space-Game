@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStatsUpgradesStatic : MonoBehaviour {
     //-------------------------------------------PLAYER SPECIFIC---------------------------------------//
+    public static List<string> discoveredUnits;
     public static float luck = 1;
     //--------------------------------------------PLAYER BATTLE----------------------------------------//
     public static int startingMiners = 1;

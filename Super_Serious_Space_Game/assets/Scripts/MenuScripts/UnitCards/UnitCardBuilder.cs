@@ -5,22 +5,25 @@ using UnityEngine;
 public class UnitCardBuilder : MonoBehaviour {
 
     private GameObject newCard;
+    private UnitCard unitCardScript;
+    private UnitStats unitStatsScript;
 
-    private float cardPowerLevel = 0;
-    private float powerLevelMultiplier = 5f;
     private int numberOfAffectedStats;
+
     private List<string> selectedStatTypes;
     private List<string> possibleStatTypes;
 
     private List<float> minimumStats;
     private List<float> maximumStats;
 
+    private string unitName;
+
 	public GameObject BuildCard(int playerLevel, GameObject cardPrefab)
     {
         newCard = Instantiate(cardPrefab);
         newCard.SetActive(false);
-        UnitCard unitCardScript = newCard.GetComponent<UnitCard>();
-        UnitStats unitStatsScript = newCard.GetComponent<UnitStats>();
+        unitCardScript = newCard.GetComponent<UnitCard>();
+        unitStatsScript = newCard.GetComponent<UnitStats>();
        
         BuildLists();
 
@@ -28,14 +31,30 @@ public class UnitCardBuilder : MonoBehaviour {
         GetNumberOfAffectedStats(playerLevel);
         // get which stats on the card will be affected
         GetRandomStatTypesToAffect();
-        // Set the minimum and maximum possible stats for each selected type based on player level
+        // get which type of unit this card represents
+        GetUnitType();
+        // Set the current and maximum possible stats for each selected type based on player level
+        SetStatAmounts();
 
         return newCard;
     }
 
-    private void SetMinimumAndMaximumStatAmounts(int playerLevel)
+    private void GetUnitType()
     {
-        
+        int random = Random.Range(1, PlayerStatsUpgradesStatic.discoveredUnits.Count);
+
+        unitName = PlayerStatsUpgradesStatic.discoveredUnits[random];
+    }
+
+    private void SetStatAmounts()
+    {
+        UnitStatsBuilder statsBuilder = new UnitStatsBuilder();
+
+        for (int i = 0; i < selectedStatTypes.Count; i++)
+        {
+            statsBuilder.GetUnitTypeAndBuildTheStats(unitName, unitStatsScript, selectedStatTypes[i]);
+            statsBuilder.statsModified = true;
+        }
     }
 
     private void GetRandomStatTypesToAffect()
@@ -56,27 +75,22 @@ public class UnitCardBuilder : MonoBehaviour {
         if (playerLevel <= 10)
         {
             numberOfAffectedStats = Random.Range(1, 3);
-            cardPowerLevel += numberOfAffectedStats * powerLevelMultiplier;
         }
         else if (playerLevel <= 25)
         {
             numberOfAffectedStats = Random.Range(1, 5);
-            cardPowerLevel += numberOfAffectedStats * powerLevelMultiplier;
         }
         else if (playerLevel <= 40)
         {
             numberOfAffectedStats = Random.Range(1, 6);
-            cardPowerLevel += numberOfAffectedStats * powerLevelMultiplier;
         }
         else if (playerLevel <= 65)
         {
             numberOfAffectedStats = Random.Range(2, 6);
-            cardPowerLevel += numberOfAffectedStats * powerLevelMultiplier;
         }
         else
         {
             numberOfAffectedStats = Random.Range(3, 6);
-            cardPowerLevel += numberOfAffectedStats * powerLevelMultiplier;
         }
     }
 

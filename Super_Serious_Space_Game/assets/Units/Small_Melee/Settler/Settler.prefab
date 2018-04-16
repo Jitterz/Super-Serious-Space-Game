@@ -496,17 +496,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdf28ff833d59941ab9712d72663637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
-  unitCost: 150
-  unitDamage: 10
-  unitBuildTime: 10
+  health: 0
+  healthMax: 0
+  unitCost: 0
+  unitCostMax: 0
+  unitDamage: 0
+  unitDamageMax: 0
+  unitBuildTime: 0
+  unitBuildTimeMax: 0
+  unitCapacity: 0
   imDead: 0
-  unitMoveSpeed: 30
+  isRanged: 0
+  unitMoveSpeed: 0
+  moveSpeedMax: 0
   unitCurrentMoveSpeed: 0
   unitTargetRange: 70
   unitAttackRange: 15
-  unitAttackSpeed: 1.07
+  unitAttackSpeed: 0
+  attackSpeedMax: 0
+  unitPowerLevel: 0
   unitName: Settler
+  unitNickName: 
   unitResourceType: Gold
 --- !u!114 &114950270678581736
 MonoBehaviour:

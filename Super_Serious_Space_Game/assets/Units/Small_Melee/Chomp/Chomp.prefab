@@ -301,17 +301,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdf28ff833d59941ab9712d72663637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 35
-  unitCost: 75
-  unitDamage: 6
-  unitBuildTime: 8
+  health: 0
+  healthMax: 0
+  unitCost: 0
+  unitCostMax: 0
+  unitDamage: 0
+  unitDamageMax: 0
+  unitBuildTime: 0
+  unitBuildTimeMax: 0
+  unitCapacity: 1
   imDead: 0
-  unitMoveSpeed: 50
+  isRanged: 0
+  unitMoveSpeed: 0
+  moveSpeedMax: 0
   unitCurrentMoveSpeed: 0
   unitTargetRange: 70
   unitAttackRange: 15
-  unitAttackSpeed: 0.5
+  unitAttackSpeed: 0
+  attackSpeedMax: 0
+  unitPowerLevel: 0
   unitName: Chomp
+  unitNickName: 
   unitResourceType: Copper
 --- !u!114 &114664197311866342
 MonoBehaviour:
