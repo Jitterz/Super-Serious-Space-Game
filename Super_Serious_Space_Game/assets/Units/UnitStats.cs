@@ -13,12 +13,12 @@ public class UnitStats : MonoBehaviour {
     public int unitBuildTime;
     public int unitBuildTimeMax;
     public int unitCapacity;
+    public int unitMoveSpeed;
+    public int moveSpeedMax;
 
     public bool imDead;
     public bool isRanged;
 
-    public float unitMoveSpeed;
-    public float moveSpeedMax;
     public float unitCurrentMoveSpeed;
     public float unitTargetRange;
     public float unitAttackRange;

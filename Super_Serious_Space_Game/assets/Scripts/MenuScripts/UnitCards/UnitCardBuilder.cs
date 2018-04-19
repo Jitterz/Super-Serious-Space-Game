@@ -13,12 +13,9 @@ public class UnitCardBuilder : MonoBehaviour {
     private List<string> selectedStatTypes;
     private List<string> possibleStatTypes;
 
-    private List<float> minimumStats;
-    private List<float> maximumStats;
-
     private string unitName;
 
-	public GameObject BuildCard(int playerLevel, GameObject cardPrefab)
+	public void BuildCard(int playerLevel, GameObject cardPrefab)
     {
         newCard = Instantiate(cardPrefab);
         newCard.SetActive(false);
@@ -36,12 +33,12 @@ public class UnitCardBuilder : MonoBehaviour {
         // Set the current and maximum possible stats for each selected type based on player level
         SetStatAmounts();
 
-        return newCard;
+        //return newCard;
     }
 
     private void GetUnitType()
     {
-        int random = Random.Range(1, PlayerStatsUpgradesStatic.discoveredUnits.Count);
+        int random = Random.Range(0, PlayerStatsUpgradesStatic.discoveredUnits.Count - 1);
 
         unitName = PlayerStatsUpgradesStatic.discoveredUnits[random];
     }
@@ -51,7 +48,7 @@ public class UnitCardBuilder : MonoBehaviour {
         UnitStatsBuilder statsBuilder = new UnitStatsBuilder();
 
         for (int i = 0; i < selectedStatTypes.Count; i++)
-        {
+        {        
             statsBuilder.GetUnitTypeAndBuildTheStats(unitName, unitStatsScript, selectedStatTypes[i]);
             statsBuilder.statsModified = true;
         }
@@ -61,9 +58,9 @@ public class UnitCardBuilder : MonoBehaviour {
     {
         int random;
 
-        for (int i = 0; i < numberOfAffectedStats - 1; i++)
+        for (int i = 0; i < numberOfAffectedStats; i++)
         {
-            random = Random.Range(1, 6);
+            random = Random.Range(0, possibleStatTypes.Count);
             selectedStatTypes.Add(possibleStatTypes[random]);
             possibleStatTypes.RemoveAt(random);
         }
@@ -97,8 +94,6 @@ public class UnitCardBuilder : MonoBehaviour {
     private void BuildLists()
     {
         selectedStatTypes = new List<string>();        
-        minimumStats = new List<float>();
-        maximumStats = new List<float>();
 
         possibleStatTypes = new List<string>();
         possibleStatTypes.Add("Attack");
