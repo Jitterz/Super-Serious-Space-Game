@@ -81,6 +81,19 @@ public class UnitStatsBuilder {
     // -------------------------------------------------------------SETTLER------------------------------------------------------------//
     private void BuildSettlerStartingStats(UnitStats myStats, string statType)
     {
+        float attackMaxPossible = 16;
+        float attackMinimumPossible = 6;
+        float healthMaxPossible = 155;
+        float healthMinimumPossible = 81;
+        float attackSpeedMaxPossible = 2.25f;
+        float attackSpeedMinimumPossible = 1.5f;
+        float moveSpeedMaxPossible = 42;
+        float movespeedMinimumPossible = 21;
+        float buildTimeMaxPossible = 15;
+        float buildTimeMinimumPossible = 5;
+        float resourceCostMaxPossible = 198;
+        float resourceCostMinimumPossible = 156;
+
         // default stats if not modified
         if (!statsModified)
         {
