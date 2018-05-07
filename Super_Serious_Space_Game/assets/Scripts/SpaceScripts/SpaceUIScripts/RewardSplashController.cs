@@ -10,6 +10,7 @@ public class RewardSplashController : MonoBehaviour {
     public Image splashImage;
     public List<Sprite> splashSprites;
 
+    private UnitCardBuilder cardBuilder;
     private ParticleSystem particles;
     private Animator animate;
     private float particleTimer;
@@ -18,10 +19,15 @@ public class RewardSplashController : MonoBehaviour {
     private float transitionTime;
     private bool particlePlayed;
     private bool rewardAmountCounted;
+    private bool cardCreated = false;
 
 	// Use this for initialization
 	void Start ()
     {
+        Debug.Log("Remove Discovered units");
+        PlayerStatsUpgradesStatic.discoveredUnits = new List<string>();
+        PlayerStatsUpgradesStatic.discoveredUnits.Add("Settler");
+        // remove above discovered units
         rewardAmountCounted = false;
         particlePlayed = false;
         particleTimer = 0;
@@ -30,6 +36,7 @@ public class RewardSplashController : MonoBehaviour {
         textAmount.text = "0";
         animate = GetComponent<Animator>();
         particles = GetComponent<ParticleSystem>();
+        cardBuilder = GetComponent<UnitCardBuilder>();
         transitionCase = "Fuel";
 	}
 	
@@ -170,13 +177,34 @@ public class RewardSplashController : MonoBehaviour {
                         {
                             particlePlayed = false;
                             rewardAmountCounted = false;
-                            Destroy(gameObject);
+                            //Destroy(gameObject);
+                            transitionCase = "WonCard";
                             // need a case here for extra rewards cards etc and close out the splash
                         }
                     }
                 }
                 break;
-        }
+            case "WonCard":
+                // show the card and stuff here
+                splashImage.enabled = false;
+                textAmount.enabled = false;
+                if (cardCreated == false)
+                {
+                    GameObject newCard = cardBuilder.BuildCard(PlayerHiddenLevelStatic.playerLevel);
+                    GameObject playerUnitCard = Instantiate(newCard);
+                    PlayerInfoStatic.PlayerUnitCards.Add(playerUnitCard);
+                    newCard.transform.parent = gameObject.transform;
+                    newCard.transform.position = gameObject.transform.position;
+                    RectTransform rect = newCard.GetComponent<RectTransform>();
+                    rect.sizeDelta = new Vector2(62.3f, 99.25f);
+                    cardCreated = true;
+                } 
+                if (TransitionTimer())
+                {
+                    Destroy(gameObject);
+                }
+                break;
+        }       
     }
 
     private bool ParticleTimer()

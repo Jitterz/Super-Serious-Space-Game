@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class UnitCard : MonoBehaviour {
 
+    public Sprite[] unitImages;
     public Sprite[] resourceSprites;
     public Sprite[] cardBackgrounds;
+    public List<string> resourceTypes;
+    public List<string> unitTypes;
 
     public Image unitImage;
     public Image cardBackground;

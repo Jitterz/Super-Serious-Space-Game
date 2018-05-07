@@ -436,18 +436,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  healthMax: 0
   unitCost: 0
+  unitCostMax: 0
   unitDamage: 0
+  unitDamageMax: 0
   unitBuildTime: 0
+  unitBuildTimeMax: 0
   unitCapacity: 0
+  unitMoveSpeed: 0
+  moveSpeedMax: 0
   imDead: 0
   isRanged: 0
-  unitMoveSpeed: 0
   unitCurrentMoveSpeed: 0
   unitTargetRange: 0
   unitAttackRange: 0
   unitAttackSpeed: 0
+  attackSpeedMax: 0
+  unitPowerLevel: 0
   unitName: 
+  unitNickName: 
   unitResourceType: 
 --- !u!114 &114333494184950954
 MonoBehaviour:
@@ -580,6 +588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c5813d6c7a2854c9cf46fa41169572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitImages:
+  - {fileID: 21300000, guid: 6392291c246f4624ab6d9f4b9f9adf3f, type: 3}
+  - {fileID: 21300000, guid: 110a37f5e1416644997575ecbab386b0, type: 3}
+  - {fileID: 21300000, guid: 82dfe4b6eaeddd24f9bc545e4f3cc6df, type: 3}
   resourceSprites:
   - {fileID: 21300000, guid: 6993a1a22f8cb514cbf3869e5cdf7004, type: 3}
   - {fileID: 21300000, guid: debeb5abd002fd74f9855145fc837991, type: 3}
@@ -591,7 +603,25 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8eea1418487e721429ff0d7c1e792d5d, type: 3}
   - {fileID: 21300000, guid: c6bccb9d95768dd4b9f75cc14766d524, type: 3}
   cardBackgrounds:
+  - {fileID: 21300000, guid: 6890efdd291ede14683c82198eda82e9, type: 3}
+  - {fileID: 21300000, guid: d03f251c80e50d6409512164e318511c, type: 3}
   - {fileID: 21300000, guid: 175156ef1052b334ba152e1f951b045b, type: 3}
+  - {fileID: 21300000, guid: 381ce2ead981d614991db2ea942a6cbf, type: 3}
+  - {fileID: 21300000, guid: 543e98b4d711ef244b269778671d1660, type: 3}
+  resourceTypes:
+  - Gold
+  - Iron
+  - Copper
+  - Nickle
+  - Silver
+  - Cobalt
+  - Cadmium
+  - Iridium
+  - Paladium
+  unitTypes:
+  - Settler
+  - Nix
+  - Chomp
   unitImage: {fileID: 114297399915684076}
   cardBackground: {fileID: 114930511894839386}
   resourceImage: {fileID: 114398250650812822}

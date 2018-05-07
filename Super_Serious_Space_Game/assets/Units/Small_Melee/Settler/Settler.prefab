@@ -504,11 +504,11 @@ MonoBehaviour:
   unitDamageMax: 0
   unitBuildTime: 0
   unitBuildTimeMax: 0
-  unitCapacity: 0
-  imDead: 0
-  isRanged: 0
+  unitCapacity: 1
   unitMoveSpeed: 0
   moveSpeedMax: 0
+  imDead: 0
+  isRanged: 0
   unitCurrentMoveSpeed: 0
   unitTargetRange: 70
   unitAttackRange: 15

@@ -80,20 +80,7 @@ public class UnitStatsBuilder {
 
     // -------------------------------------------------------------SETTLER------------------------------------------------------------//
     private void BuildSettlerStartingStats(UnitStats myStats, string statType)
-    {
-        float attackMaxPossible = 16;
-        float attackMinimumPossible = 6;
-        float healthMaxPossible = 155;
-        float healthMinimumPossible = 81;
-        float attackSpeedMaxPossible = 2.25f;
-        float attackSpeedMinimumPossible = 1.5f;
-        float moveSpeedMaxPossible = 42;
-        float movespeedMinimumPossible = 21;
-        float buildTimeMaxPossible = 15;
-        float buildTimeMinimumPossible = 5;
-        float resourceCostMaxPossible = 198;
-        float resourceCostMinimumPossible = 156;
-
+    {       
         // default stats if not modified
         if (!statsModified)
         {
@@ -110,6 +97,11 @@ public class UnitStatsBuilder {
             myStats.unitCost = 200;
             myStats.unitCostMax = 190;
             myStats.unitPowerLevel += 10;
+            myStats.unitCapacity = 1;
+            myStats.unitTargetRange = 70;
+            myStats.unitAttackRange = 15;
+            myStats.unitName = "Settler";
+            myStats.unitResourceType = "Gold";
         }
 
         if (statType == "Attack")
@@ -174,6 +166,11 @@ public class UnitStatsBuilder {
             myStats.unitCost = 120;
             myStats.unitCostMax = 110;
             myStats.unitPowerLevel += 13;
+            myStats.unitCapacity = 1;
+            myStats.unitTargetRange = 160;
+            myStats.unitAttackRange = 125;
+            myStats.unitName = "Nix";
+            myStats.unitResourceType = "Iron";
         }
 
         if (statType == "Attack")
@@ -237,6 +234,11 @@ public class UnitStatsBuilder {
             myStats.unitCost = 80;
             myStats.unitCostMax = 70;
             myStats.unitPowerLevel += 14;
+            myStats.unitCapacity = 1;
+            myStats.unitTargetRange = 70;
+            myStats.unitAttackRange = 15;
+            myStats.unitName = "Chomp";
+            myStats.unitResourceType = "Copper";
         }
 
         if (statType == "Attack")

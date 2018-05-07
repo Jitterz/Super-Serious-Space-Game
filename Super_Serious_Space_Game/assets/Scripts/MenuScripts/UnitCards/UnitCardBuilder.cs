@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnitCardBuilder : MonoBehaviour {
 
+    public GameObject cardPrefab;
+
     private GameObject newCard;
     private UnitCard unitCardScript;
     private UnitStats unitStatsScript;
@@ -15,10 +17,10 @@ public class UnitCardBuilder : MonoBehaviour {
 
     private string unitName;
 
-	public void BuildCard(int playerLevel, GameObject cardPrefab)
+	public GameObject BuildCard(int playerLevel)
     {
         newCard = Instantiate(cardPrefab);
-        newCard.SetActive(false);
+        //newCard.SetActive(false);
         unitCardScript = newCard.GetComponent<UnitCard>();
         unitStatsScript = newCard.GetComponent<UnitStats>();
        
@@ -32,8 +34,57 @@ public class UnitCardBuilder : MonoBehaviour {
         GetUnitType();
         // Set the current and maximum possible stats for each selected type based on player level
         SetStatAmounts();
+        // build the card visuals
+        CreateCardVisuals();
 
-        //return newCard;
+        return newCard;
+    }
+
+    private void CreateCardVisuals()
+    {
+        // determine the card background
+        if (unitStatsScript.unitPowerLevel <= 20)
+        {
+            unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[0];
+        }
+        else if (unitStatsScript.unitPowerLevel <= 50)
+        {
+            unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[1];
+        }
+        else if (unitStatsScript.unitPowerLevel <= 100)
+        {
+            unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[2];
+        }
+        else if (unitStatsScript.unitPowerLevel <= 170)
+        {
+            unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[3];
+        }
+        else
+        {
+            unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[4];
+        }
+        //determine the resource image
+        for (int i = 0; i < unitCardScript.resourceTypes.Count - 1; i++)
+        {
+            if (unitStatsScript.unitResourceType == unitCardScript.resourceTypes[i])
+            {
+                unitCardScript.resourceImage.sprite = unitCardScript.resourceSprites[i];
+                break;
+            }
+        }
+        // get the unit image for the card
+        for (int i = 0; i < unitCardScript.unitTypes.Count - 1; i++)
+        {
+            if (unitStatsScript.unitName == unitCardScript.unitTypes[i])
+            {
+                unitCardScript.unitImage.sprite = unitCardScript.unitImages[i];
+            }
+        }
+
+        unitCardScript.unitName.text = unitStatsScript.unitName;
+        unitCardScript.unitCapacity.text = unitStatsScript.unitCapacity.ToString();
+        unitCardScript.resourceCost.text = unitStatsScript.unitCost.ToString();
+        unitCardScript.cardLevel.text = unitStatsScript.unitPowerLevel.ToString();
     }
 
     private void GetUnitType()

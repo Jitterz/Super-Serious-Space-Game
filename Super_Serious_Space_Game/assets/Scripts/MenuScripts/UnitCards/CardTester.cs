@@ -13,6 +13,6 @@ public class CardTester : MonoBehaviour {
         PlayerStatsUpgradesStatic.discoveredUnits.Add("Settler");
         cardBuild = GetComponent<UnitCardBuilder>();
 
-        cardBuild.BuildCard(PlayerHiddenLevelStatic.playerLevel, prefab);
+        cardBuild.BuildCard(PlayerHiddenLevelStatic.playerLevel);
     }
 }

@@ -1946,8 +1946,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663505194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 176.5, y: 132.5, z: 0}
-  m_LocalScale: {x: 0.29444444, y: 0.29444444, z: 0.29444444}
+  m_LocalPosition: {x: 269.5, y: 238.5, z: 0}
+  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
   m_Children:
   - {fileID: 829371084}
   - {fileID: 2049108960}
@@ -3803,12 +3803,12 @@ Prefab:
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 77.5
+      value: -235.1311
       objectReference: {fileID: 0}
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -115
+      value: -766.19995
       objectReference: {fileID: 0}
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
@@ -4238,6 +4238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f0ddb4501871d46be479cfefffd728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 1582452596923008, guid: 123708c4d4048d449b8cb8a6a4a334e4, type: 2}
 --- !u!1 &1417456921
 GameObject:
   m_ObjectHideFlags: 0
