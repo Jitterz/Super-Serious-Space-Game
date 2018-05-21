@@ -35,6 +35,7 @@ public class LevelManager : MonoBehaviour {
 
     public void CloseUpgradesMenu(string name)
     {
+        Debug.Log("Hit");
         SceneManager.UnloadSceneAsync(name);
         SpaceUIManager.pauseSpaceScene = false;
         SpaceUIManager.upgradeMenuClosed = true;

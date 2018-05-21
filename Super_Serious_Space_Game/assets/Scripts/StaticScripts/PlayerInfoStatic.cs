@@ -5,6 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerInfoStatic : MonoBehaviour {
 
+    private void Awake()
+    {
+        if(PlayerUnitCards == null)
+        {
+            PlayerUnitCards = new List<GameObject>();
+        }
+    }
+
     // Resources
     public static float CurrentShipFuel;
     public static float CurrentCredits;
@@ -21,6 +29,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static Sprite HomePlanetSprite;
     public static Sprite ShipImage;
 
+    public static float CardID;
     public static List<GameObject> PlayerUnitCards;
     public static List<GameObject> PlayerDeck;
 }

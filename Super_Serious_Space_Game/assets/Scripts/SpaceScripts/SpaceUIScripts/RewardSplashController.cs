@@ -192,6 +192,9 @@ public class RewardSplashController : MonoBehaviour {
                 {
                     GameObject newCard = cardBuilder.BuildCard(PlayerHiddenLevelStatic.playerLevel);
                     GameObject playerUnitCard = Instantiate(newCard);
+                    playerUnitCard.name = "Card" + PlayerInfoStatic.CardID.ToString();
+                    PlayerInfoStatic.CardID++;
+                    DontDestroyOnLoad(playerUnitCard);
                     PlayerInfoStatic.PlayerUnitCards.Add(playerUnitCard);
                     newCard.transform.parent = gameObject.transform;
                     newCard.transform.position = gameObject.transform.position;
@@ -202,8 +205,8 @@ public class RewardSplashController : MonoBehaviour {
                 if (TransitionTimer())
                 {
                     Destroy(gameObject);
-                }
-                break;
+                }               
+                break;                
         }       
     }
 

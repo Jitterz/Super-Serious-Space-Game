@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1937,7 +1937,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &663505198
 RectTransform:
@@ -1946,8 +1946,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663505194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 269.5, y: 238.5, z: 0}
-  m_LocalScale: {x: 0.53, y: 0.53, z: 0.53}
+  m_LocalPosition: {x: 154, y: 115.5, z: 0}
+  m_LocalScale: {x: 0.25666666, y: 0.25666666, z: 0.25666666}
   m_Children:
   - {fileID: 829371084}
   - {fileID: 2049108960}
@@ -2104,22 +2104,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 674613697}
---- !u!1 &713092129 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1582452596923008, guid: 123708c4d4048d449b8cb8a6a4a334e4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1108037153}
---- !u!225 &713092134
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 713092129}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!224 &747743482 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
@@ -2135,6 +2119,7 @@ GameObject:
   - component: {fileID: 780502243}
   - component: {fileID: 780502244}
   - component: {fileID: 780502245}
+  - component: {fileID: 780502246}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -2197,6 +2182,18 @@ MonoBehaviour:
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 1
   m_ConstraintCount: 3
+--- !u!114 &780502246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780502242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5a9c8caab439d40a362e9d5620f0a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlot: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
 --- !u!1 &785709534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.05882353, g: 0.05882353, b: 0.05882353, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3411,7 +3408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3803,12 +3800,12 @@ Prefab:
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -235.1311
+      value: 77.5
       objectReference: {fileID: 0}
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -766.19995
+      value: -115
       objectReference: {fileID: 0}
     - target: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
         type: 2}
@@ -4227,6 +4224,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1582452596923008, guid: 123708c4d4048d449b8cb8a6a4a334e4, type: 2}
+  cardSlot: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
+  content: {fileID: 780502243}
 --- !u!114 &1372121906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4430,7 +4429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5178,7 +5177,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1761901013}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1761901015
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6247,7 +6246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
