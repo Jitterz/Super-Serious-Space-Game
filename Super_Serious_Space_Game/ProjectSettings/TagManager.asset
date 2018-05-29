@@ -17,6 +17,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - DeckSlot
+  - UnitCard
   layers:
   - Default
   - TransparentFX

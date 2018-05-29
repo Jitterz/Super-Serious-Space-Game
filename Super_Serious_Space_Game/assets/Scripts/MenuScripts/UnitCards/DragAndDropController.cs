@@ -7,10 +7,12 @@ using UnityEngine.EventSystems;
 public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
 
     public static GameObject draggedObject;
+    public static GameObject originalParent;
     private Vector3 startPosition;
     private Transform startingParent;
     private Transform canvasParent;
     private CanvasGroup canvasGroup;
+    private string startingList;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        originalParent = transform.parent.gameObject;
         startingParent = transform.parent;
         canvasParent = GameObject.Find("CanvasMenu").transform;
         transform.SetParent(canvasParent);
@@ -40,11 +43,13 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         draggedObject = null;
+        Debug.Log(eventData.pointerCurrentRaycast.gameObject.tag);
         canvasGroup.blocksRaycasts = true;
         if (transform.parent == canvasParent)
         {
+            // put card back in original list here
             transform.position = startPosition;
             transform.SetParent(startingParent);            
-        }
+        }      
     }
 }

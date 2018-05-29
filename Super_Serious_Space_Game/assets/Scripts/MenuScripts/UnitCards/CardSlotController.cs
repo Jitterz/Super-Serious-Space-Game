@@ -25,8 +25,16 @@ public class CardSlotController : MonoBehaviour, IDropHandler {
         {
             if (DragAndDropController.draggedObject != null)
             {
-                DragAndDropController.draggedObject.transform.SetParent(transform);
-                DragAndDropController.draggedObject.transform.position = transform.position;
+                // if the dragged objects parent isnt this object and this object is not a deck slot then remove it and set the new parent
+                if (DragAndDropController.originalParent != gameObject)
+                {                    
+                    DragAndDropController.draggedObject.transform.SetParent(transform);
+                    DragAndDropController.draggedObject.transform.position = transform.position;
+                    if (DragAndDropController.originalParent.tag != "DeckSlot")
+                    {
+                        Destroy(DragAndDropController.originalParent);
+                    }
+                }
             }
         }
     }

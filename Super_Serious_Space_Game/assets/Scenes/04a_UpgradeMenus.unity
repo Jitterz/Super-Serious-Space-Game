@@ -112,6 +112,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12484822 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+  m_PrefabInternal: {fileID: 1675774655}
 --- !u!1 &72264419
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +637,11 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 335297100}
+--- !u!1 &339620612 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+  m_PrefabInternal: {fileID: 1938867828}
 --- !u!1 &342214764
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +941,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_Name
-      value: CardSlot (2)
+      value: CardSlot03
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_TagString
@@ -1877,7 +1887,7 @@ GameObject:
   - component: {fileID: 663505195}
   m_Layer: 5
   m_Name: CanvasMenu
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1946,8 +1956,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663505194}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 154, y: 115.5, z: 0}
-  m_LocalScale: {x: 0.25666666, y: 0.25666666, z: 0.25666666}
+  m_LocalPosition: {x: 162, y: 121.5, z: 0}
+  m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_Children:
   - {fileID: 829371084}
   - {fileID: 2049108960}
@@ -1972,6 +1982,7 @@ GameObject:
   - component: {fileID: 668214077}
   - component: {fileID: 668214079}
   - component: {fileID: 668214078}
+  - component: {fileID: 668214080}
   m_Layer: 5
   m_Name: DeckPanel
   m_TagString: Untagged
@@ -2036,6 +2047,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668214076}
+--- !u!114 &668214080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 668214076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e984ef9c727154f9526403ff853ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardSlots:
+  - {fileID: 1878224269}
+  - {fileID: 12484822}
+  - {fileID: 1711094142}
+  - {fileID: 921239819}
+  - {fileID: 921239819}
+  - {fileID: 339620612}
 --- !u!1 &674613697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2349,9 @@ GameObject:
   - component: {fileID: 798962562}
   - component: {fileID: 798962564}
   - component: {fileID: 798962563}
+  - component: {fileID: 798962567}
+  - component: {fileID: 798962566}
+  - component: {fileID: 798962565}
   m_Layer: 5
   m_Name: CardsPanel
   m_TagString: Untagged
@@ -2379,6 +2411,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 798962561}
+--- !u!114 &798962565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798962561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 798962566}
+          m_MethodName: DragDropCreateNewSlotAddCard
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &798962566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798962561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc4ab4bfa3b90f49a0993881ef0f1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentWindow: {fileID: 780502243}
+  cardSlotPrefab: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+--- !u!114 &798962567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 798962561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 6
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &816315075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,7 +2743,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_Name
-      value: CardSlot (4)
+      value: CardSlot05
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_TagString
@@ -3032,6 +3138,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870801618}
+--- !u!1 &921239819 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+  m_PrefabInternal: {fileID: 1604300458}
 --- !u!1 &971915443
 GameObject:
   m_ObjectHideFlags: 0
@@ -4851,7 +4962,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_Name
-      value: CardSlot (3)
+      value: CardSlot04
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_TagString
@@ -5042,7 +5153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_Name
-      value: CardSlot (1)
+      value: CardSlot02
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_TagString
@@ -5051,6 +5162,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1711094142 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+  m_PrefabInternal: {fileID: 380935547}
 --- !u!1 &1757466153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,7 +5180,7 @@ GameObject:
   - component: {fileID: 1757466155}
   m_Layer: 5
   m_Name: Scroll View
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5518,6 +5634,10 @@ Prefab:
       propertyPath: m_TagString
       value: DeckSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
+      propertyPath: m_Name
+      value: CardSlot01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
   m_IsPrefabParent: 0
@@ -5740,6 +5860,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
     type: 2}
   m_PrefabInternal: {fileID: 380935547}
+--- !u!1 &1878224269 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241,
+    type: 2}
+  m_PrefabInternal: {fileID: 1815278634}
 --- !u!1 &1926366153
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,7 +6090,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_Name
-      value: CardSlot (5)
+      value: CardSlot06
       objectReference: {fileID: 0}
     - target: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
       propertyPath: m_TagString
