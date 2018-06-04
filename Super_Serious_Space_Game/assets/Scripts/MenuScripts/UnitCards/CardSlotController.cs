@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class CardSlotController : MonoBehaviour, IDropHandler {
 
-    public GameObject unitCard
+    public GameObject UnitCard
     {
         get
         {
@@ -21,7 +21,7 @@ public class CardSlotController : MonoBehaviour, IDropHandler {
     public void OnDrop(PointerEventData eventData)
     {
         // if my card slot does not have an item then set the cards parent to the slot
-        if (!unitCard)
+        if (gameObject.transform.childCount == 0)
         {
             if (DragAndDropController.draggedObject != null)
             {
@@ -36,6 +36,23 @@ public class CardSlotController : MonoBehaviour, IDropHandler {
                     }
                 }
             }
+        }      
+        else if (gameObject.transform.childCount == 1)
+        {
+            GameObject destinationCard = gameObject.transform.GetChild(0).gameObject;
+            GameObject destinationParent = gameObject;
+            GameObject originalCard = DragAndDropController.draggedObject;
+            GameObject originalParent = DragAndDropController.originalParent;
+
+            originalCard.transform.SetParent(destinationParent.transform);
+            destinationCard.transform.SetParent(originalParent.transform);
+
+            Vector3 tempDestination = new Vector3(destinationParent.transform.position.x, destinationParent.transform.position.y, destinationParent.transform.position.z);
+            Vector3 tempOriginal = new Vector3(originalParent.transform.position.x, originalParent.transform.position.y, originalParent.transform.position.z);
+
+            destinationCard.transform.position = tempOriginal;
+            originalCard.transform.position = tempDestination;
         }
+        
     }
 }

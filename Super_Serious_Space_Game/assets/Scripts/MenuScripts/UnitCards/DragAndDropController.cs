@@ -8,14 +8,14 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
 
     public static GameObject draggedObject;
     public static GameObject originalParent;
+    private Transform canvasParent;
     private Vector3 startPosition;
     private Transform startingParent;
-    private Transform canvasParent;
-    private CanvasGroup canvasGroup;
-    private string startingList;
+    private CanvasGroup canvasGroup;    
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         canvasGroup = GetComponent<CanvasGroup>();
 	}
 	
@@ -43,13 +43,26 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         draggedObject = null;
-        Debug.Log(eventData.pointerCurrentRaycast.gameObject.tag);
         canvasGroup.blocksRaycasts = true;
         if (transform.parent == canvasParent)
         {
-            // put card back in original list here
             transform.position = startPosition;
-            transform.SetParent(startingParent);            
-        }      
+            transform.SetParent(startingParent);
+        }
+    }        
+
+    private void SwapCards(PointerEventData eventData)
+    {
+        GameObject destinationCard = eventData.pointerCurrentRaycast.gameObject;
+        GameObject originalCard = draggedObject;
+
+        originalCard.transform.SetParent(destinationCard.transform.parent);
+        destinationCard.transform.SetParent(originalParent.transform);
+
+        Vector3 tempDestination = new Vector3(destinationCard.transform.position.x, destinationCard.transform.position.y, destinationCard.transform.position.z);
+        Vector3 tempOriginal = new Vector3(originalCard.transform.position.x, originalCard.transform.position.y, originalCard.transform.position.z);
+
+        destinationCard.transform.position = tempOriginal;
+        originalCard.transform.position = tempDestination;
     }
 }
