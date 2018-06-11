@@ -21,8 +21,10 @@ public class RewardSplashController : MonoBehaviour {
     private bool rewardAmountCounted;
     private bool cardCreated = false;
 
-	// Use this for initialization
-	void Start ()
+    private GameObject playerUnitCard;
+
+    // Use this for initialization
+    void Start ()
     {
         Debug.Log("Remove Discovered units");
         PlayerStatsUpgradesStatic.discoveredUnits = new List<string>();
@@ -191,8 +193,9 @@ public class RewardSplashController : MonoBehaviour {
                 if (cardCreated == false)
                 {
                     GameObject newCard = cardBuilder.BuildCard(PlayerHiddenLevelStatic.playerLevel);
-                    GameObject playerUnitCard = Instantiate(newCard);
-                    playerUnitCard.name = "Card" + PlayerInfoStatic.CardID.ToString();
+                    playerUnitCard = Instantiate(newCard);
+                    playerUnitCard.GetComponent<UnitCard>().cardID = PlayerInfoStatic.CardID;
+                    playerUnitCard.name = "UnitCard" + PlayerInfoStatic.CardID.ToString();                    
                     PlayerInfoStatic.CardID++;
                     DontDestroyOnLoad(playerUnitCard);
                     PlayerInfoStatic.PlayerUnitCards.Add(playerUnitCard);
@@ -204,6 +207,8 @@ public class RewardSplashController : MonoBehaviour {
                 } 
                 if (TransitionTimer())
                 {
+                    playerUnitCard.transform.parent = GameObject.Find("PlayerCardsHolder").transform;
+                    playerUnitCard.SetActive(false);
                     Destroy(gameObject);
                 }               
                 break;                

@@ -29,7 +29,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static Sprite HomePlanetSprite;
     public static Sprite ShipImage;
 
-    public static float CardID;
+    public static int CardID;
     public static List<GameObject> PlayerUnitCards;
     public static List<GameObject> PlayerDeck;
 }

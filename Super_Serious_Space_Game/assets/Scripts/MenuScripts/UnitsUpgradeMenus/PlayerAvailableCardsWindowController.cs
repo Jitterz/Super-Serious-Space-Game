@@ -23,9 +23,28 @@ public class PlayerAvailableCardsWindowController : MonoBehaviour {
         {
             GameObject newCardSlot = Instantiate(cardSlot, gameObject.transform.position, Quaternion.identity);
             newCardSlot.transform.SetParent(gameObject.transform, false);
-            GameObject newPlayerCard = Instantiate(playerCards, newCardSlot.transform.position, Quaternion.identity);
-            newPlayerCard.transform.SetParent(newCardSlot.transform, false);
-            newPlayerCard.transform.position = newCardSlot.transform.position;
+            playerCards.transform.SetParent(newCardSlot.transform, false);
+            playerCards.transform.position = newCardSlot.transform.position;
+            playerCards.SetActive(true);
+        }
+    }  
+
+    public void BuildPlayerCardsList()
+    {
+        PlayerInfoStatic.PlayerUnitCards.Clear();
+        for (int i = 0; i < gameObject.transform.childCount; i++)
+        {
+            if (gameObject.transform.GetChild(i).childCount == 1)
+            {                
+                PlayerInfoStatic.PlayerUnitCards.Add(gameObject.transform.GetChild(i).transform.GetChild(0).gameObject);
+            }
+        }
+
+        GameObject playerCardsParent = GameObject.Find("PlayerCardsHolder");
+        foreach (GameObject playerCards in PlayerInfoStatic.PlayerUnitCards)
+        {
+            playerCards.transform.SetParent(playerCardsParent.transform, false);
+            playerCards.SetActive(false);
         }
     }
 }

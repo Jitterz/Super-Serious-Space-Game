@@ -20,6 +20,7 @@ public class PlanetScanner : MonoBehaviour {
         // REVOVE THIS
         PlayerStatsUpgradesStatic.scannerLevel = 5;
         Debug.Log("Remove me");
+        //REMOVE THIS
         playerShipController = playerShip.GetComponent<ShipController>();
         scannerSprite = GetComponent<SpriteRenderer>();
         scannerLine = GetComponent<LineRenderer>();

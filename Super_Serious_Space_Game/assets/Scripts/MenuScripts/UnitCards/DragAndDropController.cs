@@ -12,9 +12,6 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
     private Vector3 startPosition;
     private Transform startingParent;
     private CanvasGroup canvasGroup;
-    private bool finishedSmoothDrag = true;
-
-    
 
     // Use this for initialization
     void Start ()
@@ -25,16 +22,7 @@ public class DragAndDropController : MonoBehaviour, IBeginDragHandler, IDragHand
 	// Update is called once per frame
 	void Update ()
     {
-        /*
-		if (!finishedSmoothDrag)
-        {
-            canvasGroup.blocksRaycasts = false;
-        }
-        else
-        {
-            canvasGroup.blocksRaycasts = true;
-        }
-        */
+       
 	}
 
     public void OnBeginDrag(PointerEventData eventData)

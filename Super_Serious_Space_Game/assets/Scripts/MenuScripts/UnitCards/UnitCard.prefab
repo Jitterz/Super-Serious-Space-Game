@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c5813d6c7a2854c9cf46fa41169572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardID: 0
   unitImages:
   - {fileID: 21300000, guid: 6392291c246f4624ab6d9f4b9f9adf3f, type: 3}
   - {fileID: 21300000, guid: 110a37f5e1416644997575ecbab386b0, type: 3}

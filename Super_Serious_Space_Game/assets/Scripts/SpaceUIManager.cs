@@ -7,6 +7,7 @@ public class SpaceUIManager : MonoBehaviour {
 
     public static bool pauseSpaceScene;
     public static bool upgradeMenuClosed;
+    public static GameObject mainUIGameObject;
 
     public GameObject playerShip;
 
@@ -36,6 +37,7 @@ public class SpaceUIManager : MonoBehaviour {
         {
             planetSpawnerScript = planetSpawner.GetComponent<PlanetSpawner>();
         }
+        mainUIGameObject = GameObject.Find("SpaceUIManager");
         approachPanel.SetActive(false);
         fuelBarDefualtBckColor = backGroundFuelBar.color;
         fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
@@ -116,5 +118,17 @@ public class SpaceUIManager : MonoBehaviour {
         GameObject splash = Instantiate(rewardsSplash, transform.position, Quaternion.identity);
         splash.transform.SetParent(gameObject.transform);
         splash.SetActive(true);
+    }
+
+    public static void EnableDisableSpaceUI(string enableDisable)
+    {
+        if (enableDisable == "enable")
+        {
+            mainUIGameObject.SetActive(true);
+        }
+        else
+        {
+            mainUIGameObject.SetActive(false);
+        }
     }
 }

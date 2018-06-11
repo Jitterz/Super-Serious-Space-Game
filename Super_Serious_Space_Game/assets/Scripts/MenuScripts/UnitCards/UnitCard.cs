@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UnitCard : MonoBehaviour {
 
+    public int cardID;
     public Sprite[] unitImages;
     public Sprite[] resourceSprites;
     public Sprite[] cardBackgrounds;
