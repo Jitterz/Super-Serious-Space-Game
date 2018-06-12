@@ -10,12 +10,8 @@ public class Arius : MonoBehaviour {
     public string difficulty = "Very Easy";   
 
     public List<GameObject> mySpawnableUnits;
-
-    public int aiPossibleUnitsCount = 2;
-    public int aiStrongUnitsCount = 1;
-    public int aiMaxUnitCount = 8;
-    public int aiMaxMinerCount = 3;
-
+    
+    private AIInformation aiInfo;
     private bool startMining;
     private bool imAttacking;
     private GameObject enemyBattleManager;
@@ -35,6 +31,7 @@ public class Arius : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        aiInfo = GetComponent<AIInformation>();
         startAttackTimer = 0;
         endAttackTime = Random.Range(20, 240);
         attackPlan = Random.Range(0, 1);
@@ -48,10 +45,10 @@ public class Arius : MonoBehaviour {
             BuildAIUnits();
         }
 
-        CurrentAIStatsStatic.aiPossibleUnitsCount = aiPossibleUnitsCount;
-        CurrentAIStatsStatic.aiStrongUnitsCount = aiStrongUnitsCount;
-        CurrentAIStatsStatic.aiMaxMinerCount = aiMaxMinerCount;
-        CurrentAIStatsStatic.aiMaxUnitCount = aiMaxUnitCount;
+        CurrentAIStatsStatic.aiPossibleUnitsCount = aiInfo.aiPossibleUnitsCount;
+        CurrentAIStatsStatic.aiStrongUnitsCount = aiInfo.aiStrongUnitsCount;
+        CurrentAIStatsStatic.aiMaxMinerCount = aiInfo.aiMaxMinerCount;
+        CurrentAIStatsStatic.aiMaxUnitCount = aiInfo.aiMaxUnitCount;
 
         GetGoldNodesTotal();
 	}

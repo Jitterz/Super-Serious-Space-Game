@@ -40,6 +40,28 @@ public class UnitCardBuilder : MonoBehaviour {
         return newCard;
     }
 
+    public GameObject BuildCardAI(string unitType, int aiLevel)
+    {
+        unitName = unitType;
+        newCard = Instantiate(cardPrefab);
+        //newCard.SetActive(false);
+        unitCardScript = newCard.GetComponent<UnitCard>();
+        unitStatsScript = newCard.GetComponent<UnitStats>();
+
+        BuildLists();
+
+        // get how many stats will be affected on the card
+        GetNumberOfAffectedStats(aiLevel);
+        // get which stats on the card will be affected
+        GetRandomStatTypesToAffect();
+        // Set the current and maximum possible stats for each selected type based on player level
+        SetStatAmounts();
+        // build the card visuals
+        CreateCardVisuals();
+
+        return newCard;
+    }
+
     private void CreateCardVisuals()
     {
         // determine the card background

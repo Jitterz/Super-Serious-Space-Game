@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHiddenLevelStatic : MonoBehaviour {
 
+    public static int playerPowerLevel = 1;
     public static int playerLevel = 1;
     public static float totalPlayerXP = 0;
 

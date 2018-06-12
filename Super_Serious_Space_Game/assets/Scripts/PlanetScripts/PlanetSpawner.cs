@@ -82,14 +82,22 @@ public class PlanetSpawner : MonoBehaviour {
             spawnedPlanets.Add(newPlanet);
             PlanetInformation planetInfo = newPlanet.GetComponent<PlanetInformation>();
             planetInfo.planetName = planetBuilder.GetRandomPlanetName();
-            // starting planets will only be tropical and temperate for now
-            int randomType = Random.Range(0, 2);
             planetInfo.type = planetBuilder.GetPlanetType();
-            planetInfo.planetAI = planetBuilder.GetPlanetAI();
-            GameObject planetsAI = Instantiate(planetInfo.planetAI, transform.position, Quaternion.identity);
-            planetsAI.transform.SetParent(newPlanet.transform);
-            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty();
-            Destroy(planetsAI);
+            planetInfo.planetAI = Instantiate(planetBuilder.GetPlanetAI());
+            planetInfo.planetAI.transform.SetParent(planetInfo.transform);
+            planetInfo.planetAI.SetActive(false);
+            AIInformation aiInfo = planetInfo.planetAI.GetComponent<AIInformation>();
+            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(aiInfo);
+            aiInfo.myUnitCards = new List<GameObject>();
+            UnitCardBuilder cardBuilder = planetInfo.planetAI.GetComponent<UnitCardBuilder>();
+            foreach (string unitType in aiInfo.myUnitTypes)
+            {
+                GameObject newCard = cardBuilder.BuildCardAI(unitType, aiInfo.aiLevel);
+                newCard.transform.SetParent(planetInfo.planetAI.transform);
+                newCard.SetActive(false);
+                DontDestroyOnLoad(newCard);
+                aiInfo.myUnitCards.Add(newCard);
+            }            
             planetInfo.negativeEffect = planetBuilder.GetPlanetNegativeEffect(planetInfo.type);
             planetInfo.planetSprite = planetBuilder.GetPlanetSprite(planetInfo.type);
 
@@ -142,10 +150,9 @@ public class PlanetSpawner : MonoBehaviour {
             spawnedPlanets.Add(newPlanet);
             PlanetInformation planetInfo = newPlanet.GetComponent<PlanetInformation>();
             planetInfo.planetName = planetBuilder.GetRandomPlanetName();
-            // starting planets will only be tropical and temperate for now
-            int randomType = Random.Range(0, 2);
             planetInfo.type = planetBuilder.GetPlanetType();
-            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty();
+            planetInfo.planetAI = planetBuilder.GetPlanetAI();
+            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(planetInfo.planetAI.GetComponent<AIInformation>());
             planetInfo.negativeEffect = planetBuilder.GetPlanetNegativeEffect(planetInfo.type);
             planetInfo.planetSprite = planetBuilder.GetPlanetSprite(planetInfo.type);
 

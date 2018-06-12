@@ -19,7 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4094828900292220}
-  - component: {fileID: 114470726197812608}
+  - component: {fileID: 114374523954166966}
+  - component: {fileID: 114461623799660186}
+  - component: {fileID: 114354730314786054}
   m_Layer: 0
   m_Name: Arius
   m_TagString: Untagged
@@ -40,7 +42,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114470726197812608
+--- !u!114 &114354730314786054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920842887933242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f0ddb4501871d46be479cfefffd728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardPrefab: {fileID: 1582452596923008, guid: 123708c4d4048d449b8cb8a6a4a334e4, type: 2}
+--- !u!114 &114374523954166966
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -55,3 +69,23 @@ MonoBehaviour:
   mySpawnableUnits:
   - {fileID: 1324240474987144, guid: 913e974c9e1519c4b873314ac25dfcf3, type: 2}
   - {fileID: 1899904794290208, guid: a5cb439ea32e72e4cbe028233557fc37, type: 2}
+--- !u!114 &114461623799660186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1920842887933242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00f284b5d44f614bbf419dcc19c72cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myUnitCards:
+  - {fileID: 0}
+  myUnitTypes:
+  - Settler
+  aiPossibleUnitsCount: 2
+  aiStrongUnitsCount: 1
+  aiMaxUnitCount: 8
+  aiMaxMinerCount: 3
+  aiLevel: 3

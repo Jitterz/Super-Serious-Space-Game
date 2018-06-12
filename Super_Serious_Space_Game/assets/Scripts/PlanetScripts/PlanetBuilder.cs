@@ -33,7 +33,7 @@ public class PlanetBuilder : MonoBehaviour {
         return "Random Planet Name";
     }
 
-    public string GetPlanetDifficulty()
+    public string GetPlanetDifficulty(AIInformation aiInfo)
     {
         theHomePlanet = GameObject.FindGameObjectWithTag("HomePlanet");
 
@@ -45,7 +45,7 @@ public class PlanetBuilder : MonoBehaviour {
         if (theHomePlanet != null)
         {
             distance = Vector3.Distance(theHomePlanet.transform.position, playerShip.transform.position);
-            difficultyScore = BuildAIDifficultyScore();
+            difficultyScore = BuildAIDifficultyScore(aiInfo);
         }
         else
         {
@@ -215,9 +215,9 @@ public class PlanetBuilder : MonoBehaviour {
         return possibleResourceTypes[random];
     }
 
-    private float BuildAIDifficultyScore()
+    private float BuildAIDifficultyScore(AIInformation aiInfo)
     {
-        float score = (CurrentAIStatsStatic.aiMaxMinerCount + CurrentAIStatsStatic.aiMaxUnitCount + CurrentAIStatsStatic.aiPossibleUnitsCount) * CurrentAIStatsStatic.aiStrongUnitsCount;
+        float score = (aiInfo.aiMaxMinerCount + aiInfo.aiMaxUnitCount + aiInfo.aiPossibleUnitsCount) * aiInfo.aiStrongUnitsCount;
 
         return score;
     }

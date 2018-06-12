@@ -18,6 +18,7 @@ public class BattleBuilder : MonoBehaviour {
     public GameObject playerBattleManager;
     public GameObject enemyBattleManager;
 
+    private GameObject savedAI;
     private Resource[] playerSpawnedResources;
     private Vector3 randomPosition;
     private BattleUIManager battleUIManager;
@@ -28,6 +29,10 @@ public class BattleBuilder : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        savedAI = GameObject.Find("BattleAISaver");
+        savedAI.SetActive(true);
+        GameObject battleAi = Instantiate(savedAI.transform.GetChild(0).gameObject);
+        battleAi.SetActive(true);
         spaceSceneSaver = GameObject.Find("SpaceSceneSaver");
         spaceSceneSaver.SetActive(false);
         BuildResources();

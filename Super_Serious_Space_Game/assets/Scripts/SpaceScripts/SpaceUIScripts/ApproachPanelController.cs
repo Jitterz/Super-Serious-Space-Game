@@ -13,6 +13,7 @@ public class ApproachPanelController : MonoBehaviour {
     public Text planetDifficulty;
     public Text planetName;
     public Text fuelTravelCost;
+    public GameObject aiSaver;
 
     public Image[] resourceImages;
     public Sprite[] resourceSprites;
@@ -113,6 +114,8 @@ public class ApproachPanelController : MonoBehaviour {
         SavedPlanetForBattleStatic.fuelReward = selectedPlanetInfo.fuelRewardAmount;
         SavedPlanetForBattleStatic.xPReward = selectedPlanetInfo.xPRewardAmount;
         SavedPlanetForBattleStatic.creditReward = selectedPlanetInfo.creditRewardAmount;
+        selectedPlanetInfo.planetAI.transform.SetParent(aiSaver.transform);
+        DontDestroyOnLoad(aiSaver);
 
         levelManager.LoadLevel("03a_Battle");
         gameObject.SetActive(false);
