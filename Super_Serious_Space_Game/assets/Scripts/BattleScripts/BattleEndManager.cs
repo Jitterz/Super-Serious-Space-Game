@@ -26,6 +26,7 @@ public class BattleEndManager : MonoBehaviour {
         {
             SavedPlanetForBattleStatic.isConquered = true;
             SavedPlanetForBattleStatic.wasAttacked = true;
+            BattleAISaverStatic.ReturnChildToOriginalParent();
             levelManager.LoadLevel("02a_Space");
         }
 
@@ -33,6 +34,7 @@ public class BattleEndManager : MonoBehaviour {
         {
             SavedPlanetForBattleStatic.isConquered = false;
             SavedPlanetForBattleStatic.wasAttacked = true;
+            BattleAISaverStatic.ReturnChildToOriginalParent();
             levelManager.LoadLevel("02a_Space");
         }
 	}

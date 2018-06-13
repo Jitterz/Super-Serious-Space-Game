@@ -114,8 +114,8 @@ public class ApproachPanelController : MonoBehaviour {
         SavedPlanetForBattleStatic.fuelReward = selectedPlanetInfo.fuelRewardAmount;
         SavedPlanetForBattleStatic.xPReward = selectedPlanetInfo.xPRewardAmount;
         SavedPlanetForBattleStatic.creditReward = selectedPlanetInfo.creditRewardAmount;
+        BattleAISaverStatic.savedAIStartingParent = selectedPlanetInfo.gameObject;
         selectedPlanetInfo.planetAI.transform.SetParent(aiSaver.transform);
-        DontDestroyOnLoad(aiSaver);
 
         levelManager.LoadLevel("03a_Battle");
         gameObject.SetActive(false);

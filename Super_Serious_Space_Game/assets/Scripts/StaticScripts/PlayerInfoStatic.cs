@@ -5,11 +5,30 @@ using UnityEngine.UI;
 
 public class PlayerInfoStatic : MonoBehaviour {
 
+    public static PlayerInfoStatic playerInfoStatic;
+
     private void Awake()
     {
+        if (playerInfoStatic == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            playerInfoStatic = this;           
+        }
+        else
+        {
+            if (playerInfoStatic != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         if(PlayerUnitCards == null)
         {
             PlayerUnitCards = new List<GameObject>();
+        }
+        if (PlayerDeck == null)
+        {
+            PlayerDeck = new List<GameObject>();
         }
     }
 

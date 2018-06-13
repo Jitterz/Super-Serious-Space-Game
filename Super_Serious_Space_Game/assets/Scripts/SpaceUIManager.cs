@@ -37,7 +37,7 @@ public class SpaceUIManager : MonoBehaviour {
         {
             planetSpawnerScript = planetSpawner.GetComponent<PlanetSpawner>();
         }
-        mainUIGameObject = GameObject.Find("SpaceUIManager");
+        
         approachPanel.SetActive(false);
         fuelBarDefualtBckColor = backGroundFuelBar.color;
         fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
@@ -122,6 +122,10 @@ public class SpaceUIManager : MonoBehaviour {
 
     public static void EnableDisableSpaceUI(string enableDisable)
     {
+        if (mainUIGameObject == null)
+        {
+            mainUIGameObject = GameObject.Find("SpaceUIManager");
+        }
         if (enableDisable == "enable")
         {
             mainUIGameObject.SetActive(true);

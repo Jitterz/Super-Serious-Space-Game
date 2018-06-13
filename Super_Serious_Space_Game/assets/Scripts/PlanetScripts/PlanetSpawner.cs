@@ -47,9 +47,9 @@ public class PlanetSpawner : MonoBehaviour {
     private void SpawnStartingPlanets(GameObject originPlanet)
     {
         // put the possible spawn positions into an array
-        Vector3[] possibleSpawnPositions = new Vector3[52];     
+        Vector3[] possibleSpawnPositions = new Vector3[48];     
 
-        for (int i = 0; i < originPlanet.transform.childCount; i++)
+        for (int i = 0; i < originPlanet.transform.childCount - 1; i++)
         {
             // need to make sure this one child doesnt get added to the array
             if (originPlanet.transform.GetChild(i).name != "ConqueredLostSpriteHolder")
@@ -117,7 +117,7 @@ public class PlanetSpawner : MonoBehaviour {
         // put the possible spawn positions into an array
         Vector3[] possibleSpawnPositions = new Vector3[48];
 
-        for (int i = 0; i < originPlanet.transform.childCount; i++)
+        for (int i = 0; i < originPlanet.transform.childCount - 1; i++)
         {
             // need to make sure this one child doesnt get added to the array
             if (originPlanet.transform.GetChild(i).name != "ConqueredLostSpriteHolder")
@@ -151,8 +151,21 @@ public class PlanetSpawner : MonoBehaviour {
             PlanetInformation planetInfo = newPlanet.GetComponent<PlanetInformation>();
             planetInfo.planetName = planetBuilder.GetRandomPlanetName();
             planetInfo.type = planetBuilder.GetPlanetType();
-            planetInfo.planetAI = planetBuilder.GetPlanetAI();
-            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(planetInfo.planetAI.GetComponent<AIInformation>());
+            planetInfo.planetAI = Instantiate(planetBuilder.GetPlanetAI());
+            planetInfo.planetAI.transform.SetParent(planetInfo.transform);
+            planetInfo.planetAI.SetActive(false);
+            AIInformation aiInfo = planetInfo.planetAI.GetComponent<AIInformation>();
+            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(aiInfo);
+            aiInfo.myUnitCards = new List<GameObject>();
+            UnitCardBuilder cardBuilder = planetInfo.planetAI.GetComponent<UnitCardBuilder>();
+            foreach (string unitType in aiInfo.myUnitTypes)
+            {
+                GameObject newCard = cardBuilder.BuildCardAI(unitType, aiInfo.aiLevel);
+                newCard.transform.SetParent(planetInfo.planetAI.transform);
+                newCard.SetActive(false);
+                DontDestroyOnLoad(newCard);
+                aiInfo.myUnitCards.Add(newCard);
+            }
             planetInfo.negativeEffect = planetBuilder.GetPlanetNegativeEffect(planetInfo.type);
             planetInfo.planetSprite = planetBuilder.GetPlanetSprite(planetInfo.type);
 
