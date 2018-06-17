@@ -9,6 +9,7 @@ public class Arius : MonoBehaviour {
 
     public string difficulty = "Very Easy";   
 
+    public List<GameObject> mySpawnableUnitsPrefab;
     public List<GameObject> mySpawnableUnits;
     
     private AIInformation aiInfo;
@@ -36,7 +37,7 @@ public class Arius : MonoBehaviour {
         endAttackTime = Random.Range(20, 240);
         attackPlan = Random.Range(0, 1);
         originalMinersCount = 2;
-
+        
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name != "02a_Space")
@@ -50,6 +51,13 @@ public class Arius : MonoBehaviour {
         CurrentAIStatsStatic.aiMaxMinerCount = aiInfo.aiMaxMinerCount;
         CurrentAIStatsStatic.aiMaxUnitCount = aiInfo.aiMaxUnitCount;
 
+        mySpawnableUnits = new List<GameObject>();
+
+        // remove me need to add miner cards
+        mySpawnableUnits.Add(mySpawnableUnitsPrefab[0]);
+        // added default prefab miner for now
+
+        BuildSpawnableUnitsFromCards();
         GetGoldNodesTotal();
 	}
 	
@@ -204,6 +212,31 @@ public class Arius : MonoBehaviour {
         else
         {
             buildMinerBeforeUnits = false;
+        }
+    }
+
+    // this should transfer the stats from the AI unit cards to the prefab objects
+    // every AI will have a miner, I am skipping the miner for now because they do not have cards
+    // deactivate the object afterwards
+    private void BuildSpawnableUnitsFromCards()
+    {
+        for (int i = 1; i < mySpawnableUnitsPrefab.Count; i++)
+        {
+            GameObject newUnit = Instantiate(mySpawnableUnitsPrefab[i]);
+            newUnit.SetActive(false);
+            newUnit.name = mySpawnableUnitsPrefab[i].GetComponent<UnitStats>().name + " spawner";
+            UnitStats myNewStats = aiInfo.myUnitCards[i - 1].GetComponent<UnitStats>();
+            UnitStats myOldStats = newUnit.GetComponent<UnitStats>();
+
+            myOldStats.health = myNewStats.health;
+            myOldStats.unitCost = myNewStats.unitCost;
+            myOldStats.unitDamage = myNewStats.unitDamage;
+            myOldStats.unitBuildTime = myNewStats.unitBuildTime;
+            myOldStats.unitCapacity = myNewStats.unitCapacity;
+            myOldStats.unitMoveSpeed = myNewStats.unitMoveSpeed;
+            myOldStats.unitAttackSpeed = myNewStats.unitAttackSpeed;
+
+            mySpawnableUnits.Add(newUnit);
         }
     }
 

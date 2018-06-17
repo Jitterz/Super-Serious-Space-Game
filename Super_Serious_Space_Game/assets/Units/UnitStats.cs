@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class UnitStats : MonoBehaviour {
 
+    public List<object> statsList;
+
     public int health;
     public int healthMax;
     public int unitCost;
@@ -33,8 +35,8 @@ public class UnitStats : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()

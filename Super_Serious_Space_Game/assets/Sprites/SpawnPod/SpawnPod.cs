@@ -40,6 +40,7 @@ public class SpawnPod : MonoBehaviour {
                 {   
                     
                     GameObject newUnit = Instantiate(mySpawningUnit, transform.position, Quaternion.identity);
+                    newUnit.SetActive(true);
                     // check the prefabs tag to see if it is a unit or a miner. Deault is always player.
                     if (mySpawningUnit.tag == "PlayerMiner")
                     {

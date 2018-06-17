@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UnitButton : MonoBehaviour {
+public class MinerButton : MonoBehaviour {
 
     public GameObject myUnit;
-    public GameObject myUnitCard;
     public GameObject playerBattleManager;
     public Image cooldownImage;
     public Text myCostText;
-    public int myButtonNumber;
 
-    private GameObject mySpawnableUnit;
     private RetrieveUnitUpgrades retrieveUnitUpgrades;
     private PlayerBattleManager playerBattleManagerScript;
     private UnitStats myStats;
@@ -23,22 +20,21 @@ public class UnitButton : MonoBehaviour {
     private int myUnitCost;
     private int myBuildTime;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-        myStats = myUnitCard.GetComponent<UnitStats>();
+        retrieveUnitUpgrades = new RetrieveUnitUpgrades();
+        myStats = myUnit.GetComponent<UnitStats>();
         myButton = gameObject.GetComponent<Button>();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         playerBattleManagerScript = playerBattleManager.GetComponent<PlayerBattleManager>();
 
         // need to set all of my variables based on any upgrades the unit might have
-        myUnitCost = myStats.unitCost;
-        myBuildTime = myStats.unitBuildTime;
-
-        InstantiateMyUnit();
+        myUnitCost = myStats.unitCost - retrieveUnitUpgrades.GetUnitResourceDiscount(myStats.unitName);
+        myBuildTime = myStats.unitBuildTime - retrieveUnitUpgrades.GetUnitSpawnTimeDiscount(myStats.unitName);
 
         myCostText.text = myUnitCost.ToString();
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -58,21 +54,6 @@ public class UnitButton : MonoBehaviour {
         }
     }
 
-    private void InstantiateMyUnit()
-    {
-        mySpawnableUnit = Instantiate(myUnit);
-        mySpawnableUnit.SetActive(false);
-        mySpawnableUnit.name = "SpawnableUnit " + myButtonNumber.ToString();
-        UnitStats myOldStats = mySpawnableUnit.GetComponent<UnitStats>();
-        myOldStats.health = myStats.health;
-        myOldStats.unitCost = myStats.unitCost;
-        myOldStats.unitDamage = myStats.unitDamage;
-        myOldStats.unitBuildTime = myStats.unitBuildTime;
-        myOldStats.unitCapacity = myStats.unitCapacity;
-        myOldStats.unitMoveSpeed = myStats.unitMoveSpeed;
-        myOldStats.unitAttackSpeed = myStats.unitAttackSpeed;
-    }
-
     public void SpawnUnit()
     {
         if (playerResourceAmountMyResource >= myUnitCost)
@@ -80,7 +61,7 @@ public class UnitButton : MonoBehaviour {
             startBuilTime = 0;
             cooldownImage.fillAmount = 1;
             isOnCooldown = true;
-            playerBattleManagerScript.SpawnPlayerUnit(mySpawnableUnit, myBuildTime, myUnitCost);           
+            playerBattleManagerScript.SpawnPlayerUnit(myUnit, myBuildTime, myUnitCost);
             myButton.interactable = false;
         }
     }
@@ -100,7 +81,7 @@ public class UnitButton : MonoBehaviour {
     }
 
     private void DisableOrEnableButton()
-    {      
+    {
         if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1)
         {
             myButton.interactable = true;

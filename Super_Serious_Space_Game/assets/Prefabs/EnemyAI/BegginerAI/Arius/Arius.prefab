@@ -66,9 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficulty: Very Easy
-  mySpawnableUnits:
+  mySpawnableUnitsPrefab:
   - {fileID: 1324240474987144, guid: 913e974c9e1519c4b873314ac25dfcf3, type: 2}
   - {fileID: 1899904794290208, guid: a5cb439ea32e72e4cbe028233557fc37, type: 2}
+  mySpawnableUnits: []
 --- !u!114 &114461623799660186
 MonoBehaviour:
   m_ObjectHideFlags: 1

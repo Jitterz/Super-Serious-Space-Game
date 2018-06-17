@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 222948791138960602}
   - component: {fileID: 114575528609418366}
   - component: {fileID: 114502023464545118}
-  - component: {fileID: 114334126217483222}
+  - component: {fileID: 114076251842519964}
   m_Layer: 5
   m_Name: Btn_PokoMiner
   m_TagString: Untagged
@@ -98,7 +98,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114334126217483222
+--- !u!114 &114076251842519964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1666606907944720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5d3b452ad19a240a6127d08dbe4357, type: 3}
+  m_Script: {fileID: 11500000, guid: 251f1d921cc8b1740815ab3210151629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myUnit: {fileID: 1324240474987144, guid: 913e974c9e1519c4b873314ac25dfcf3, type: 2}
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114334126217483222}
+      - m_Target: {fileID: 114076251842519964}
         m_MethodName: SpawnUnit
         m_Mode: 1
         m_Arguments:
