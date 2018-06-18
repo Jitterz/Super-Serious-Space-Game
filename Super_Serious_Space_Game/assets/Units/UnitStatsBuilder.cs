@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class UnitStatsBuilder {
 
@@ -106,44 +107,48 @@ public class UnitStatsBuilder {
 
         if (statType == "Attack")
         {
-            myStats.unitDamage = Random.Range(5 + positiveModifier, 7 + positiveModifier);
-            myStats.unitDamageMax = Random.Range(7 + positiveModifier, 9 + positiveModifier);
+            myStats.unitDamage = UnityEngine.Random.Range(5 + positiveModifier, 7 + positiveModifier);
+            myStats.unitDamageMax = UnityEngine.Random.Range(7 + positiveModifier, 9 + positiveModifier);
             int difference = (16 - myStats.unitDamage);
             myStats.unitPowerLevel += CalculateBonusPower(16, difference, "positive");
 
         }
         else if (statType == "Health")
         {
-            myStats.health = Random.Range(80 + (positiveModifier * healthMultiplier), 90 + (positiveModifier * healthMultiplier));
-            myStats.healthMax = Random.Range(90 + (positiveModifier * healthMultiplier), 120 + (positiveModifier * healthMultiplier));
+            myStats.health = UnityEngine.Random.Range(80 + (positiveModifier * healthMultiplier), 90 + (positiveModifier * healthMultiplier));
+            myStats.healthMax = UnityEngine.Random.Range(90 + (positiveModifier * healthMultiplier), 120 + (positiveModifier * healthMultiplier));
             int difference = (155 - myStats.health);
             myStats.unitPowerLevel += CalculateBonusPower(155, difference, "positive");
         }
         else if (statType == "Attack Speed")
         {
-            myStats.unitAttackSpeed = Random.Range(2.2f + decimalNegativeModifier, 2.5f + decimalNegativeModifier);
-            myStats.attackSpeedMax = Random.Range(2.0f + decimalNegativeModifier, 2.2f + decimalNegativeModifier);
+            myStats.unitAttackSpeed = UnityEngine.Random.Range(2.2f + decimalNegativeModifier, 2.5f + decimalNegativeModifier);           
+            myStats.attackSpeedMax = UnityEngine.Random.Range(2.0f + decimalNegativeModifier, 2.2f + decimalNegativeModifier);
+            double newSpeed = Math.Round(myStats.unitAttackSpeed, 2);
+            myStats.unitAttackSpeed = (float)newSpeed;
+            double newMaxSpeed = Math.Round(myStats.attackSpeedMax, 2);
+            myStats.attackSpeedMax = (float)newMaxSpeed;
             int difference = (int)((2.4f * 100) - (myStats.unitAttackSpeed * 100));
             myStats.unitPowerLevel += CalculateBonusPower((int)(2.4f * 100), difference, "negative");
         }
         else if (statType == "Move Speed")
         {
-            myStats.unitMoveSpeed = Random.Range(20 + positiveModifier, 30 + positiveModifier);
-            myStats.moveSpeedMax = Random.Range(30 + positiveModifier, 35 + positiveModifier);
+            myStats.unitMoveSpeed = UnityEngine.Random.Range(20 + positiveModifier, 30 + positiveModifier);
+            myStats.moveSpeedMax = UnityEngine.Random.Range(30 + positiveModifier, 35 + positiveModifier);
             int difference = (42 - myStats.unitMoveSpeed);
             myStats.unitPowerLevel += CalculateBonusPower(42, difference, "positive");
         }
         else if (statType == "Build Time")
         {
-            myStats.unitBuildTime = Random.Range(14 + negativeModifier, 16 + negativeModifier);
-            myStats.unitBuildTimeMax = Random.Range(12 + negativeModifier, 14 + negativeModifier);
+            myStats.unitBuildTime = UnityEngine.Random.Range(14 + negativeModifier, 16 + negativeModifier);
+            myStats.unitBuildTimeMax = UnityEngine.Random.Range(12 + negativeModifier, 14 + negativeModifier);
             int difference = (15 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(15, difference, "negative");
         }
         else if (statType == "Resource Cost")
         {
-            myStats.unitCost = Random.Range(190 + (negativeModifier * 2), 200 + (negativeModifier * 2));
-            myStats.unitCostMax = Random.Range(170 + (negativeModifier * 2), 190 + (negativeModifier * 2));
+            myStats.unitCost = UnityEngine.Random.Range(190 + (negativeModifier * 2), 200 + (negativeModifier * 2));
+            myStats.unitCostMax = UnityEngine.Random.Range(170 + (negativeModifier * 2), 190 + (negativeModifier * 2));
             int difference = (214 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(214, difference, "negative");
         }
@@ -175,43 +180,47 @@ public class UnitStatsBuilder {
 
         if (statType == "Attack")
         {
-            myStats.unitDamage = Random.Range(3 + positiveModifier, 5 + positiveModifier);
-            myStats.unitDamageMax = Random.Range(5 + positiveModifier, 7 + positiveModifier);
+            myStats.unitDamage = UnityEngine.Random.Range(3 + positiveModifier, 5 + positiveModifier);
+            myStats.unitDamageMax = UnityEngine.Random.Range(5 + positiveModifier, 7 + positiveModifier);
             int difference = (14 - myStats.unitDamage);
             myStats.unitPowerLevel += CalculateBonusPower(14, difference, "positive");
         }
         else if (statType == "Health")
         {
-            myStats.health = Random.Range(50 + (positiveModifier * healthMultiplier), 60 + (positiveModifier * healthMultiplier));
-            myStats.healthMax = Random.Range(60 + (positiveModifier * healthMultiplier), 90 + (positiveModifier * healthMultiplier));
+            myStats.health = UnityEngine.Random.Range(50 + (positiveModifier * healthMultiplier), 60 + (positiveModifier * healthMultiplier));
+            myStats.healthMax = UnityEngine.Random.Range(60 + (positiveModifier * healthMultiplier), 90 + (positiveModifier * healthMultiplier));
             int difference = (125 - myStats.health);
             myStats.unitPowerLevel += CalculateBonusPower(125, difference, "positive");
         }
         else if (statType == "Attack Speed")
         {
-            myStats.unitAttackSpeed = Random.Range(1.7f + decimalNegativeModifier, 1.9f + decimalNegativeModifier);
-            myStats.attackSpeedMax = Random.Range(1.5f + decimalNegativeModifier, 1.7f + decimalNegativeModifier);
+            myStats.unitAttackSpeed = UnityEngine.Random.Range(1.7f + decimalNegativeModifier, 1.9f + decimalNegativeModifier);
+            myStats.attackSpeedMax = UnityEngine.Random.Range(1.5f + decimalNegativeModifier, 1.7f + decimalNegativeModifier);
+            double newSpeed = Math.Round(myStats.unitAttackSpeed, 2);
+            myStats.unitAttackSpeed = (float)newSpeed;
+            double newMaxSpeed = Math.Round(myStats.attackSpeedMax, 2);
+            myStats.attackSpeedMax = (float)newMaxSpeed;
             int difference = (int)((1.8f * 100) - (myStats.unitAttackSpeed * 100));
             myStats.unitPowerLevel += CalculateBonusPower((int)(1.8f * 100), difference, "negative");
         }
         else if (statType == "Move Speed")
         {
-            myStats.unitMoveSpeed = Random.Range(20 + positiveModifier, 30 + positiveModifier);
-            myStats.moveSpeedMax = Random.Range(30 + positiveModifier, 35 + positiveModifier);
+            myStats.unitMoveSpeed = UnityEngine.Random.Range(20 + positiveModifier, 30 + positiveModifier);
+            myStats.moveSpeedMax = UnityEngine.Random.Range(30 + positiveModifier, 35 + positiveModifier);
             int difference = (42 - myStats.unitMoveSpeed);
             myStats.unitPowerLevel += CalculateBonusPower(42, difference, "positive");
         }
         else if (statType == "Build Time")
         {
-            myStats.unitBuildTime = Random.Range(12 + negativeModifier, 14 + negativeModifier);
-            myStats.unitBuildTimeMax = Random.Range(10 + negativeModifier, 12 + negativeModifier);
+            myStats.unitBuildTime = UnityEngine.Random.Range(12 + negativeModifier, 14 + negativeModifier);
+            myStats.unitBuildTimeMax = UnityEngine.Random.Range(10 + negativeModifier, 12 + negativeModifier);
             int difference = (13 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(13, difference, "negative");
         }
         else if (statType == "Resource Cost")
         {
-            myStats.unitCost = Random.Range(110 + (negativeModifier * 2), 120 + (negativeModifier * 2));
-            myStats.unitCostMax = Random.Range(100 + (negativeModifier * 2), 110 + (negativeModifier * 2));
+            myStats.unitCost = UnityEngine.Random.Range(110 + (negativeModifier * 2), 120 + (negativeModifier * 2));
+            myStats.unitCostMax = UnityEngine.Random.Range(100 + (negativeModifier * 2), 110 + (negativeModifier * 2));
             int difference = (118 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(118, difference, "negative");
         }
@@ -243,43 +252,47 @@ public class UnitStatsBuilder {
 
         if (statType == "Attack")
         {
-            myStats.unitDamage = Random.Range(3 + positiveModifier, 5 + positiveModifier);
-            myStats.unitDamageMax = Random.Range(5 + positiveModifier, 7 + positiveModifier);
+            myStats.unitDamage = UnityEngine.Random.Range(3 + positiveModifier, 5 + positiveModifier);
+            myStats.unitDamageMax = UnityEngine.Random.Range(5 + positiveModifier, 7 + positiveModifier);
             int difference = (14 - myStats.unitDamage);
             myStats.unitPowerLevel += CalculateBonusPower(14, difference, "positive");
         }
         else if (statType == "Health")
         {
-            myStats.health = Random.Range(60 + (positiveModifier * healthMultiplier), 70 + (positiveModifier * healthMultiplier));
-            myStats.healthMax = Random.Range(70 + (positiveModifier * healthMultiplier), 100 + (positiveModifier * healthMultiplier));
+            myStats.health = UnityEngine.Random.Range(60 + (positiveModifier * healthMultiplier), 70 + (positiveModifier * healthMultiplier));
+            myStats.healthMax = UnityEngine.Random.Range(70 + (positiveModifier * healthMultiplier), 100 + (positiveModifier * healthMultiplier));
             int difference = (135 - myStats.health);
             myStats.unitPowerLevel += CalculateBonusPower(135, difference, "positive");
         }
         else if (statType == "Attack Speed")
         {
-            myStats.unitAttackSpeed = Random.Range(1.5f + decimalNegativeModifier, 1.7f + decimalNegativeModifier);
-            myStats.attackSpeedMax = Random.Range(1.3f + decimalNegativeModifier, 1.5f + decimalNegativeModifier);
+            myStats.unitAttackSpeed = UnityEngine.Random.Range(1.5f + decimalNegativeModifier, 1.7f + decimalNegativeModifier);
+            myStats.attackSpeedMax = UnityEngine.Random.Range(1.3f + decimalNegativeModifier, 1.5f + decimalNegativeModifier);
+            double newSpeed = Math.Round(myStats.unitAttackSpeed, 2);
+            myStats.unitAttackSpeed = (float)newSpeed;
+            double newMaxSpeed = Math.Round(myStats.attackSpeedMax, 2);
+            myStats.attackSpeedMax = (float)newMaxSpeed;
             int difference = (int)((1.6f * 100) - (myStats.unitAttackSpeed * 100));
             myStats.unitPowerLevel += CalculateBonusPower((int)(1.6f * 100), difference, "negative");
         }
         else if (statType == "Move Speed")
         {
-            myStats.unitMoveSpeed = Random.Range(20 + positiveModifier, 30 + positiveModifier);
-            myStats.moveSpeedMax = Random.Range(30 + positiveModifier, 40 + positiveModifier);
+            myStats.unitMoveSpeed = UnityEngine.Random.Range(20 + positiveModifier, 30 + positiveModifier);
+            myStats.moveSpeedMax = UnityEngine.Random.Range(30 + positiveModifier, 40 + positiveModifier);
             int difference = (47 - (int)myStats.unitMoveSpeed);
             myStats.unitPowerLevel += CalculateBonusPower(47, difference, "positive");
         }
         else if (statType == "Build Time")
         {
-            myStats.unitBuildTime = Random.Range(12 + negativeModifier, 14 + negativeModifier);
-            myStats.unitBuildTimeMax = Random.Range(10 + negativeModifier, 12 + negativeModifier);
+            myStats.unitBuildTime = UnityEngine.Random.Range(12 + negativeModifier, 14 + negativeModifier);
+            myStats.unitBuildTimeMax = UnityEngine.Random.Range(10 + negativeModifier, 12 + negativeModifier);
             int difference = (13 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(13, difference, "negative");
         }
         else if (statType == "Resource Cost")
         {
-            myStats.unitCost = Random.Range(100 + (negativeModifier * 2), 110 + (negativeModifier * 2));
-            myStats.unitCostMax = Random.Range(90 + (negativeModifier * 2), 100 + (negativeModifier * 2));
+            myStats.unitCost = UnityEngine.Random.Range(100 + (negativeModifier * 2), 110 + (negativeModifier * 2));
+            myStats.unitCostMax = UnityEngine.Random.Range(90 + (negativeModifier * 2), 100 + (negativeModifier * 2));
             int difference = (108 - myStats.unitBuildTime);
             myStats.unitPowerLevel += CalculateBonusPower(108, difference, "negative");
         }
@@ -289,7 +302,7 @@ public class UnitStatsBuilder {
     {
         float amount;
         float percentage;
-        float random = Random.Range(0.25f, 0.45f);
+        float random = UnityEngine.Random.Range(0.25f, 0.45f);
 
         if (difference != 0 && max != 0)
         {

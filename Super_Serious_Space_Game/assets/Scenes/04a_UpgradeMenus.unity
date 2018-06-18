@@ -469,7 +469,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 254720845}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -115, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -479,7 +479,7 @@ RectTransform:
   - {fileID: 554404128}
   - {fileID: 821904764}
   - {fileID: 856780775}
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -727,6 +727,7 @@ GameObject:
   - component: {fileID: 363575347}
   - component: {fileID: 363575346}
   - component: {fileID: 363575345}
+  - component: {fileID: 363575348}
   m_Layer: 5
   m_Name: Btn_UpgradeAttackSpeed
   m_TagString: Untagged
@@ -791,7 +792,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 363575346}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363575348}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeAttackSpeed
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &363575346
@@ -827,6 +839,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363575343}
+--- !u!114 &363575348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 363575343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!1001 &380935547
 Prefab:
   m_ObjectHideFlags: 0
@@ -1643,14 +1667,14 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 592082146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.000038146973, y: 166, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 509525805}
   - {fileID: 1113160070}
   - {fileID: 2048520644}
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1733,7 +1757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1896,6 +1920,45 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 607519356}
+--- !u!1 &624348442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 624348443}
+  m_Layer: 5
+  m_Name: PanelControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &624348443
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624348442}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 848335563}
+  - {fileID: 1489792267}
+  - {fileID: 254720846}
+  - {fileID: 870801619}
+  - {fileID: 592082147}
+  - {fileID: 1822705186}
+  m_Father: {fileID: 1087172751}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &663505194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2318,7 @@ GameObject:
   - component: {fileID: 785709538}
   - component: {fileID: 785709537}
   - component: {fileID: 785709536}
+  - component: {fileID: 785709539}
   m_Layer: 5
   m_Name: Btn_UpgradeBuildTime
   m_TagString: Untagged
@@ -2319,7 +2383,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 785709537}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 785709539}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeBuildTime
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &785709537
@@ -2355,6 +2430,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 785709534}
+--- !u!114 &785709539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 785709534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!224 &786861114 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224397879811875036, guid: f21f9b448362cd24c9f2d52ff29f8241,
@@ -2860,7 +2947,7 @@ RectTransform:
   m_LocalPosition: {x: -0.39996338, y: 236.19998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3082,11 +3169,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 870801618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 108.2, y: 46.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3223,6 +3310,7 @@ GameObject:
   - component: {fileID: 1004540094}
   - component: {fileID: 1004540093}
   - component: {fileID: 1004540092}
+  - component: {fileID: 1004540095}
   m_Layer: 5
   m_Name: Btn_UpgradeMoveSpeed
   m_TagString: Untagged
@@ -3287,7 +3375,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1004540093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1004540095}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeMoveSpeed
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1004540093
@@ -3323,6 +3422,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1004540090}
+--- !u!114 &1004540095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1004540090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!1 &1031745236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,6 +3513,7 @@ GameObject:
   - component: {fileID: 1087172751}
   - component: {fileID: 1087172753}
   - component: {fileID: 1087172752}
+  - component: {fileID: 1087172754}
   m_Layer: 5
   m_Name: UnitUpgradePanel
   m_TagString: Untagged
@@ -3419,12 +3531,7 @@ RectTransform:
   m_LocalPosition: {x: 354.3, y: -126.899994, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children:
-  - {fileID: 848335563}
-  - {fileID: 1489792267}
-  - {fileID: 254720846}
-  - {fileID: 870801619}
-  - {fileID: 592082147}
-  - {fileID: 1822705186}
+  - {fileID: 624348443}
   m_Father: {fileID: 829371084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3466,6 +3573,72 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1087172750}
+--- !u!114 &1087172754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1087172750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d949df5fbc19954d86b5665b02c52bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelControl: {fileID: 624348442}
+  unitName: {fileID: 848335564}
+  unitDescription: {fileID: 870801620}
+  nicknameText: {fileID: 1113160071}
+  upgradeCostAmountText: {fileID: 471917795}
+  unitImage: {fileID: 1489792268}
+  resourceImage: {fileID: 856780776}
+  possibleUnitTypes:
+  - Settler
+  - Nix
+  - Chomp
+  possibleResourceTypes:
+  - Gold
+  - Iron
+  - Copper
+  - Nickle
+  - Silver
+  - Colbalt
+  - Cadmium
+  - Iridium
+  - Paladium
+  possibleUnitImages:
+  - {fileID: 21300000, guid: 6392291c246f4624ab6d9f4b9f9adf3f, type: 3}
+  - {fileID: 21300000, guid: 110a37f5e1416644997575ecbab386b0, type: 3}
+  - {fileID: 21300000, guid: 82dfe4b6eaeddd24f9bc545e4f3cc6df, type: 3}
+  possibleResourceImages:
+  - {fileID: 21300000, guid: 6993a1a22f8cb514cbf3869e5cdf7004, type: 3}
+  - {fileID: 21300000, guid: debeb5abd002fd74f9855145fc837991, type: 3}
+  - {fileID: 21300000, guid: 5c8d7fc8ead92c047bdc14362d588cd8, type: 3}
+  - {fileID: 21300000, guid: 4df057fe5f1bee440bd6c4feafac9099, type: 3}
+  - {fileID: 21300000, guid: 4d6cf3ddfc0115c4c9bb0c48b4d1603d, type: 3}
+  - {fileID: 21300000, guid: c7e89e93eea1e0041bbb3f930ca31523, type: 3}
+  - {fileID: 21300000, guid: 650728eee5e3fcf42ac14ffad1878c5e, type: 3}
+  - {fileID: 21300000, guid: 8eea1418487e721429ff0d7c1e792d5d, type: 3}
+  - {fileID: 21300000, guid: c6bccb9d95768dd4b9f75cc14766d524, type: 3}
+  nicknameInput: {fileID: 592082148}
+  upgradeButtonsList:
+  - {fileID: 1787364475}
+  - {fileID: 1926366158}
+  - {fileID: 363575348}
+  - {fileID: 1004540095}
+  - {fileID: 785709539}
+  - {fileID: 1346342507}
+  damageFill: {fileID: 1822913106}
+  damageUpgradeText: {fileID: 1541034813}
+  healthFill: {fileID: 674613699}
+  healthUpgradeText: {fileID: 342214766}
+  attackSpeedFill: {fileID: 571381638}
+  attackSpeedUpgradeText: {fileID: 2074913711}
+  moveSpeedFill: {fileID: 816315077}
+  moveSpeedUpgradeText: {fileID: 853375605}
+  buildTimeFill: {fileID: 454243329}
+  buildTimeUpgradeText: {fileID: 1138198292}
+  resourceCostFill: {fileID: 1417456923}
+  resourceCostUpgradeText: {fileID: 1123396208}
 --- !u!1 &1106451475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3889,6 +4062,7 @@ GameObject:
   - component: {fileID: 1346342506}
   - component: {fileID: 1346342505}
   - component: {fileID: 1346342504}
+  - component: {fileID: 1346342507}
   m_Layer: 5
   m_Name: Btn_UpgradeResourceCost
   m_TagString: Untagged
@@ -3953,7 +4127,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1346342505}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1346342507}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeResourceCost
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1346342505
@@ -3989,6 +4174,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1346342502}
+--- !u!114 &1346342507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1346342502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!1 &1372121900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,7 +4581,7 @@ RectTransform:
   m_LocalPosition: {x: -108.1, y: 59.85003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5223,6 +5420,7 @@ GameObject:
   - component: {fileID: 1787364474}
   - component: {fileID: 1787364473}
   - component: {fileID: 1787364472}
+  - component: {fileID: 1787364475}
   m_Layer: 5
   m_Name: Btn_UpgradeDamage
   m_TagString: Untagged
@@ -5287,7 +5485,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1787364473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1787364475}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeDamage
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1787364473
@@ -5323,6 +5532,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1787364470}
+--- !u!114 &1787364475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1787364470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!1001 &1815278634
 Prefab:
   m_ObjectHideFlags: 0
@@ -5530,13 +5751,13 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822705185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -25, y: -90.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 471917794}
   - {fileID: 292125446}
-  m_Father: {fileID: 1087172751}
+  m_Father: {fileID: 624348443}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -5636,7 +5857,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.5
+  m_FillAmount: 0.058
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &1822913107
@@ -5666,6 +5887,7 @@ GameObject:
   - component: {fileID: 1926366157}
   - component: {fileID: 1926366156}
   - component: {fileID: 1926366155}
+  - component: {fileID: 1926366158}
   m_Layer: 5
   m_Name: Btn_UpgradeHealth
   m_TagString: Untagged
@@ -5730,7 +5952,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1926366156}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1926366158}
+        m_MethodName: UpgradeClicked
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Btn_UpgradeHealth
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1926366156
@@ -5766,6 +5999,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1926366153}
+--- !u!114 &1926366158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926366153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 521fec31f860b8541adcf6bbe100290a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradePanelController: {fileID: 1087172754}
 --- !u!1001 &1938867828
 Prefab:
   m_ObjectHideFlags: 0

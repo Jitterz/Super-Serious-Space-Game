@@ -22,13 +22,23 @@ public class UnitCard : MonoBehaviour {
     public Text resourceCost;
     public Text cardLevel;
 
+    public UnitUpgradePanelController upgradePanel;
+
     // Use this for initialization
-    void Start () {
-		
+    void Start ()
+    {
+        
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
+
+    public void ActivateUpgradePanel()
+    {
+        upgradePanel = GameObject.Find("UnitUpgradePanel").GetComponent<UnitUpgradePanelController>();
+        upgradePanel.UpdateUpgradesPanel(gameObject);
+    }
 }
