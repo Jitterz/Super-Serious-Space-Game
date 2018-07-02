@@ -37,6 +37,7 @@ public class PokoMiner : MonoBehaviour {
         {
             playerBattleManagerScript.myPlayerMiners.Add(gameObject);
             playerBattleManagerScript.mySpawnedUnits.Add(gameObject);
+            playerBattleManagerScript.spawnedUnitsCapacityCount++;
             miningGain = playerMiningGain + PlayerStatsUpgradesStatic.pokoMinerResourceMiningGain;
         }
         else
@@ -152,39 +153,39 @@ public class PokoMiner : MonoBehaviour {
                 Resource resourceScript = minerAtNode.currentResourceNode.GetComponent<Resource>();
                 if (resourceScript.myResourceType == "Gold")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[0] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[0] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Iron")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[1] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[1] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Copper")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[2] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[2] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Nickel")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[3] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[3] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Silver")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[4] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[4] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Cobalt")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[5] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[5] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Cadmium")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[6] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[6] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Iridium")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[7] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[7] += (enemyMiningGain);
                 }
                 else if (resourceScript.myResourceType == "Paladium")
                 {
-                    enemyBattleManagerScript.enemyResourcesAmount[8] += (enemyMiningGain + CurrentAIStatsStatic.miningGainBonus);
+                    enemyBattleManagerScript.enemyResourcesAmount[8] += (enemyMiningGain);
                 }
             }
         }
@@ -202,6 +203,7 @@ public class PokoMiner : MonoBehaviour {
                 if (playerBattleManagerScript.myPlayerMiners[i] == gameObject)
                 {
                     playerBattleManagerScript.myPlayerMiners.RemoveAt(i);
+                    playerBattleManagerScript.spawnedUnitsCapacityCount--;
                 }
             }
         }

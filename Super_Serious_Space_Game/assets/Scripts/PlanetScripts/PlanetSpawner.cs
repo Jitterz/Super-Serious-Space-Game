@@ -87,17 +87,7 @@ public class PlanetSpawner : MonoBehaviour {
             planetInfo.planetAI.transform.SetParent(planetInfo.transform);
             planetInfo.planetAI.SetActive(false);
             AIInformation aiInfo = planetInfo.planetAI.GetComponent<AIInformation>();
-            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(aiInfo);
-            aiInfo.myUnitCards = new List<GameObject>();
-            UnitCardBuilder cardBuilder = planetInfo.planetAI.GetComponent<UnitCardBuilder>();
-            foreach (string unitType in aiInfo.myUnitTypes)
-            {
-                GameObject newCard = cardBuilder.BuildCardAI(unitType, aiInfo.aiLevel);
-                newCard.transform.SetParent(planetInfo.planetAI.transform);
-                newCard.SetActive(false);
-                DontDestroyOnLoad(newCard);
-                aiInfo.myUnitCards.Add(newCard);
-            }            
+            planetInfo.difficulty = aiInfo.aiPowerLevel.ToString();                    
             planetInfo.negativeEffect = planetBuilder.GetPlanetNegativeEffect(planetInfo.type);
             planetInfo.planetSprite = planetBuilder.GetPlanetSprite(planetInfo.type);
 
@@ -105,7 +95,7 @@ public class PlanetSpawner : MonoBehaviour {
             planetInfo.resources.Add("Gold");
             for (int r = 0; r < 3; r++)
             {
-                planetInfo.resources.Add(planetBuilder.GetPlanetResources(planetInfo.difficulty));
+                planetInfo.resources.Add(planetBuilder.GetPlanetResources(planetInfo.planetPowerLevel));
             }
 
             newPlanet.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetSprite;
@@ -155,17 +145,8 @@ public class PlanetSpawner : MonoBehaviour {
             planetInfo.planetAI.transform.SetParent(planetInfo.transform);
             planetInfo.planetAI.SetActive(false);
             AIInformation aiInfo = planetInfo.planetAI.GetComponent<AIInformation>();
-            planetInfo.difficulty = planetBuilder.GetPlanetDifficulty(aiInfo);
-            aiInfo.myUnitCards = new List<GameObject>();
-            UnitCardBuilder cardBuilder = planetInfo.planetAI.GetComponent<UnitCardBuilder>();
-            foreach (string unitType in aiInfo.myUnitTypes)
-            {
-                GameObject newCard = cardBuilder.BuildCardAI(unitType, aiInfo.aiLevel);
-                newCard.transform.SetParent(planetInfo.planetAI.transform);
-                newCard.SetActive(false);
-                DontDestroyOnLoad(newCard);
-                aiInfo.myUnitCards.Add(newCard);
-            }
+            planetInfo.planetPowerLevel = aiInfo.aiPowerLevel;
+            planetInfo.difficulty = planetInfo.planetPowerLevel.ToString();          
             planetInfo.negativeEffect = planetBuilder.GetPlanetNegativeEffect(planetInfo.type);
             planetInfo.planetSprite = planetBuilder.GetPlanetSprite(planetInfo.type);
 
@@ -173,7 +154,7 @@ public class PlanetSpawner : MonoBehaviour {
             planetInfo.resources.Add("Gold");
             for (int r = 0; r < 3; r++)
             {
-                planetInfo.resources.Add(planetBuilder.GetPlanetResources(planetInfo.difficulty));
+                planetInfo.resources.Add(planetBuilder.GetPlanetResources(planetInfo.planetPowerLevel));
             }
 
             newPlanet.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetSprite;

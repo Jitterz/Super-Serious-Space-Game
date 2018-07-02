@@ -175,16 +175,26 @@ public class RewardSplashController : MonoBehaviour {
                         {
                             particlePlayed = false;
                             rewardAmountCounted = false;
-                            //Destroy(gameObject);
-                            transitionCase = "WonCard";
-                            // need a case here for extra rewards cards etc and close out the splash
+
+                            int randomChance = UnityEngine.Random.Range(0, 101);
+                            randomChance += PlayerStatsUpgradesStatic.luck;
+
+                            Debug.Log(randomChance);
+                            if (randomChance >= 0)
+                            {
+                                transitionCase = "WonCard";
+                            }
+                            else
+                            {
+                                Destroy(gameObject);
+                            }
                         }
                     }
                 }
                 break;
             case "WonCard":
                 // show the card and stuff here
-                splashImage.enabled = false;
+                splashImage.sprite = splashSprites[3];
                 textAmount.enabled = false;
                 if (cardCreated == false)
                 {
@@ -195,7 +205,7 @@ public class RewardSplashController : MonoBehaviour {
                     PlayerInfoStatic.CardID++;
                     DontDestroyOnLoad(playerUnitCard);
                     PlayerInfoStatic.PlayerUnitCards.Add(playerUnitCard);
-                    newCard.transform.parent = gameObject.transform;
+                    newCard.transform.SetParent(gameObject.transform);
                     newCard.transform.position = gameObject.transform.position;
                     RectTransform rect = newCard.GetComponent<RectTransform>();
                     rect.sizeDelta = new Vector2(62.3f, 99.25f);
@@ -261,7 +271,7 @@ public class RewardSplashController : MonoBehaviour {
 
     private bool TransitionTimer()
     {
-        transitionTime += 5f * Time.deltaTime;
+        transitionTime += 2f * Time.deltaTime;
 
         if (transitionTime >= 4)
         {

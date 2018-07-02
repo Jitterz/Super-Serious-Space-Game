@@ -24,6 +24,7 @@ public class PlanetInformation : MonoBehaviour {
     public List<string> resources;
     public List<string> uiResources;
 
+    public int planetPowerLevel;
     public int fuelRewardAmount;
     public string uiFuelRewardAmount;
     public int xPRewardAmount;
@@ -46,9 +47,7 @@ public class PlanetInformation : MonoBehaviour {
     {
         mySprite = GetComponent<SpriteRenderer>();
         conqueredLostSpriteHolder = transform.GetChild(48).gameObject;
-        CalculateFuelReward();
-        CalculateXPReward();
-        CalculateCreditReward();
+        CalculateRewards();
     }
 
     private void Update()
@@ -81,92 +80,51 @@ public class PlanetInformation : MonoBehaviour {
         }
     }
 
-    public int CalculateFuelReward()
+    private void CalculateRewards()
     {
         // need to calculate based on the planet difficulty, planet ai, ai cards, ai buffs ect
-        if (difficulty == "Very Easy")
+        if (planetPowerLevel <= 15)
         {
-            fuelRewardAmount = Random.Range(5, 12);
+            fuelRewardAmount = Random.Range(2, 6);
+            xPRewardAmount = Random.Range(15, 35);
+            creditRewardAmount = Random.Range(3, 10);
         }
-        else if (difficulty == "Easy")
+        else if (planetPowerLevel <= 30)
         {
-            fuelRewardAmount = Random.Range(7, 15);
+            fuelRewardAmount = Random.Range(3, 10);
+            xPRewardAmount = Random.Range(20, 40);
+            creditRewardAmount = Random.Range(5, 12);
         }
-        else if (difficulty == "Medium")
+        else if (planetPowerLevel <= 50)
         {
-            fuelRewardAmount = Random.Range(9, 22);
+            fuelRewardAmount = Random.Range(4, 15);
+            xPRewardAmount = Random.Range(23, 39);
+            creditRewardAmount = Random.Range(5, 15);
         }
-        else if (difficulty == "Hard")
+        else if (planetPowerLevel <= 75)
         {
-            fuelRewardAmount = Random.Range(11, 28);
+            fuelRewardAmount = Random.Range(6, 23);
+            xPRewardAmount = Random.Range(31, 44);
+            creditRewardAmount = Random.Range(6, 20);
         }
-        else if (difficulty == "Very Hard")
+        else if (planetPowerLevel <= 100)
         {
-            fuelRewardAmount = Random.Range(13, 34);
+            fuelRewardAmount = Random.Range(8, 26);
+            xPRewardAmount = Random.Range(37, 55);
+            creditRewardAmount = Random.Range(7, 27);
         }
-        else
+        else if (planetPowerLevel <= 150)
         {
-            fuelRewardAmount = 1;
-        }
-        return fuelRewardAmount;
-    }
-
-    public int CalculateXPReward()
-    {
-        if (difficulty == "Very Easy")
-        {
-            xPRewardAmount = Random.Range(50, 120);
-        }
-        else if (difficulty == "Easy")
-        {
-            xPRewardAmount = Random.Range(70, 150);
-        }
-        else if (difficulty == "Medium")
-        {
-            xPRewardAmount = Random.Range(90, 220);
-        }
-        else if (difficulty == "Hard")
-        {
-            xPRewardAmount = Random.Range(110, 280);
-        }
-        else if (difficulty == "Very Hard")
-        {
-            xPRewardAmount = Random.Range(130, 340);
+            fuelRewardAmount = Random.Range(9, 34);
+            xPRewardAmount = Random.Range(40, 57);
+            creditRewardAmount = Random.Range(9, 33);
         }
         else
         {
-            xPRewardAmount = 1;
+            fuelRewardAmount = Random.Range(10, 37);
+            xPRewardAmount = Random.Range(47, 62);
+            creditRewardAmount = Random.Range(10, 39);
         }
-        return xPRewardAmount;
-    }
-
-    public int CalculateCreditReward()
-    {
-        if (difficulty == "Very Easy")
-        {
-            creditRewardAmount = Random.Range(10, 50);
-        }
-        else if (difficulty == "Easy")
-        {
-            creditRewardAmount = Random.Range(21, 82);
-        }
-        else if (difficulty == "Medium")
-        {
-            creditRewardAmount = Random.Range(30, 120);
-        }
-        else if (difficulty == "Hard")
-        {
-            creditRewardAmount = Random.Range(35, 155);
-        }
-        else if (difficulty == "Very Hard")
-        {
-            creditRewardAmount = Random.Range(43, 211);
-        }
-        else
-        {
-            creditRewardAmount = 1;
-        }
-        return creditRewardAmount;
     }
 
     public void PlanetSpriteStateMachine()

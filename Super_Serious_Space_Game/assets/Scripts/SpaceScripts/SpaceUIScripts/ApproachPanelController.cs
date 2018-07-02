@@ -83,7 +83,7 @@ public class ApproachPanelController : MonoBehaviour {
 
         planetImageSprite.sprite = planetInfo.GetComponent<SpriteRenderer>().sprite;
         planetType.text = "Planet Type: " + planetInfo.uiType;
-        planetDifficulty.text = "Planet Difficulty: " + planetInfo.uiDifficulty;
+        planetDifficulty.text = "Enemy Power Level: " + planetInfo.uiDifficulty;
         planetName.text = planetInfo.planetName;
         fuelTravelCost.text = "Fuel Cost to Planet: " +  planetInfo.uiFuelCostToPlanet;
         GetResourceImages(planetInfo);

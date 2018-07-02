@@ -15,6 +15,8 @@ public class BattleUIManager : MonoBehaviour {
     private PlayerBattleManager playerBattleManagerScript;
     private List<ResourceMeter> spawnedResourceMeters;
 
+    public Text playerUnityCapacityText;
+
     // Use this for initialization
     void Start ()
     {
@@ -31,6 +33,7 @@ public class BattleUIManager : MonoBehaviour {
 	void Update ()
     {
         UpdateResourceMeters();
+        playerUnityCapacityText.text = playerBattleManagerScript.spawnedUnitsCapacityCount.ToString() + " / " + PlayerStatsUpgradesStatic.unitMaxCapacity.ToString();
 	}
 
     public void PlaceResourceMeter(string resourceName)

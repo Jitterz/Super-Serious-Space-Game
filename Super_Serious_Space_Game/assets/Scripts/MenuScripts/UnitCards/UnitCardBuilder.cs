@@ -119,6 +119,15 @@ public class UnitCardBuilder : MonoBehaviour {
 
     private void GetUnitType()
     {
+        //REMOVE ME
+        Debug.Log("Remove list initialization");
+        if (PlayerStatsUpgradesStatic.discoveredUnits == null)
+        {
+            PlayerStatsUpgradesStatic.discoveredUnits = new List<string>();
+            PlayerStatsUpgradesStatic.discoveredUnits.Add("Settler");
+        }
+        //REMOVE ME
+
         int random = Random.Range(0, PlayerStatsUpgradesStatic.discoveredUnits.Count);
 
         unitName = PlayerStatsUpgradesStatic.discoveredUnits[random];

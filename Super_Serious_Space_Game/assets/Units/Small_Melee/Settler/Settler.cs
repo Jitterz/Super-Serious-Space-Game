@@ -34,6 +34,7 @@ public class Settler : MonoBehaviour {
         if (gameObject.tag == "PlayerUnit")
         {
             playerBattleManagerScript.mySpawnedUnits.Add(gameObject);
+            playerBattleManagerScript.spawnedUnitsCapacityCount++;
         }
         else
         {
@@ -134,12 +135,13 @@ public class Settler : MonoBehaviour {
             animator.SetBool("isAttacking", false);
             animator.SetBool("isWalking", false);
             if (gameObject.tag == "PlayerUnit")
-            {
+            {           
                 for (int i = 0; i < playerBattleManagerScript.mySpawnedUnits.Count; i++)
                 {
                     if (playerBattleManagerScript.mySpawnedUnits[i] == gameObject)
                     {
                         playerBattleManagerScript.mySpawnedUnits.RemoveAt(i);
+                        playerBattleManagerScript.spawnedUnitsCapacityCount--;
                     }
                 }
             }
@@ -153,7 +155,7 @@ public class Settler : MonoBehaviour {
                     }
                 }
             }
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject, 2.0f);           
         }
     }
 

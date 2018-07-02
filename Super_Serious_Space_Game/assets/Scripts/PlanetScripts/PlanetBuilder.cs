@@ -33,50 +33,6 @@ public class PlanetBuilder : MonoBehaviour {
         return "Random Planet Name";
     }
 
-    public string GetPlanetDifficulty(AIInformation aiInfo)
-    {
-        theHomePlanet = GameObject.FindGameObjectWithTag("HomePlanet");
-
-        float distance = 0f;
-        float difficultyScore = 0f;
-
-        string difficulty = "";
-
-        if (theHomePlanet != null)
-        {
-            distance = Vector3.Distance(theHomePlanet.transform.position, playerShip.transform.position);
-            difficultyScore = BuildAIDifficultyScore(aiInfo);
-        }
-        else
-        {
-            distance = 0f;
-        }
-
-        if (difficultyScore <= 5f)
-        {
-            difficulty = "Very Easy";
-        }
-        else if (difficultyScore <= 10f)
-        {
-            difficulty = "Easy";
-        }
-        else if (difficultyScore <= 15f)
-        {
-            difficulty = "Medium";
-        }
-        else if (difficultyScore <= 20f)
-        {
-            difficulty = "Hard";
-        }
-        else
-        {
-            difficulty = "Very Hard";
-        }
-        // need to figure out how to calculate the planets difficulty. 
-        // base it on the ai, his buffs, his units, distance from home planet etc.
-        return difficulty;
-    }
-
     public GameObject GetPlanetAI()
     {
         // determine the ai based on how far the ship has traveled
@@ -181,35 +137,38 @@ public class PlanetBuilder : MonoBehaviour {
         }        
     }
 
-    public string GetPlanetResources(string planetDifficulty)
+    public string GetPlanetResources(int planetPowerLevel)
     {
         int random;
 
         // need to add different types of resources based on difficulty and distance n such
-        if (planetDifficulty == "Very Easy")
+        if (planetPowerLevel <= 15)
+        {
+            random = Random.Range(0, 2);
+        }
+        else if (planetPowerLevel <= 33)
         {
             random = Random.Range(0, 3);
         }
-        else if (planetDifficulty == "Easy")
+        else if (planetPowerLevel <= 54)
         {
-            random = Random.Range(0, 4);
+            random = Random.Range(0, 5);
         }
-        else if (planetDifficulty == "Medium")
+        else if (planetPowerLevel <= 87)
         {
             random = Random.Range(0, 6);
         }
-        else if (planetDifficulty == "Hard")
+        else if (planetPowerLevel <= 115)
         {
-            random = Random.Range(0, 8);
+            random = Random.Range(0, 7);
         }
-        else if (planetDifficulty == "Very Hard")
+        else if (planetPowerLevel <= 155)
         {
             random = Random.Range(0, 8);
         }
         else
         {
-            random = 0;
-            Debug.Log("GetPlanetResourses hit else");
+            random = Random.Range(0, 8);
         }
 
         return possibleResourceTypes[random];

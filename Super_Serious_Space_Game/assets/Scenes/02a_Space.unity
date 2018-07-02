@@ -5958,7 +5958,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Planet Difficulty: ????'
+  m_Text: 'Enemy Power Level: ????'
 --- !u!222 &1482518707
 CanvasRenderer:
   m_ObjectHideFlags: 0

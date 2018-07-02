@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerStatsUpgradesStatic : MonoBehaviour {
     //-------------------------------------------PLAYER SPECIFIC---------------------------------------//
     public static List<string> discoveredUnits;
-    public static float luck = 1;
+    public static int luck = 1;
     //--------------------------------------------PLAYER BATTLE----------------------------------------//
     public static int startingMiners = 1;
+    public static int unitMaxCapacity = 2;
     // ---------------------------------------------SHIP-----------------------------------------------//
     public static int scannerLevel = 0;
     public static float scannerRange = 0;

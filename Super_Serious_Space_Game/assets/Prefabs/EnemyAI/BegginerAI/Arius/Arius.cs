@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 public class Arius : MonoBehaviour {
 
     // only uses gold. One of the first AI player will encounter. Only pokominer and Settler. 
-
-    public string difficulty = "Very Easy";   
-
     public List<GameObject> mySpawnableUnitsPrefab;
     public List<GameObject> mySpawnableUnits;
     
@@ -31,8 +28,7 @@ public class Arius : MonoBehaviour {
 
 	// Use this for initialization
 	void Start ()
-    {
-        aiInfo = GetComponent<AIInformation>();
+    {       
         startAttackTimer = 0;
         endAttackTime = Random.Range(20, 240);
         attackPlan = Random.Range(0, 1);
@@ -44,12 +40,7 @@ public class Arius : MonoBehaviour {
         {
             BuildMaxUnitCounts();
             BuildAIUnits();
-        }
-
-        CurrentAIStatsStatic.aiPossibleUnitsCount = aiInfo.aiPossibleUnitsCount;
-        CurrentAIStatsStatic.aiStrongUnitsCount = aiInfo.aiStrongUnitsCount;
-        CurrentAIStatsStatic.aiMaxMinerCount = aiInfo.aiMaxMinerCount;
-        CurrentAIStatsStatic.aiMaxUnitCount = aiInfo.aiMaxUnitCount;
+        }       
 
         mySpawnableUnits = new List<GameObject>();
 
@@ -94,6 +85,8 @@ public class Arius : MonoBehaviour {
 
     private void Awake()
     {
+        aiInfo = GetComponent<AIInformation>();
+        BuildAIInfo();
         Scene currentScene = SceneManager.GetActiveScene();
 
         if (currentScene.name != "02a_Space")
@@ -225,6 +218,7 @@ public class Arius : MonoBehaviour {
             GameObject newUnit = Instantiate(mySpawnableUnitsPrefab[i]);
             newUnit.SetActive(false);
             newUnit.name = mySpawnableUnitsPrefab[i].GetComponent<UnitStats>().name + " spawner";
+            newUnit.transform.SetParent(gameObject.transform);
             UnitStats myNewStats = aiInfo.myUnitCards[i - 1].GetComponent<UnitStats>();
             UnitStats myOldStats = newUnit.GetComponent<UnitStats>();
 
@@ -278,5 +272,49 @@ public class Arius : MonoBehaviour {
     {
         aiUnits.Add("Settler");
         aiUnits.Add("PokoMiner");
+    }
+
+    private void BuildAIInfo()
+    {
+        // create the card builder
+        UnitCardBuilder cardBuilder = GetComponent<UnitCardBuilder>();
+
+        // get my level
+        aiInfo.aiLevel = Random.Range(1, 4);
+        aiInfo.aiPowerLevel += aiInfo.aiLevel;
+
+        // build my unit cards Arius only has one
+        aiInfo.myUnitCards = new List<GameObject>();
+        GameObject newUnitCard = cardBuilder.BuildCardAI("Settler", aiInfo.aiLevel);
+        newUnitCard.transform.SetParent(gameObject.transform);
+        newUnitCard.SetActive(false);
+        DontDestroyOnLoad(newUnitCard);
+        aiInfo.myUnitCards.Add(newUnitCard);
+        aiInfo.aiPowerLevel += (int)newUnitCard.GetComponent<UnitStats>().unitPowerLevel;
+
+        // get miner upgrades
+        if (aiInfo.aiLevel >= 3)
+        {
+            // if he is the higher level of himself then give him a couple small upgrades
+            aiInfo.minerCostUpgrade += 10;
+            aiInfo.aiPowerLevel += 5;
+
+            aiInfo.resource01StorageCapacityUpgrade += 20;
+            aiInfo.resource02StorageCapacityUpgrade += 20;
+            aiInfo.resource03StorageCapacityUpgrade += 20;
+            aiInfo.resource04StorageCapacityUpgrade += 20;
+            aiInfo.aiPowerLevel += 3;
+
+            aiInfo.generatorHealthUpgrade += Random.Range(10, 25);
+            aiInfo.aiPowerLevel += (aiInfo.generatorHealthUpgrade - 5);
+
+            int random = Random.Range(1, 100);
+            if (random > 50)
+            {
+                aiInfo.unitCapacityUpgrage = 2;
+                aiInfo.aiPossibleUnitsCount += aiInfo.unitCapacityUpgrage;
+                aiInfo.aiPowerLevel += 2;
+            }
+        }
     }
 }

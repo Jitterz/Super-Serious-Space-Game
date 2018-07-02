@@ -18,6 +18,7 @@ public class PlayerBattleManager : MonoBehaviour {
     public string[] playerResourcesType;
 
     public int spawnPodCount;
+    public int spawnedUnitsCapacityCount;
 
     // used for movement state machine when player clicks action buttons
     public bool playerAttacking;
@@ -52,6 +53,7 @@ public class PlayerBattleManager : MonoBehaviour {
     void Awake()
     {
         activeSpawnPodScripts = new List<SpawnPod>();
+        spawnedUnitsCapacityCount = 0;
     }
 
     private void GetSpawnPodCount()

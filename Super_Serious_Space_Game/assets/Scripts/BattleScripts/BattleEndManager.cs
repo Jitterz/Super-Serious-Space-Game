@@ -25,6 +25,7 @@ public class BattleEndManager : MonoBehaviour {
 		if (enemyGeneratorScript.health <= 0)
         {
             SavedPlanetForBattleStatic.isConquered = true;
+            PlayerHiddenLevelStatic.conqueredPlanetsCount++;
             SavedPlanetForBattleStatic.wasAttacked = true;
             BattleAISaverStatic.ReturnChildToOriginalParent();
             levelManager.LoadLevel("02a_Space");
