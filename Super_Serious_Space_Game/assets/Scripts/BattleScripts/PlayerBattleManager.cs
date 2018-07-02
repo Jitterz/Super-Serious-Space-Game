@@ -251,7 +251,7 @@ public class PlayerBattleManager : MonoBehaviour {
             }
             else
             {
-                if (selectedUnit != null && !hit.transform.gameObject.name.Contains("Turret"))
+                if (selectedUnit != null && hit.transform == null)
                 {
                     GameObject childSprite = selectedUnit.transform.GetChild(0).gameObject;
                     SpriteRenderer changeSprite = childSprite.GetComponent<SpriteRenderer>();

@@ -6,6 +6,8 @@ public class UnitStats : MonoBehaviour {
 
     public List<object> statsList;
 
+    public int cardCreditsValue;
+
     public int health;
     public int healthMax;
     public int unitCost;

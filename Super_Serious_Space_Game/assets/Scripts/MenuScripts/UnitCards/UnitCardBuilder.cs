@@ -36,6 +36,8 @@ public class UnitCardBuilder : MonoBehaviour {
         SetStatAmounts();
         // build the card visuals
         CreateCardVisuals();
+        // get the credits value of the card
+        GetCardCreditsValue();
 
         return newCard;
     }
@@ -57,27 +59,33 @@ public class UnitCardBuilder : MonoBehaviour {
         // Set the current and maximum possible stats for each selected type based on player level
         SetStatAmounts();
         // build the card visuals
-        CreateCardVisuals();
+        CreateCardVisuals();      
 
         return newCard;
+    }
+
+    private void GetCardCreditsValue()
+    {
+        unitStatsScript.cardCreditsValue = (int)unitStatsScript.unitPowerLevel;
+        unitCardScript.cardCreditsValue.text = unitStatsScript.cardCreditsValue.ToString();
     }
 
     private void CreateCardVisuals()
     {
         // determine the card background
-        if (unitStatsScript.unitPowerLevel <= 20)
+        if (unitStatsScript.unitPowerLevel <= 25)
         {
             unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[0];
         }
-        else if (unitStatsScript.unitPowerLevel <= 50)
+        else if (unitStatsScript.unitPowerLevel <= 58)
         {
             unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[1];
         }
-        else if (unitStatsScript.unitPowerLevel <= 100)
+        else if (unitStatsScript.unitPowerLevel <= 99)
         {
             unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[2];
         }
-        else if (unitStatsScript.unitPowerLevel <= 170)
+        else if (unitStatsScript.unitPowerLevel <= 155)
         {
             unitCardScript.cardBackground.sprite = unitCardScript.cardBackgrounds[3];
         }
@@ -95,7 +103,7 @@ public class UnitCardBuilder : MonoBehaviour {
             }
         }
         // get the unit image for the card
-        for (int i = 0; i < unitCardScript.unitTypes.Count - 1; i++)
+        for (int i = 0; i < unitCardScript.unitTypes.Count; i++)
         {
             if (unitStatsScript.unitName == unitCardScript.unitTypes[i])
             {
@@ -111,7 +119,7 @@ public class UnitCardBuilder : MonoBehaviour {
 
     private void GetUnitType()
     {
-        int random = Random.Range(0, PlayerStatsUpgradesStatic.discoveredUnits.Count - 1);
+        int random = Random.Range(0, PlayerStatsUpgradesStatic.discoveredUnits.Count);
 
         unitName = PlayerStatsUpgradesStatic.discoveredUnits[random];
     }

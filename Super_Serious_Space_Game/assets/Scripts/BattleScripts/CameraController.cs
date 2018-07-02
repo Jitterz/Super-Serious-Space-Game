@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public float speed;
+    public float cameraLeftClamp = -280;
+    public float cameraRightClamp = 1010;
 
 	// Use this for initialization
 	void Start ()
@@ -17,11 +19,17 @@ public class CameraController : MonoBehaviour {
     {
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += (Vector3.left * speed) * Time.deltaTime;
+            if (transform.position.x > cameraLeftClamp)
+            {
+                transform.position += (Vector3.left * speed) * Time.deltaTime;
+            }
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += (Vector3.right * speed) * Time.deltaTime;
+            if (transform.position.x < cameraRightClamp)
+            {
+                transform.position += (Vector3.right * speed) * Time.deltaTime;
+            }
         }
     }
 }

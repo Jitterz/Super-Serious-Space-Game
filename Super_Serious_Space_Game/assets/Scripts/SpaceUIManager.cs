@@ -8,6 +8,7 @@ public class SpaceUIManager : MonoBehaviour {
     public static bool pauseSpaceScene;
     public static bool upgradeMenuClosed;
     public static GameObject mainUIGameObject;
+    public GameObject removeThisPrefabBuildAtStart;
 
     public GameObject playerShip;
 
@@ -31,13 +32,23 @@ public class SpaceUIManager : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
+        //REMOVE ME starting card
+        Debug.Log("Remove Me Starting Card Build on new Game");
+        GameObject startingCard = Instantiate(removeThisPrefabBuildAtStart);
+        DontDestroyOnLoad(startingCard);
+        PlayerInfoStatic.PlayerDeck.Add(startingCard);
+        GameObject deckParent = GameObject.Find("PlayerDeckHolder");
+        startingCard.transform.SetParent(deckParent.transform, false);
+        startingCard.SetActive(false);
+        // REMOVE ME
+
         if (planetSpawnerScript == null)
         {
             planetSpawnerScript = planetSpawner.GetComponent<PlanetSpawner>();
         }
-        
+
         approachPanel.SetActive(false);
         fuelBarDefualtBckColor = backGroundFuelBar.color;
         fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
@@ -45,7 +56,7 @@ public class SpaceUIManager : MonoBehaviour {
         powerBar.value = PlayerInfoStatic.CurrentShipPower;
         powerBarText.text = PlayerInfoStatic.CurrentShipPower.ToString();
         shipController = playerShip.GetComponent<ShipController>();
-	}
+    }
 
     // Update is called once per frame
     void Update()

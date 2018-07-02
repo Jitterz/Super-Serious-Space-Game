@@ -21,13 +21,14 @@ public class UnitCard : MonoBehaviour {
     public Text unitCapacity;
     public Text resourceCost;
     public Text cardLevel;
+    public Text cardCreditsValue;
 
     public UnitUpgradePanelController upgradePanel;
 
     // Use this for initialization
     void Start ()
     {
-        
+
 	}
 	
 	// Update is called once per frame

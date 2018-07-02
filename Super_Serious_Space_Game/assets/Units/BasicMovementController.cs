@@ -272,11 +272,11 @@ public class BasicMovementController : MonoBehaviour {
         Vector3 myDefendPosition;
         if (gameObject.tag == "PlayerUnit")
         {
-            myDefendPosition = new Vector3(Random.Range(-121, 5), Random.Range(-150, 1.5f), -1);
+            myDefendPosition = new Vector3(Random.Range(-121, 5), Random.Range(-130, -5), -1);
         }
         else
         {
-            myDefendPosition = new Vector3(Random.Range(708, 830), Random.Range(-148, -5), -1);
+            myDefendPosition = new Vector3(Random.Range(708, 830), Random.Range(-130, -5), -1);
         }
         return myDefendPosition;
     }

@@ -25,11 +25,7 @@ public class RewardSplashController : MonoBehaviour {
 
     // Use this for initialization
     void Start ()
-    {
-        Debug.Log("Remove Discovered units");
-        PlayerStatsUpgradesStatic.discoveredUnits = new List<string>();
-        PlayerStatsUpgradesStatic.discoveredUnits.Add("Settler");
-        // remove above discovered units
+    {      
         rewardAmountCounted = false;
         particlePlayed = false;
         particleTimer = 0;

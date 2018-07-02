@@ -1,0 +1,63 @@
+Menus:
+
+Add option to display damage numbers
+
+AI:
+
+Fix Arius AI spawning third miner with nowhere to go
+Arius 3rd miner also doesnt mine if there is an open node
+Arius 2nd miner doesnt mine sometimes as well
+
+Battle:
+
+Bring power supply to battle to spawn ship special
+Add starting cooldown for ship special
+Block camera from scrolling out of bounds
+Clicking off selected unit not working
+Fix units spawning starting position goes too low they off screen
+Fix attack timing and damage animations animation needs to match attack speed
+Damage output needs to match attack speed
+Fix attack/defend not finding targets in their own base when unit spawns they go to their spawn position and ignore enemies in their base
+Find and fix all of the units retrieveUpgrades references
+Try to fix layering issues for units/turrets/miners etc.
+Create other ship specials Wall/Spawn Units etc.
+Need to tie in the unit capacity and add a unit capacity cap to battle
+Implement planet specific battle changes
+Turret shooting at enemies after they die
+Add blood splatters
+Have clumped units spread out a little bit
+Fighting units should always prioritize killing other fighting units first
+Add placing spawn pods
+Tropical island add some green on ground around trees looks like desert
+Temperate map trees blend in with grass make darker
+Add damage numbers
+Add health bars
+
+Space:
+
+Fix splash reward particles not working
+Need to add discovered new unit to reward splash screen  
+Add chance to find a new unit card after battle affected by players luck stat start at 10% chance
+Implement power guage and cost for scanning and ship special
+Calculate planet power level when planet created
+Remove difficulty and change to power level
+Add power level of planet to scanable option
+Display calculated player power level
+Cant scan planet already discovered by proximity need to be able to if player chooses
+Stop player clicks while splash screen playing
+Splash doesnt play after some battles
+
+Unit Upgrades:
+
+Calculate XP cost to upgrade unit
+Block upgrade if not enough XP
+Add upgrades menu for player/miners/ship
+Fix unit card power level calculations
+
+Player:
+
+Player needs a default starting unit that cannot be deleted or removed from deck if deck empty
+Need to discover new units after winning a battle
+Calculate player power level
+Create player stats resource caps/miner caps/unit caps etc.
+Add spawn pod type upgrades cap/cost/types etc.

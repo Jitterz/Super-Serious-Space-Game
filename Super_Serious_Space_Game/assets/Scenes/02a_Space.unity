@@ -1008,12 +1008,12 @@ Prefab:
     - target: {fileID: 224580821341773242, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 224581714390160096, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -16
       objectReference: {fileID: 0}
     - target: {fileID: 114783923714863816, guid: f9e7abdd71144bb42989e8b6987f62ff,
         type: 2}
@@ -2129,6 +2129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba9cbc5f3f04ff47b20f30fe8901380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  removeThisPrefabBuildAtStart: {fileID: 1752706721389642, guid: bcd92d9a49b389f409fb29d8b7b5dc8e,
+    type: 2}
   playerShip: {fileID: 1345937864}
   fuelBar: {fileID: 1479648299}
   powerBar: {fileID: 1976573892}
@@ -6430,12 +6432,12 @@ Prefab:
     - target: {fileID: 224580821341773242, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 224581714390160096, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 114783923714863816, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}

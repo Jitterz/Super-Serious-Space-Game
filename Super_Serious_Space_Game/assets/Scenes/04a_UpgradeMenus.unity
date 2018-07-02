@@ -1934,7 +1934,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &624348443
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4326,6 +4326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4946f4504f3734744b0d65397a19af93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLevel: 1
   prefab: {fileID: 1582452596923008, guid: 123708c4d4048d449b8cb8a6a4a334e4, type: 2}
   cardSlot: {fileID: 1915825931077296, guid: f21f9b448362cd24c9f2d52ff29f8241, type: 2}
   content: {fileID: 780502243}
