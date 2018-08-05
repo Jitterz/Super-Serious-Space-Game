@@ -35,7 +35,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     // Resources
     public static float CurrentShipFuel;
     public static float CurrentCredits;
-    public static float CurrentXP;
+    public static float CurrentXP = 100000;
 
     public static string PlayerName;
     public static string HomePlanetType;

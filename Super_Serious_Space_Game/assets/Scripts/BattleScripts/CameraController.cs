@@ -5,8 +5,8 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public float speed;
-    public float cameraLeftClamp = -280;
-    public float cameraRightClamp = 1010;
+    public float cameraLeftClamp;
+    public float cameraRightClamp;
 
 	// Use this for initialization
 	void Start ()

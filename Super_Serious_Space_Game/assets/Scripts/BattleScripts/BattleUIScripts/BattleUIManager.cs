@@ -70,63 +70,63 @@ public class BattleUIManager : MonoBehaviour {
                     resource = 0;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[0];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceGoldMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Iron")
                 {
                     resource = 1;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[1];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceIronMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Copper")
                 {
                     resource = 2;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[2];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceCopperMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Nickel")
                 {
                     resource = 3;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[3];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceNickelMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Silver")
                 {
                     resource = 4;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[4];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceSilverMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Cobalt")
                 {
                     resource = 5;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[5];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceCobaltMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Cadmium")
                 {
                     resource = 6;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[6];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceCadmiumMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Iridium")
                 {
                     resource = 7;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[7];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourceIridiumMaxAmount;
                 }
                 else if (spawnedResourceMeters[i].resourceType == "Paladium")
                 {
                     resource = 8;
                     spawnedResourceMeters[i].resourceAmount.text = playerBattleManagerScript.playerResourcesAmount[resource].ToString();
                     spawnedResourceMeters[i].resourceSlider.value = playerBattleManagerScript.playerResourcesAmount[resource];
-                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.maxResourceAmounts[8];
+                    spawnedResourceMeters[i].resourceSlider.maxValue = PlayerStatsUpgradesStatic.resourcePaladiumMaxAmount;
                 }
             }
         }
