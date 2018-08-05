@@ -27,9 +27,12 @@ public class ShowHidePlayerUpgrades : MonoBehaviour {
         // disable the upgrade not enough XP
         if (myUpgradeCost > PlayerInfoStatic.CurrentXP)
         {
-            hidePanel.SetActive(true);
-            myUpgradeButton.enabled = true;
-            myUpgradeButton.interactable = false;
+            if (!upgradeMaxed)
+            {
+                hidePanel.SetActive(true);
+                myUpgradeButton.enabled = true;
+                myUpgradeButton.interactable = false;
+            }
         }
         else if (upgradeMaxed)
         {
