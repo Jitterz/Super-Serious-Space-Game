@@ -62,22 +62,17 @@ public class PlayerStatsUpgradesStatic : MonoBehaviour {
         resourcePaladiumMaxAmount,
     };
 
-    // ----------------------------------------------UNITS---------------------------------------------//
+    // ----------------------------------------------Miners--------------------------------------------//
     // --------------POKO MINER-----------------//
-    public static int pokoMinerResourceDiscount = 0;
-    public static int pokoMinerSpawnTimeDiscount = 0;
-    public static int pokoMinerResourceMiningGain = 0;
-    // --------------SETTLER--------------------//
-    public static int settlerResourceDiscount = 0;
-    public static int settlerSpawnTimeDiscount = 0;
-    public static int settlerDamageUpgrade = 0;
-    // --------------NIX------------------------//
-    public static int nixResourceDiscount = 0;
-    public static int nixSpawnTimeDiscount = 0;
-    public static int nixDamageUpgrade = 0;
-    public static int nixRangeIncrease = 0;
-    // --------------CHOMP------------------------//
-    public static int chompResourceDiscount = 0;
-    public static int chompSpawnTimeDiscount = 0;
-    public static int chompDamageUpgrade = 0;
+    public static int pokoMinerResourceUpgrade = 0;
+    public static int pokoMinerResourceUpgradeMax = 80;
+    public static float pokoMinerSpawnTimeUpgrade = 0;
+    public static float pokoMinerSpawnTimeUpgradeMax = 3;
+    public static int pokoMinerResourceMiningGainUpgrade = 0;
+    public static int pokoMinerResourceMiningGainUpgradeMax = 40;
+    public static int pokoMinerHealthUpgrade = 0;
+    public static int pokoMinerHealthUpgradeMax = 100;
+    public static int pokoMinerMoveSpeedUpgrade = 0;
+    public static int pokoMinerMoveSpeedUpgradeMax = 20;
+
 }

@@ -16,13 +16,11 @@ public class BasicTargeting : MonoBehaviour {
     private GameObject enemyBattleManager;
     private PlayerBattleManager playerBattleManagerScript;
     private EnemyBattleManager enemyBattleManagerScript;
-    private RetrieveUnitUpgrades retrieveUpgrades;
     private Turret turret;
 
     // Use this for initialization
     void Start()
     {       
-        retrieveUpgrades = new RetrieveUnitUpgrades();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         enemyBattleManager = GameObject.Find("EnemyBattleManager");
         playerBattleManagerScript = playerBattleManager.GetComponent<PlayerBattleManager>();
@@ -129,7 +127,7 @@ public class BasicTargeting : MonoBehaviour {
                     
                     float distance = Vector3.Distance(gameObject.transform.position, enemyBattleManagerScript.mySpawnedUnits[i].transform.position);
 
-                    if (distance <= (myStats.unitTargetRange + retrieveUpgrades.GetUnitRangeIncrease(myStats.name)))
+                    if (distance <= myStats.unitTargetRange)
                     {
                         for (int t = 0; t < targetsList.Count; t++)
                         {                           
@@ -176,7 +174,7 @@ public class BasicTargeting : MonoBehaviour {
 
                     float distance = Vector3.Distance(gameObject.transform.position, playerBattleManagerScript.mySpawnedUnits[i].transform.position);
 
-                    if (distance <= (myStats.unitTargetRange + retrieveUpgrades.GetUnitRangeIncrease(myStats.name)))
+                    if (distance <= myStats.unitTargetRange)
                     {
                         for (int t = 0; t < targetsList.Count; t++)
                         {

@@ -27,7 +27,6 @@ public class PlayerBattleManager : MonoBehaviour {
 
     private SpriteRenderer defendAreaSprite;
     private BoxCollider2D defendAreaCollider;
-    private RetrieveUnitUpgrades retrieveUpgrades;
 
 
     // Use this for initialization
@@ -35,7 +34,6 @@ public class PlayerBattleManager : MonoBehaviour {
     {
         defendAreaSprite = defendArea.GetComponent<SpriteRenderer>();
         defendAreaCollider = defendArea.GetComponent<BoxCollider2D>();
-        retrieveUpgrades = new RetrieveUnitUpgrades();
 
         // start the battle in defending mode
         SetDefending();
@@ -87,7 +85,6 @@ public class PlayerBattleManager : MonoBehaviour {
     private void SubtractResource(GameObject myUnit, int unitCost)
     {
         UnitStats myStats = myUnit.GetComponent<UnitStats>();
-        unitCost -= retrieveUpgrades.GetUnitResourceDiscount(myStats.unitName);
         int resource;
         if (myStats.unitResourceType == "Gold")
         {

@@ -25,7 +25,6 @@ public class Turret : MonoBehaviour {
     private UnitStats myStats;
     private UnitStats myTargetsStats;
     private float myAttacktimeStart;
-    private RetrieveUnitUpgrades retrieveUnitUpgrades;
     private BasicTargeting myTargeting;
     private Quaternion originalRotation;
     private PlayerBattleManager playerBattleManagerScript;
@@ -40,7 +39,6 @@ public class Turret : MonoBehaviour {
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         enemyBattleManager = GameObject.Find("EnemyBattleManager");
         myTargeting = GetComponent<BasicTargeting>();
-        retrieveUnitUpgrades = new RetrieveUnitUpgrades();
         myStats = GetComponent<UnitStats>();
         turretBaseSprite = turretBase.GetComponent<SpriteRenderer>();
         turretHeadSprite = turretHead.GetComponent<SpriteRenderer>();
@@ -78,12 +76,12 @@ public class Turret : MonoBehaviour {
             FaceTarget();
 
             float distance = Vector3.Distance(transform.position, myAttackTarget.transform.position);
-            if (distance <= (myStats.unitAttackRange + retrieveUnitUpgrades.GetUnitDamageBoost(myStats.name)))
+            if (distance <= myStats.unitAttackRange)
             {
                 isAttacking = true;
                 Attack();
             }
-            if (distance > (myStats.unitTargetRange + retrieveUnitUpgrades.GetUnitRangeIncrease(myStats.name)))
+            if (distance > myStats.unitTargetRange)
             {
                 isAttacking = false;
                 myAttackTarget = null;
@@ -142,7 +140,7 @@ public class Turret : MonoBehaviour {
                 {
                     // once timer ends then shoot
                     FireProjectile(myAttackTarget);
-                    myTargetsStats.health -= (myStats.unitDamage + retrieveUnitUpgrades.GetUnitDamageBoost(myStats.unitName));
+                    myTargetsStats.health -= myStats.unitDamage;
                     if (myTargetsStats.health <= 0)
                     {
                         // find them in my target list and kill them

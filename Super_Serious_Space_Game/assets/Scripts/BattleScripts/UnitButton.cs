@@ -13,7 +13,6 @@ public class UnitButton : MonoBehaviour {
     public int myButtonNumber;
 
     private GameObject mySpawnableUnit;
-    private RetrieveUnitUpgrades retrieveUnitUpgrades;
     private PlayerBattleManager playerBattleManagerScript;
     private UnitStats myStats;
     private Button myButton;

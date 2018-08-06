@@ -23,4 +23,12 @@ public class StoredUpgradeCostsStatic
     public static int cadmiumMaxStorageUpgradeCost = 100;
     public static int iridiumMaxStorageUpgradeCost = 125;
     public static int paladiumMaxStorageUpgradeCost = 200;
+
+    // miner specific upgrades
+    // poko miner
+    public static int pokoMinerResourceUpgradeCost = 200;
+    public static int pokoMinerSpawnTimeUpgradeCost = 350;
+    public static int pokoMinerResourceMiningGainUpgradeCost = 500;
+    public static int pokoMinerHealthUpgradeCost = 150;
+    public static int pokoMinerMoveSpeedUpgradeCost = 100;
 }

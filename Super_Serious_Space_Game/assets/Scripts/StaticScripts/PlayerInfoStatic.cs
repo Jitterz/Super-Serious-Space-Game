@@ -47,6 +47,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static float CurrentShipCapacity;
     public static Sprite HomePlanetSprite;
     public static Sprite ShipImage;
+    public static string SelectedMiner = "PokoMiner";
 
     public static int CardID;
     public static List<GameObject> PlayerUnitCards;

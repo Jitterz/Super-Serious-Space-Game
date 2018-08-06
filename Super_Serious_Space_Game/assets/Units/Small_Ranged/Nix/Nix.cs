@@ -18,12 +18,10 @@ public class Nix : MonoBehaviour {
     private UnitStats myStats;
     private BasicTargeting myTargeting;
     private float myAttacktimeStart;
-    private RetrieveUnitUpgrades retrieveUnitUpgrades;
 
     // Use this for initialization
     void Start ()
     {
-        retrieveUnitUpgrades = new RetrieveUnitUpgrades();
         moveController = gameObject.GetComponent<BasicMovementController>();
         animator = gameObject.GetComponent<Animator>();
 
@@ -105,7 +103,7 @@ public class Nix : MonoBehaviour {
                 {
                     // once timer ends then shoot
                     FireProjectile(myTarget);
-                    myTargetsStats.health -= myStats.unitDamage + retrieveUnitUpgrades.GetUnitDamageBoost(myStats.unitName);
+                    myTargetsStats.health -= myStats.unitDamage;
                     if (myTargetsStats.health <= 0)
                     {
                         // find them in my target list and kill them

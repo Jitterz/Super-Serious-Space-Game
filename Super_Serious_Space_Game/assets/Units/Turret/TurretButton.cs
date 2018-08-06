@@ -10,7 +10,6 @@ public class TurretButton : MonoBehaviour {
     public Image cooldownImage;
     public Text myCostText;
 
-    private RetrieveUnitUpgrades retrieveUnitUpgrades;
     private PlayerBattleManager playerBattleManagerScript;
     private UnitStats myStats;
     private Button myButton;
@@ -28,15 +27,14 @@ public class TurretButton : MonoBehaviour {
     {
         mySpawningTurret = null;
         turretIsSlectedToSpawn = false;
-        retrieveUnitUpgrades = new RetrieveUnitUpgrades();
         myStats = myUnit.GetComponent<UnitStats>();
         myButton = gameObject.GetComponent<Button>();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
         playerBattleManagerScript = playerBattleManager.GetComponent<PlayerBattleManager>();
 
         // need to set all of my variables based on any upgrades the unit might have
-        myUnitCost = myStats.unitCost - retrieveUnitUpgrades.GetUnitResourceDiscount(myStats.unitName);
-        myBuildTime = myStats.unitBuildTime - retrieveUnitUpgrades.GetUnitSpawnTimeDiscount(myStats.unitName);
+        myUnitCost = myStats.unitCost;
+        myBuildTime = myStats.unitBuildTime;
 
         myCostText.text = myUnitCost.ToString();
 

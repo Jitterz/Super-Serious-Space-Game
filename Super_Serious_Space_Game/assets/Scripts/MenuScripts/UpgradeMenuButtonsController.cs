@@ -7,6 +7,8 @@ public class UpgradeMenuButtonsController : MonoBehaviour {
     public GameObject unitsPanel;
     public GameObject playerPanel;
     public GameObject resourcesPanel;
+    public GameObject minersPanel;
+    public GameObject shipPanel;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,8 @@ public class UpgradeMenuButtonsController : MonoBehaviour {
         unitsPanel.SetActive(true);
         playerPanel.SetActive(false);
         resourcesPanel.SetActive(false);
+        minersPanel.SetActive(false);
+        shipPanel.SetActive(false);
     }
 
     public void ActivatePlayerPanel()
@@ -30,6 +34,8 @@ public class UpgradeMenuButtonsController : MonoBehaviour {
         unitsPanel.SetActive(false);
         playerPanel.SetActive(true);
         resourcesPanel.SetActive(false);
+        minersPanel.SetActive(false);
+        shipPanel.SetActive(false);
     }
 
     public void ActivateResourcesPanel()
@@ -37,5 +43,25 @@ public class UpgradeMenuButtonsController : MonoBehaviour {
         unitsPanel.SetActive(false);
         playerPanel.SetActive(false);
         resourcesPanel.SetActive(true);
+        minersPanel.SetActive(false);
+        shipPanel.SetActive(false);
+    }
+
+    public void ActivateMinersPanel()
+    {
+        unitsPanel.SetActive(false);
+        playerPanel.SetActive(false);
+        resourcesPanel.SetActive(false);
+        minersPanel.SetActive(true);
+        shipPanel.SetActive(false);
+    }
+
+    public void ActivateShipPanel()
+    {
+        unitsPanel.SetActive(false);
+        playerPanel.SetActive(false);
+        resourcesPanel.SetActive(false);
+        minersPanel.SetActive(false);
+        shipPanel.SetActive(true);
     }
 }

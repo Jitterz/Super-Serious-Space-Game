@@ -38,7 +38,7 @@ public class PokoMiner : MonoBehaviour {
             playerBattleManagerScript.myPlayerMiners.Add(gameObject);
             playerBattleManagerScript.mySpawnedUnits.Add(gameObject);
             playerBattleManagerScript.spawnedUnitsCapacityCount++;
-            miningGain = playerMiningGain + PlayerStatsUpgradesStatic.pokoMinerResourceMiningGain;
+            miningGain = playerMiningGain;
         }
         else
         {
