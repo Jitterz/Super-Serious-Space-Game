@@ -18,6 +18,7 @@ public class MinerButton : MonoBehaviour {
     private bool isOnCooldown;
     private int myUnitCost;
     private int myBuildTime;
+    private int playerUnitMaxCapacity;
 
     // Use this for initialization
     void Start()
@@ -80,7 +81,7 @@ public class MinerButton : MonoBehaviour {
 
     private void DisableOrEnableButton()
     {
-        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < PlayerStatsUpgradesStatic.unitMaxCapacity)
+        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < ShipStatsUpgradesStatic.GetPlayerUnitMaxCapacity())
         {
             myButton.interactable = true;
         }

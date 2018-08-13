@@ -19,18 +19,7 @@ public class PlayerStatsUpgradesStatic : MonoBehaviour {
     public static int lowerShopPricesMax = 100;
     public static int sellValueIncrease = 0;
     public static int sellValueIncreaseMax = 100;
-    // ---------------------------------------------SHIP-----------------------------------------------//
-    public static int scannerLevel = 0;
-    public static float scannerRange = 0;
-    public static int unitMaxCapacity = 8;
-    public static int unitMaxCapacityMax = 30;
-
-    // ------------------------------------------SHIP SPECIAL------------------------------------------//
-    //--------TURRET SPECIAL----------------------//
-    public static int turretDamageUpgrade = 0;
-    public static int turretRangeUpgrade = 0;
-    public static int turretHealthUpgrade = 0;
-    public static int turretResourceDiscount = 0;
+    
     // --------------------------------------------RESOURCES-------------------------------------------//
     public static int resourceGoldMaxAmount = 200;
     public static int resourceGoldMaxAmountMax = 2000;

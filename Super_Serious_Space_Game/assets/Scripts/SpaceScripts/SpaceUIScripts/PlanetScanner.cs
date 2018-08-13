@@ -17,10 +17,6 @@ public class PlanetScanner : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        // REVOVE THIS
-        PlayerStatsUpgradesStatic.scannerLevel = 5;
-        Debug.Log("Remove me");
-        //REMOVE THIS
         playerShipController = playerShip.GetComponent<ShipController>();
         scannerSprite = GetComponent<SpriteRenderer>();
         scannerLine = GetComponent<LineRenderer>();
@@ -52,27 +48,27 @@ public class PlanetScanner : MonoBehaviour {
             if (planetInfo.GetComponent<SpriteRenderer>().sprite == planetInfo.unknownPlanetScanSprite)
             {
                 planetInfo.isScanned = true;
-                if (PlayerStatsUpgradesStatic.scannerLevel == 0)
+                if (ShipStatsUpgradesStatic.GetShipScannerLevel() == 0)
                 {
                     planetInfo.revealInformationCase = "Scan01";
                     planetInfo.PlanetSpriteStateMachine();
                 }
-                else if (PlayerStatsUpgradesStatic.scannerLevel == 1)
+                else if (ShipStatsUpgradesStatic.GetShipScannerLevel() == 1)
                 {
                     planetInfo.revealInformationCase = "Scan02";
                     planetInfo.PlanetSpriteStateMachine();
                 }
-                else if (PlayerStatsUpgradesStatic.scannerLevel == 2)
+                else if (ShipStatsUpgradesStatic.GetShipScannerLevel() == 2)
                 {
                     planetInfo.revealInformationCase = "Scan03";
                     planetInfo.PlanetSpriteStateMachine();
                 }
-                else if (PlayerStatsUpgradesStatic.scannerLevel == 4)
+                else if (ShipStatsUpgradesStatic.GetShipScannerLevel() == 4)
                 {
                     planetInfo.revealInformationCase = "Scan04";
                     planetInfo.PlanetSpriteStateMachine();
                 }
-                else if (PlayerStatsUpgradesStatic.scannerLevel == 5)
+                else if (ShipStatsUpgradesStatic.GetShipScannerLevel() == 5)
                 {
                     planetInfo.revealInformationCase = "Scan05";
                     planetInfo.PlanetSpriteStateMachine();
@@ -138,9 +134,9 @@ public class PlanetScanner : MonoBehaviour {
 
                 float distance = Vector3.Distance(planet.transform.position, playerShip.transform.position);
                 // if the planet is in range and is not already scanned
-                if (PlayerStatsUpgradesStatic.scannerRange == 0 && (planetInfo.isScanned == false && planetInfo.planetProximityScan == false))
+                if (ShipStatsUpgradesStatic.GetShipScannerRange() == 0 && (planetInfo.isScanned == false && planetInfo.planetProximityScan == false))
                 {
-                    if (distance <= 8f && PlayerStatsUpgradesStatic.scannerRange == 0)
+                    if (distance <= 8f && ShipStatsUpgradesStatic.GetShipScannerRange() == 0)
                     {
                         planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
                     }
@@ -164,23 +160,23 @@ public class PlanetScanner : MonoBehaviour {
 
     private Vector3 GetScannerRange()
     {
-        if (PlayerStatsUpgradesStatic.scannerRange == 0)
+        if (ShipStatsUpgradesStatic.GetShipScannerRange() == 0)
         {
             scannerRange = new Vector3(3f, 3f, 1f);
         }
-        else if (PlayerStatsUpgradesStatic.scannerRange == 1)
+        else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 1)
         {
             scannerRange = new Vector3(4f, 4f, 1f);
         }
-        else if (PlayerStatsUpgradesStatic.scannerRange == 2)
+        else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 2)
         {
             scannerRange = new Vector3(5f, 5f, 1f);
         }
-        else if (PlayerStatsUpgradesStatic.scannerRange == 3)
+        else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 3)
         {
             scannerRange = new Vector3(6f, 6f, 1f);
         }
-        else if (PlayerStatsUpgradesStatic.scannerRange == 4)
+        else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 4)
         {
             scannerRange = new Vector3(7f, 7f, 1f);
         }

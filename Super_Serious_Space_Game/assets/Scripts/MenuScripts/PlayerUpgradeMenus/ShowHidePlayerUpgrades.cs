@@ -9,6 +9,7 @@ public class ShowHidePlayerUpgrades : MonoBehaviour {
     public Button myUpgradeButton;
     public int myUpgradeCost;
     public bool upgradeMaxed;
+    public bool isCredits;
 
 	// Use this for initialization
 	void Start ()
@@ -19,20 +20,47 @@ public class ShowHidePlayerUpgrades : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        EnableDisablePanel();
+        if (isCredits)
+        {
+            EnableDisablePanelCredits();
+        }
+        else
+        {
+            EnableDisablePanelXP();
+        }
     }
 
-    private void EnableDisablePanel()
+    private void EnableDisablePanelXP()
     {
         // disable the upgrade not enough XP
-        if (myUpgradeCost > PlayerInfoStatic.CurrentXP)
+        if (myUpgradeCost > PlayerInfoStatic.CurrentXP && !upgradeMaxed)
         {
-            if (!upgradeMaxed)
-            {
-                hidePanel.SetActive(true);
-                myUpgradeButton.enabled = true;
-                myUpgradeButton.interactable = false;
-            }
+            hidePanel.SetActive(true);
+            myUpgradeButton.enabled = true;
+            myUpgradeButton.interactable = false;
+        }
+        else if (upgradeMaxed)
+        {
+            hidePanel.SetActive(false);
+            myUpgradeButton.gameObject.SetActive(false);
+            myUpgradeButton.interactable = false;
+        }
+        else
+        {
+            hidePanel.SetActive(false);
+            myUpgradeButton.enabled = true;
+            myUpgradeButton.interactable = true;
+        }
+    }
+
+    private void EnableDisablePanelCredits()
+    {
+        // disable the upgrade not enough XP
+        if (myUpgradeCost > PlayerInfoStatic.CurrentCredits && !upgradeMaxed)
+        {
+            hidePanel.SetActive(true);
+            myUpgradeButton.enabled = true;
+            myUpgradeButton.interactable = false;
         }
         else if (upgradeMaxed)
         {

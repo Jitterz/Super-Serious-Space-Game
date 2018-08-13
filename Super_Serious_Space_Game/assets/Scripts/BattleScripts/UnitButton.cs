@@ -101,7 +101,7 @@ public class UnitButton : MonoBehaviour {
     private void DisableOrEnableButton()
     {      
 
-        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < PlayerStatsUpgradesStatic.unitMaxCapacity)
+        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < ShipStatsUpgradesStatic.GetPlayerUnitMaxCapacity())
         {
             myButton.interactable = true;
         }

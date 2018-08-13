@@ -34,14 +34,14 @@ public class PlayerInfoStatic : MonoBehaviour {
 
     // Resources
     public static float CurrentShipFuel;
-    public static float CurrentCredits;
+    public static float CurrentCredits = 500;
     public static float CurrentXP = 100000;
 
     public static string PlayerName;
     public static string HomePlanetType;
     public static string HomePlanetPositiveEffects;
     public static string HomePlanetNegativeEffects;
-    public static string CurrentShipName;
+    public static string CurrentShipName = "Partinili";
     public static string CurrentShipSpecialAbility;
     public static float CurrentShipPower;
     public static float CurrentShipCapacity;

@@ -31,4 +31,18 @@ public class StoredUpgradeCostsStatic
     public static int pokoMinerResourceMiningGainUpgradeCost = 500;
     public static int pokoMinerHealthUpgradeCost = 150;
     public static int pokoMinerMoveSpeedUpgradeCost = 100;
+
+    // Ship specific upgrades
+    // Partinili
+    public static int partiniliPowerCapacityUpgradeCost = 50;
+    public static int partiniliShipSpeedUpgradeCost = 150;
+    public static int partiniliScannerUpgradeCost = 100;
+    public static int partiniliScannerRangeUpgradeCost = 50;
+    public static int partiniliUnitCapacityUpgradeCost = 25;
+    public static int partiniliFuelCapacityUpgradeCost = 75;
+    public static int partiniliTurretDamageUpgradeCost = 100;
+    public static int partiniliTurretRangeUpgradeCost = 75;
+    public static int partiniliTurretHealthUpgradeCost = 50;
+    public static int partiniliTurretCostUpgradeCost = 25;
+    public static int partiniliTurretCooldownUpgradeCost = 100;
 }
