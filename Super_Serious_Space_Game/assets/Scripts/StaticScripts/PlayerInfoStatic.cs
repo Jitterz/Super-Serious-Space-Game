@@ -34,7 +34,7 @@ public class PlayerInfoStatic : MonoBehaviour {
 
     // Resources
     public static float CurrentShipFuel;
-    public static float CurrentCredits = 500;
+    public static float CurrentCredits = 5000;
     public static float CurrentXP = 100000;
 
     public static string PlayerName;
@@ -48,6 +48,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static Sprite HomePlanetSprite;
     public static Sprite ShipImage;
     public static string SelectedMiner = "PokoMiner";
+    public static string SelectedSpawner = "SpawnPod";
 
     public static int CardID;
     public static List<GameObject> PlayerUnitCards;

@@ -18,14 +18,14 @@ public class PokoMiner : MonoBehaviour {
     private PlayerBattleManager playerBattleManagerScript;
     private EnemyBattleManager enemyBattleManagerScript;
     private UnitStats myStats;
-    private int playerMiningGain = 120;
-    private int enemyMiningGain = 20;
+    private int playerMiningGain;
+    private int enemyMiningGain;
 
     // Use this for initialization
     void Start ()
     {
         myStats = GetComponent<UnitStats>();
-        myStats.unitCurrentMoveSpeed = myStats.unitMoveSpeed;
+          
         animator = GetComponent<Animator>();
         minerAtNode = GetComponent<MoveToNode>();
         playerBattleManager = GameObject.Find("PlayerBattleManager");
@@ -37,13 +37,18 @@ public class PokoMiner : MonoBehaviour {
         {
             playerBattleManagerScript.myPlayerMiners.Add(gameObject);
             playerBattleManagerScript.mySpawnedUnits.Add(gameObject);
-            playerBattleManagerScript.spawnedUnitsCapacityCount++;
-            miningGain = playerMiningGain;
+
+            // Add player upgrades here
+            playerMiningGain = (20 + MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade);
+            myStats.unitCurrentMoveSpeed = (myStats.unitMoveSpeed + MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade);
+            myStats.health += MinersStatsUpgradesStatic.pokoMinerHealthUpgrade;
+            miningGain = playerMiningGain + 200;
         }
         else
         {
             enemyBattleManagerScript.myEnemyMiners.Add(gameObject);
             enemyBattleManagerScript.mySpawnedUnits.Add(gameObject);
+            // need to add enemy miner adjustments here based on the AIs personal upgrades
         }
     }
 	

@@ -17,7 +17,7 @@ public class MinerButton : MonoBehaviour {
     private float startBuilTime;
     private bool isOnCooldown;
     private int myUnitCost;
-    private int myBuildTime;
+    private float myBuildTime;
     private int playerUnitMaxCapacity;
 
     // Use this for initialization
@@ -29,8 +29,8 @@ public class MinerButton : MonoBehaviour {
         playerBattleManagerScript = playerBattleManager.GetComponent<PlayerBattleManager>();
 
         // need to set all of my variables based on any upgrades the unit might have
-        myUnitCost = myStats.unitCost;
-        myBuildTime = myStats.unitBuildTime;
+        myUnitCost = myStats.unitCost - MinersStatsUpgradesStatic.pokoMinerResourceUpgrade;
+        myBuildTime = myStats.unitBuildTime - MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade;
 
         myCostText.text = myUnitCost.ToString();
     }
@@ -41,41 +41,14 @@ public class MinerButton : MonoBehaviour {
         UpdatePlayerResourceAmountMyResource();
 
         DisableOrEnableButton();
-
-        if (isOnCooldown)
-        {
-            if (AnimateButtonBuildTime())
-            {
-                myButton.interactable = true;
-                isOnCooldown = false;
-                cooldownImage.fillAmount = 0;
-            }
-        }
     }
 
     public void SpawnUnit()
     {
         if (playerResourceAmountMyResource >= myUnitCost)
         {
-            startBuilTime = 0;
-            cooldownImage.fillAmount = 1;
-            isOnCooldown = true;
             playerBattleManagerScript.SpawnPlayerUnit(myUnit, myBuildTime, myUnitCost);
-            myButton.interactable = false;
-        }
-    }
-
-    private bool AnimateButtonBuildTime()
-    {
-        startBuilTime += Time.deltaTime;
-        if (startBuilTime >= myBuildTime)
-        {
-            return true;
-        }
-        else
-        {
-            cooldownImage.fillAmount -= Time.deltaTime / myBuildTime;
-            return false;
+            playerBattleManagerScript.spawnedUnitsCapacityCount++;
         }
     }
 

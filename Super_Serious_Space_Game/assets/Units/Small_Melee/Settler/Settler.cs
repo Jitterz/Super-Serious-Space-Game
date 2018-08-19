@@ -34,7 +34,6 @@ public class Settler : MonoBehaviour {
         if (gameObject.tag == "PlayerUnit")
         {
             playerBattleManagerScript.mySpawnedUnits.Add(gameObject);
-            playerBattleManagerScript.spawnedUnitsCapacityCount++;
         }
         else
         {

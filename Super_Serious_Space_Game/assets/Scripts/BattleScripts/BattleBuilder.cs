@@ -5,7 +5,6 @@ using UnityEngine;
 public class BattleBuilder : MonoBehaviour {
 
     public List<GameObject> playerResourcePositions;
-    public List<GameObject> playerSpawnPodLocations;
     public List<GameObject> enemyResourcePositions;
     public List<GameObject> enemySpawnPodLocations;
     public List<GameObject> playerStartingMinerLocations;
@@ -43,12 +42,6 @@ public class BattleBuilder : MonoBehaviour {
     {
 		
 	}
-
-    private void OnEnable()
-    {
-        
-               
-    }
 
     private void Awake()
     {
@@ -211,7 +204,8 @@ public class BattleBuilder : MonoBehaviour {
     private void PlacePlayerSpawnPods()
     {
         // spawn the players initial spawn pod at location 1
-        GameObject newSpawnPod = Instantiate(playerSpawnPod, playerSpawnPodLocations[0].transform.position, Quaternion.identity);
+        GameObject newSpawnPod = Instantiate(playerSpawnPod, playerBattleManagerScript.playerSpawnPodLocations[0].transform.position, Quaternion.identity);
+        playerBattleManagerScript.playerSpawnPodLocations.RemoveAt(0);
         newSpawnPod.tag = "PlayerSpawnPod";
         playerBattleManagerScript.activeSpawnPodScripts.Add(newSpawnPod.GetComponent<SpawnPod>());
     }

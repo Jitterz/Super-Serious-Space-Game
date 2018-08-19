@@ -128,6 +128,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliPowerCapacity.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliPowerCapacityUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliPowerCapacity / (float)ShipStatsUpgradesStatic.partiniliPowerCapacityMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliPowerCapacity, ShipStatsUpgradesStatic.partiniliPowerCapacityMax);
         }
         else if (myName == "PartiniliShipSpeedUpgradePanel")
         {
@@ -135,6 +136,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliShipSpeed.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliShipSpeedUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliShipSpeed / (float)ShipStatsUpgradesStatic.partiniliShipSpeedMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliShipSpeed, ShipStatsUpgradesStatic.partiniliShipSpeedMax);
         }
         else if (myName == "PartiniliScannerUpgradePanel")
         {
@@ -142,6 +144,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliScannerLevel.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliScannerUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliScannerLevel / (float)ShipStatsUpgradesStatic.partiniliScannerLevelMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerLevel, ShipStatsUpgradesStatic.partiniliScannerLevelMax);
         }
         else if (myName == "PartiniliScannerRangeUpgradePanel")
         {
@@ -149,6 +152,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliScannerRange.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliScannerRangeUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliScannerRange / (float)ShipStatsUpgradesStatic.partiniliScannerRangeMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerRange, ShipStatsUpgradesStatic.partiniliScannerRangeMax);
         }
         else if (myName == "PartiniliUnitCapacityUpgradePanel")
         {
@@ -156,6 +160,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliUnitMaxCapacity.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliUnitCapacityUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliUnitMaxCapacity / (float)ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliUnitMaxCapacity, ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
         }
         else if (myName == "PartiniliFuelCapacityUpgradePanel")
         {
@@ -163,6 +168,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.partiniliFuelCapacity.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliFuelCapacityUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliFuelCapacity / (float)ShipStatsUpgradesStatic.partiniliFuelCapacityMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliFuelCapacity, ShipStatsUpgradesStatic.partiniliFuelCapacityMax);
         }
         else if (myName == "TurretDamageUpgradePanel")
         {
@@ -170,6 +176,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.turretDamageUpgrade.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliTurretDamageUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.turretDamageUpgrade / (float)ShipStatsUpgradesStatic.turretDamageUpgradeMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.turretDamageUpgrade, ShipStatsUpgradesStatic.turretDamageUpgradeMax);
         }
         else if (myName == "TurretRangeUpgradePanel")
         {
@@ -177,6 +184,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.turretRangeUpgrade.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliTurretRangeUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.turretRangeUpgrade / (float)ShipStatsUpgradesStatic.turretRangeUpgradeMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.turretRangeUpgrade, ShipStatsUpgradesStatic.turretRangeUpgradeMax);
         }
         else if (myName == "TurretHealthUpgradePanel")
         {
@@ -184,6 +192,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.turretHealthUpgrade.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliTurretHealthUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.turretHealthUpgrade / (float)ShipStatsUpgradesStatic.turretHealthUpgradeMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.turretHealthUpgrade, ShipStatsUpgradesStatic.turretHealthUpgradeMax);
         }
         else if (myName == "TurretCostUpgradePanel")
         {
@@ -191,6 +200,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.turretResourceDiscount.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliTurretCostUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.turretResourceDiscount / (float)ShipStatsUpgradesStatic.turretResourceDiscountMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.turretResourceDiscount, ShipStatsUpgradesStatic.turretResourceDiscountMax);
         }
         else if (myName == "TurretCooldownUpgradePanel")
         {
@@ -198,6 +208,7 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             myValue.text = ShipStatsUpgradesStatic.turretCooldownReduction.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliTurretCooldownUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.turretCooldownReduction / (float)ShipStatsUpgradesStatic.turretCooldownReductionMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.turretCooldownReduction, ShipStatsUpgradesStatic.turretCooldownReductionMax);
         }
     }
 }

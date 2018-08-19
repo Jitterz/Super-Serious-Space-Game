@@ -44,17 +44,7 @@ public class UnitButton : MonoBehaviour {
     {
         UpdatePlayerResourceAmountMyResource();
 
-        DisableOrEnableButton();
-
-        if (isOnCooldown)
-        {
-            if (AnimateButtonBuildTime())
-            {
-                myButton.interactable = true;
-                isOnCooldown = false;
-                cooldownImage.fillAmount = 0;
-            }
-        }
+        DisableOrEnableButton();       
     }
 
     private void InstantiateMyUnit()
@@ -75,26 +65,9 @@ public class UnitButton : MonoBehaviour {
     public void SpawnUnit()
     {
         if (playerResourceAmountMyResource >= myUnitCost)
-        {
-            startBuilTime = 0;
-            cooldownImage.fillAmount = 1;
-            isOnCooldown = true;
-            playerBattleManagerScript.SpawnPlayerUnit(mySpawnableUnit, myBuildTime, myUnitCost);           
-            myButton.interactable = false;
-        }
-    }
-
-    private bool AnimateButtonBuildTime()
-    {
-        startBuilTime += Time.deltaTime;
-        if (startBuilTime >= myBuildTime)
-        {
-            return true;
-        }
-        else
-        {
-            cooldownImage.fillAmount -= Time.deltaTime / myBuildTime;
-            return false;
+        {       
+            playerBattleManagerScript.SpawnPlayerUnit(mySpawnableUnit, myBuildTime, myUnitCost);
+            playerBattleManagerScript.spawnedUnitsCapacityCount++;
         }
     }
 

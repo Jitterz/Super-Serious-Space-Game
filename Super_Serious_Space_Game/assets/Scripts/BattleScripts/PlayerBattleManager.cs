@@ -8,7 +8,7 @@ public class PlayerBattleManager : MonoBehaviour {
     
     public GameObject selectedMiner;
     public GameObject selectedUnit;
-    public List<GameObject> spawnerLocations;
+    public List<GameObject> playerSpawnPodLocations;
     public SpawnPod spawnPod;
     public List<SpawnPod> activeSpawnPodScripts;
     public List<GameObject> myPlayerMiners;
@@ -56,15 +56,11 @@ public class PlayerBattleManager : MonoBehaviour {
 
     private void GetSpawnPodCount()
     {
-        spawnPodCount = 0;
+        spawnPodCount = activeSpawnPodScripts.Count;
         foreach (SpawnPod spawnPod in activeSpawnPodScripts)
         {
-            if (!spawnPod.imSpawningSomething)
-            {
-                spawnPodCount++;
-            }
-            else
-            {
+            if (spawnPod.imSpawningSomething)
+            {       
                 spawnPodCount--;
             }
         }
@@ -78,6 +74,7 @@ public class PlayerBattleManager : MonoBehaviour {
             {
                 SubtractResource(unitToSpawn, unitCost);
                 activeSpawnPodScripts[i].GiveSpawnPodUnit(unitToSpawn, spawnTime);
+                break;
             }
         }
     }
@@ -290,9 +287,9 @@ public class PlayerBattleManager : MonoBehaviour {
     {
         for (int i = 0; i < playerResourcesAmount.Length; i++)
         {
-            if (playerResourcesAmount[i] > PlayerStatsUpgradesStatic.maxResourceAmounts[i])
+            if (playerResourcesAmount[i] > ResourcesStatsUpgradesStatic.maxResourceAmounts[i])
             {
-                playerResourcesAmount[i] = PlayerStatsUpgradesStatic.maxResourceAmounts[i];
+                playerResourcesAmount[i] = ResourcesStatsUpgradesStatic.maxResourceAmounts[i];
             }
         }
     }

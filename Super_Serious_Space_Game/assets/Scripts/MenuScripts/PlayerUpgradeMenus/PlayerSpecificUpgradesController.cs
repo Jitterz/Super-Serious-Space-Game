@@ -100,6 +100,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.luck.ToString();
             myXPCost.text = StoredUpgradeCostsStatic.luckUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.luck / (float)PlayerStatsUpgradesStatic.luckMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.luck, PlayerStatsUpgradesStatic.luckMax);
         }
         else if (myName == "StartingMinersUpgradePanel")
         {
@@ -107,6 +108,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.startingMiners.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.startingMiners / (float)PlayerStatsUpgradesStatic.startingMinersMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.startingMiners, PlayerStatsUpgradesStatic.startingMinersMax);
         }
         else if (myName == "XPGainIncreaseUpgradePanel")
         {
@@ -114,6 +116,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.xpGainIncrease.ToString() + "%";
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.xpGainIncrease / (float)PlayerStatsUpgradesStatic.xpGainIncreaseMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.xpGainIncrease, PlayerStatsUpgradesStatic.xpGainIncreaseMax);
         }
         else if (myName == "CreditsGainIncreaseUpgradePanel")
         {
@@ -121,6 +124,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.creditsGainIncrease.ToString() + "%";
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.creditsGainIncrease / (float)PlayerStatsUpgradesStatic.creditsGainIncreaseMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.creditsGainIncrease, PlayerStatsUpgradesStatic.creditsGainIncreaseMax);
         }
         else if (myName == "FuelGainIncreaseUpgradePanel")
         {
@@ -128,6 +132,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.fuelGainIncrease.ToString() + "%";
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.fuelGainIncrease / (float)PlayerStatsUpgradesStatic.fuelGainIncreaseMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.fuelGainIncrease, PlayerStatsUpgradesStatic.fuelGainIncreaseMax);
         }
         else if (myName == "LowerShopPricesUpgradePanel")
         {
@@ -135,6 +140,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.lowerShopPrices.ToString() + "%";
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.lowerShopPrices / (float)PlayerStatsUpgradesStatic.lowerShopPricesMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.lowerShopPrices, PlayerStatsUpgradesStatic.lowerShopPricesMax);
         }
         else if (myName == "SellValueUpgradePanel")
         {
@@ -142,6 +148,7 @@ public class PlayerSpecificUpgradesController : MonoBehaviour {
             myValue.text = PlayerStatsUpgradesStatic.sellValueIncrease.ToString() + "%";
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
             upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.sellValueIncrease / (float)PlayerStatsUpgradesStatic.sellValueIncreaseMax);
+            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.sellValueIncrease, PlayerStatsUpgradesStatic.sellValueIncreaseMax);
         }
     }
 }

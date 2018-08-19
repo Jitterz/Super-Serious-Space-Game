@@ -33,66 +33,66 @@ public class ResourceSpecificUpgradesController : MonoBehaviour
     {
         if (myName == "GoldMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceGoldMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceGoldMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.goldMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.goldMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceGoldMaxAmount, PlayerStatsUpgradesStatic.resourceGoldMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceGoldMaxAmount, ResourcesStatsUpgradesStatic.resourceGoldMaxAmountMax);
         }
         else if (myName == "IronMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceIronMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceIronMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.ironMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.ironMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceIronMaxAmount, PlayerStatsUpgradesStatic.resourceIronMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceIronMaxAmount, ResourcesStatsUpgradesStatic.resourceIronMaxAmountMax);
         }
         else if (myName == "CopperMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceCopperMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceCopperMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.copperMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.copperMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceCopperMaxAmount, PlayerStatsUpgradesStatic.resourceCopperMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCopperMaxAmount, ResourcesStatsUpgradesStatic.resourceCopperMaxAmountMax);
         }
         else if (myName == "NickelMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceNickelMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceNickelMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.nickelMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.nickelMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier); ;
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceNickelMaxAmount, PlayerStatsUpgradesStatic.resourceNickelMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceNickelMaxAmount, ResourcesStatsUpgradesStatic.resourceNickelMaxAmountMax);
         }
         else if (myName == "SilverMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceSilverMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceSilverMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.silverMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.silverMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceSilverMaxAmount, PlayerStatsUpgradesStatic.resourceSilverMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceSilverMaxAmount, ResourcesStatsUpgradesStatic.resourceSilverMaxAmountMax);
         }
         else if (myName == "CobaltMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceCobaltMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceCobaltMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.cobaltMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.cobaltMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceCobaltMaxAmount, PlayerStatsUpgradesStatic.resourceCobaltMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCobaltMaxAmount, ResourcesStatsUpgradesStatic.resourceCobaltMaxAmountMax);
         }
         else if (myName == "CadmiumMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceCadmiumMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.cadmiumMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.cadmiumMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceCadmiumMaxAmount, PlayerStatsUpgradesStatic.resourceCadmiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmount, ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmountMax);
         }
         else if (myName == "IridiumMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourceIridiumMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourceIridiumMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.iridiumMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.iridiumMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourceIridiumMaxAmount, PlayerStatsUpgradesStatic.resourceIridiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceIridiumMaxAmount, ResourcesStatsUpgradesStatic.resourceIridiumMaxAmountMax);
         }
         else if (myName == "PaladiumMaxUpgradePanel")
         {
-            PlayerStatsUpgradesStatic.resourcePaladiumMaxAmount += 25;
+            ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmount += 25;
             PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.paladiumMaxStorageUpgradeCost += (int)(StoredUpgradeCostsStatic.paladiumMaxStorageUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.resourcePaladiumMaxAmount, PlayerStatsUpgradesStatic.resourcePaladiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmount, ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmountMax);
         }
 
         GetMyUpgradeCostAndUpdatePanel();
@@ -112,65 +112,74 @@ public class ResourceSpecificUpgradesController : MonoBehaviour
         if (myName == "GoldMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.goldMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceGoldMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceGoldMaxAmount.ToString();
             myXPCost.text = StoredUpgradeCostsStatic.goldMaxStorageUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceGoldMaxAmount / (float)PlayerStatsUpgradesStatic.resourceGoldMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceGoldMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceGoldMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceGoldMaxAmount, ResourcesStatsUpgradesStatic.resourceGoldMaxAmountMax);
         }
         else if (myName == "IronMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.ironMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceIronMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceIronMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceIronMaxAmount / (float)PlayerStatsUpgradesStatic.resourceIronMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceIronMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceIronMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceIronMaxAmount, ResourcesStatsUpgradesStatic.resourceIronMaxAmountMax);
         }
         else if (myName == "CopperMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.copperMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceCopperMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceCopperMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceCopperMaxAmount / (float)PlayerStatsUpgradesStatic.resourceCopperMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceCopperMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceCopperMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCopperMaxAmount, ResourcesStatsUpgradesStatic.resourceCopperMaxAmountMax);
         }
         else if (myName == "NickelMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.nickelMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceNickelMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceNickelMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceNickelMaxAmount / (float)PlayerStatsUpgradesStatic.resourceNickelMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceNickelMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceNickelMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceNickelMaxAmount, ResourcesStatsUpgradesStatic.resourceNickelMaxAmountMax);
         }
         else if (myName == "SilverMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.silverMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceSilverMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceSilverMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceSilverMaxAmount / (float)PlayerStatsUpgradesStatic.resourceSilverMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceSilverMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceSilverMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceSilverMaxAmount, ResourcesStatsUpgradesStatic.resourceSilverMaxAmountMax);
         }
         else if (myName == "CobaltMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.cobaltMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceCobaltMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceCobaltMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceCobaltMaxAmount / (float)PlayerStatsUpgradesStatic.resourceCobaltMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceCobaltMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceCobaltMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCobaltMaxAmount, ResourcesStatsUpgradesStatic.resourceCobaltMaxAmountMax);
         }
         else if (myName == "CadmiumMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.cadmiumMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceCadmiumMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceCadmiumMaxAmount / (float)PlayerStatsUpgradesStatic.resourceCadmiumMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmount, ResourcesStatsUpgradesStatic.resourceCadmiumMaxAmountMax);
         }
         else if (myName == "IridiumMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.iridiumMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourceIridiumMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourceIridiumMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourceIridiumMaxAmount / (float)PlayerStatsUpgradesStatic.resourceIridiumMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourceIridiumMaxAmount / (float)ResourcesStatsUpgradesStatic.resourceIridiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourceIridiumMaxAmount, ResourcesStatsUpgradesStatic.resourceIridiumMaxAmountMax);
         }
         else if (myName == "PaladiumMaxUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.paladiumMaxStorageUpgradeCost;
-            myValue.text = PlayerStatsUpgradesStatic.resourcePaladiumMaxAmount.ToString();
+            myValue.text = ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmount.ToString();
             myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.resourcePaladiumMaxAmount / (float)PlayerStatsUpgradesStatic.resourcePaladiumMaxAmountMax);
+            upgradeBar.fillAmount = ((float)ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmount / (float)ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmountMax);
+            CheckIfStatIsMaxed(ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmount, ResourcesStatsUpgradesStatic.resourcePaladiumMaxAmountMax);
         }
     }
 }

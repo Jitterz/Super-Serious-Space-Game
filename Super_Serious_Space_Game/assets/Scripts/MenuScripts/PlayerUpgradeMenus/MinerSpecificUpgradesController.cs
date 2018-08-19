@@ -34,38 +34,38 @@ public class MinerSpecificUpgradesController : MonoBehaviour {
         {
             if (myName == "HealthUpgradePanel")
             {
-                PlayerStatsUpgradesStatic.pokoMinerHealthUpgrade += 10;
+                MinersStatsUpgradesStatic.pokoMinerHealthUpgrade += 10;
                 PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
                 StoredUpgradeCostsStatic.pokoMinerHealthUpgradeCost += (int)(StoredUpgradeCostsStatic.pokoMinerHealthUpgradeCost * upgradeCostIncreaseMultiplier);
-                CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.pokoMinerHealthUpgrade, PlayerStatsUpgradesStatic.pokoMinerHealthUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerHealthUpgrade, MinersStatsUpgradesStatic.pokoMinerHealthUpgradeMax);
             }
             else if (myName == "MiningGainUpgradePanel")
             {
-                PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade += 5;
+                MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade += 5;
                 PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
                 StoredUpgradeCostsStatic.pokoMinerResourceMiningGainUpgradeCost += (int)(StoredUpgradeCostsStatic.pokoMinerResourceMiningGainUpgradeCost * upgradeCostIncreaseMultiplier);
-                CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade, PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade, MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgradeMax);
             }
             else if (myName == "ResourceCostUpgradePanel")
             {
-                PlayerStatsUpgradesStatic.pokoMinerResourceUpgrade += 5;
+                MinersStatsUpgradesStatic.pokoMinerResourceUpgrade += 5;
                 PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
                 StoredUpgradeCostsStatic.pokoMinerResourceUpgradeCost += (int)(StoredUpgradeCostsStatic.pokoMinerResourceUpgradeCost * upgradeCostIncreaseMultiplier);
-                CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.pokoMinerResourceUpgrade, PlayerStatsUpgradesStatic.pokoMinerResourceUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerResourceUpgrade, MinersStatsUpgradesStatic.pokoMinerResourceUpgradeMax);
             }
             else if (myName == "BuildTimeUpgradePanel")
             {
-                PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade += 0.2f;
+                MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade += 0.2f;
                 PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
                 StoredUpgradeCostsStatic.pokoMinerSpawnTimeUpgradeCost += (int)(StoredUpgradeCostsStatic.pokoMinerSpawnTimeUpgradeCost * upgradeCostIncreaseMultiplier); ;
-                CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade, PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade, MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgradeMax);
             }
             else if (myName == "MoveSpeedUpgradePanel")
             {
-                PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade += 2;
+                MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade += 2;
                 PlayerInfoStatic.CurrentXP -= upgradeCostControl.myUpgradeCost;
                 StoredUpgradeCostsStatic.pokoMinerMoveSpeedUpgradeCost += (int)(StoredUpgradeCostsStatic.pokoMinerMoveSpeedUpgradeCost * upgradeCostIncreaseMultiplier);
-                CheckIfStatIsMaxed(PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade, PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade, MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgradeMax);
             }            
         }
 
@@ -97,37 +97,42 @@ public class MinerSpecificUpgradesController : MonoBehaviour {
             if (myName == "HealthUpgradePanel")
             {
                 upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.pokoMinerHealthUpgradeCost;
-                myValue.text = PlayerStatsUpgradesStatic.pokoMinerHealthUpgrade.ToString();
+                myValue.text = MinersStatsUpgradesStatic.pokoMinerHealthUpgrade.ToString();
                 myXPCost.text = StoredUpgradeCostsStatic.pokoMinerHealthUpgradeCost.ToString();
-                upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.pokoMinerHealthUpgrade / (float)PlayerStatsUpgradesStatic.pokoMinerHealthUpgradeMax);
+                upgradeBar.fillAmount = ((float)MinersStatsUpgradesStatic.pokoMinerHealthUpgrade / (float)MinersStatsUpgradesStatic.pokoMinerHealthUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerHealthUpgrade, MinersStatsUpgradesStatic.pokoMinerHealthUpgradeMax);
             }
             else if (myName == "MiningGainUpgradePanel")
             {
                 upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.pokoMinerResourceMiningGainUpgradeCost;
-                myValue.text = PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade.ToString();
+                myValue.text = MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade.ToString();
                 myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-                upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade / (float)PlayerStatsUpgradesStatic.pokoMinerResourceMiningGainUpgradeMax);
+                upgradeBar.fillAmount = ((float)MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade / (float)MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgrade, MinersStatsUpgradesStatic.pokoMinerResourceMiningGainUpgradeMax);
             }
             else if (myName == "ResourceCostUpgradePanel")
             {
                 upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.pokoMinerResourceUpgradeCost;
-                myValue.text = PlayerStatsUpgradesStatic.pokoMinerResourceUpgrade.ToString();
+                myValue.text = MinersStatsUpgradesStatic.pokoMinerResourceUpgrade.ToString();
                 myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-                upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.pokoMinerResourceUpgrade / (float)PlayerStatsUpgradesStatic.pokoMinerResourceUpgradeMax);
+                upgradeBar.fillAmount = ((float)MinersStatsUpgradesStatic.pokoMinerResourceUpgrade / (float)MinersStatsUpgradesStatic.pokoMinerResourceUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerResourceUpgrade, MinersStatsUpgradesStatic.pokoMinerResourceUpgradeMax);
             }
             else if (myName == "BuildTimeUpgradePanel")
             {
                 upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.pokoMinerSpawnTimeUpgradeCost;
-                myValue.text = PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade.ToString();
+                myValue.text = MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade.ToString();
                 myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-                upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade / (float)PlayerStatsUpgradesStatic.pokoMinerSpawnTimeUpgradeMax);
+                upgradeBar.fillAmount = ((float)MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade / (float)MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgrade, MinersStatsUpgradesStatic.pokoMinerSpawnTimeUpgradeMax);
             }
             else if (myName == "MoveSpeedUpgradePanel")
             {
                 upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.pokoMinerMoveSpeedUpgradeCost;
-                myValue.text = PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade.ToString();
+                myValue.text = MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade.ToString();
                 myXPCost.text = upgradeCostControl.myUpgradeCost.ToString();
-                upgradeBar.fillAmount = ((float)PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade / (float)PlayerStatsUpgradesStatic.pokoMinerMoveSpeedUpgradeMax);
+                upgradeBar.fillAmount = ((float)MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade / (float)MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgradeMax);
+                CheckIfStatIsMaxed(MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgrade, MinersStatsUpgradesStatic.pokoMinerMoveSpeedUpgradeMax);
             }           
         }
     }

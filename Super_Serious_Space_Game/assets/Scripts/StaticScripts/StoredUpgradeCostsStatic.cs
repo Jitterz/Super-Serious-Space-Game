@@ -45,4 +45,11 @@ public class StoredUpgradeCostsStatic
     public static int partiniliTurretHealthUpgradeCost = 50;
     public static int partiniliTurretCostUpgradeCost = 25;
     public static int partiniliTurretCooldownUpgradeCost = 100;
+
+    // Spawner specific upgrades
+    // Spawn Pod
+    public static int spawnPodMaxSpawnedUpgradeCost = 500;
+    public static int spawnPodBuildTimeUpgradeCost = 150;
+    public static int spawnPodCostUpgradeCost = 50;
+    public static int spawnPodUnitBuildSpeedUpgradeCost = 350;
 }
