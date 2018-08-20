@@ -7,16 +7,18 @@ public class ShipStatsUpgradesStatic : MonoBehaviour {
     // ---------------------------------------------Partinili-----------------------------------------------//
     public static int partiniliPowerCapacity = 50;
     public static int partiniliPowerCapacityMax = 150;
-    public static int partiniliShipSpeed = 2;
+    public static int partiniliShipSpeed = 4;
     public static int partiniliShipSpeedMax = 10;
     public static int partiniliScannerLevel = 0;
     public static int partiniliScannerLevelMax = 5;
     public static int partiniliScannerRange = 0;
     public static int partiniliScannerRangeMax = 4;
-    public static int partiniliUnitMaxCapacity = 8;
+    public static int partiniliUnitCapacity = 8;
     public static int partiniliUnitMaxCapacityMax = 20;
     public static int partiniliFuelCapacity = 75;
     public static int partiniliFuelCapacityMax = 150;
+    public static int partiniliScannerCostUpgrade = 0;
+    public static int partiniliScannerCostUpgradeMax = 40;
 
     // ------------------------------------------SHIP SPECIAL------------------------------------------//
     //--------TURRET SPECIAL----------------------//
@@ -31,11 +33,34 @@ public class ShipStatsUpgradesStatic : MonoBehaviour {
     public static int turretCooldownReduction = 0;
     public static int turretCooldownReductionMax = 20;
 
-    public static int GetPlayerUnitMaxCapacity()
+    public static int GetShipScannerCost()
     {
         if (PlayerInfoStatic.CurrentShipName == "Partinili")
         {
-            return partiniliUnitMaxCapacity;
+            return partiniliScannerCostUpgrade;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    public static int GetShipUnitCapacity()
+    {
+        if (PlayerInfoStatic.CurrentShipName == "Partinili")
+        {
+            return partiniliUnitCapacity;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public static int GetShipUnitCapacityMax()
+    {
+        if (PlayerInfoStatic.CurrentShipName == "Partinili")
+        {
+            return partiniliUnitMaxCapacityMax;
         }
         else
         {

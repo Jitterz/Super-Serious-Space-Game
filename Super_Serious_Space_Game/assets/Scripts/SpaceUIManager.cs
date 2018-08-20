@@ -53,6 +53,7 @@ public class SpaceUIManager : MonoBehaviour {
         fuelBarDefualtBckColor = backGroundFuelBar.color;
         fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
         fuelBarText.text = PlayerInfoStatic.CurrentShipFuel.ToString();
+        powerBar.maxValue = ShipStatsUpgradesStatic.GetShipPowerCapacity();
         powerBar.value = PlayerInfoStatic.CurrentShipPower;
         powerBarText.text = PlayerInfoStatic.CurrentShipPower.ToString();
         shipController = playerShip.GetComponent<ShipController>();
@@ -72,14 +73,18 @@ public class SpaceUIManager : MonoBehaviour {
             Time.timeScale = 1;
             shipController.isMoving = false;
         }
-
+        
         creditsPlayerText.text = PlayerInfoStatic.CurrentCredits.ToString();
         xpPlayerText.text = PlayerInfoStatic.CurrentXP.ToString();
 
         if (Input.GetMouseButtonDown(0))
         {
             GetClickedPlanetInfo();
-        }        
+        }
+
+        fuelBar.maxValue = ShipStatsUpgradesStatic.GetShipFuelCapacity();
+        powerBarText.text = PlayerInfoStatic.CurrentShipPower.ToString();
+        powerBar.value = PlayerInfoStatic.CurrentShipPower;
 
         if (shipController.isMoving)
         {

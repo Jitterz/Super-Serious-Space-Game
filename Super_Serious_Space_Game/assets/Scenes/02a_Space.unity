@@ -1283,6 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerShip: {fileID: 1345937864}
   planetSpawner: {fileID: 441402229}
+  scannerButton: {fileID: 1112194187}
   isScanning: 0
 --- !u!50 &915669175
 Rigidbody2D:
@@ -1890,12 +1891,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 0
+  - eventID: 1
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 915669174}
-          m_MethodName: ScannerMouseOver
+          m_MethodName: ScannerMouseExit
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1907,12 +1908,12 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  - eventID: 1
+  - eventID: 0
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 915669174}
-          m_MethodName: ScannerMouseExit
+          m_MethodName: ScannerMouseOver
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1985,6 +1986,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1156805761}
+  - component: {fileID: 1156805762}
   m_Layer: 5
   m_Name: ScannerButton
   m_TagString: Untagged
@@ -2011,6 +2013,19 @@ RectTransform:
   m_AnchoredPosition: {x: -436, y: 298}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1156805762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1156805760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8914d3e506a252e4f875a25f0b0eb8cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scannerCostText: {fileID: 512029760}
+  scannerButton: {fileID: 1112194187}
 --- !u!114 &1207181838 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114783923714863816, guid: f9e7abdd71144bb42989e8b6987f62ff,
@@ -2100,8 +2115,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297172276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 169.95428, y: 122.216324, z: 0.11603093}
-  m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
+  m_LocalPosition: {x: 148.45428, y: 106.216324, z: 0.11603093}
+  m_LocalScale: {x: 0.23444444, y: 0.23444444, z: 0.23444444}
   m_Children:
   - {fileID: 1479648298}
   - {fileID: 1976573891}
@@ -2246,7 +2261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a65ae5255e8c74da25f4c00fc1d13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shipSpeed: 5
   isMoving: 0
   engine1: {fileID: 2134429353}
   engine2: {fileID: 1472835623}
@@ -6432,17 +6446,22 @@ Prefab:
     - target: {fileID: 224580821341773242, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -44
+      value: -37.86667
       objectReference: {fileID: 0}
     - target: {fileID: 224581714390160096, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: 4.2666626
       objectReference: {fileID: 0}
     - target: {fileID: 114783923714863816, guid: 7e388e94ca545bb4c997d1506cc210d8,
         type: 2}
       propertyPath: m_Text
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624166051530922, guid: 7e388e94ca545bb4c997d1506cc210d8,
+        type: 2}
+      propertyPath: m_Value
+      value: 158
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7e388e94ca545bb4c997d1506cc210d8, type: 2}

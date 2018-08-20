@@ -54,7 +54,7 @@ public class MinerButton : MonoBehaviour {
 
     private void DisableOrEnableButton()
     {
-        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < ShipStatsUpgradesStatic.GetPlayerUnitMaxCapacity())
+        if (playerResourceAmountMyResource >= myUnitCost && playerBattleManagerScript.spawnPodCount >= 1 && playerBattleManagerScript.spawnedUnitsCapacityCount < ShipStatsUpgradesStatic.GetShipUnitCapacity())
         {
             myButton.interactable = true;
         }

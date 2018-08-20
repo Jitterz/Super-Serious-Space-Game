@@ -73,11 +73,6 @@ public class PlanetInformation : MonoBehaviour {
                 conqueredLostSpriteRenderer.enabled = true;              
             }
         }       
-
-        if (planetProximityScan || isScanned)
-        {
-            mySprite.sprite = planetSprite;
-        }
     }
 
     private void CalculateRewards()

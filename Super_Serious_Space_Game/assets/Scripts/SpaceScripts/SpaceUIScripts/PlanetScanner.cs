@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlanetScanner : MonoBehaviour {
 
     public GameObject playerShip;
     public GameObject planetSpawner;
+    public Button scannerButton;
     public bool isScanning;
 
     private LineRenderer scannerLine;
@@ -33,6 +35,7 @@ public class PlanetScanner : MonoBehaviour {
     public void UseScanner()
     {
         transform.localScale = GetScannerRange();
+        PlayerInfoStatic.CurrentShipPower -= (50 - ShipStatsUpgradesStatic.GetShipScannerCost());
 
         // stop the ship
         playerShipController.isMoving = false;
@@ -103,25 +106,29 @@ public class PlanetScanner : MonoBehaviour {
 
     public void ScannerMouseOver()
     {
-        isScanning = true;
-        transform.localScale = GetScannerRange();
+        if (scannerButton.interactable == true)
+        {
+            isScanning = true;
+            transform.localScale = GetScannerRange();
 
-        scannerSprite.enabled = true;
-        
-        //playerShipController.isMoving = false;
+            scannerSprite.enabled = true;
 
-        scannerSprite.color = new Color(scannerSprite.color.r, scannerSprite.color.g, scannerSprite.color.b, 0.2f);
-        GetPossiblePlanetsToScan("enter");
+            scannerSprite.color = new Color(scannerSprite.color.r, scannerSprite.color.g, scannerSprite.color.b, 0.2f);
+            GetPossiblePlanetsToScan("enter");
+        }
     }
 
     public void ScannerMouseExit()
     {
-        isScanning = false;
-        Color alpha = scannerSprite.color;
-        alpha.a = 100;
-        scannerSprite.color = alpha;
-        scannerSprite.enabled = false;
-        GetPossiblePlanetsToScan("exit");
+        if (scannerButton.interactable == true)
+        {
+            isScanning = false;
+            Color alpha = scannerSprite.color;
+            alpha.a = 100;
+            scannerSprite.color = alpha;
+            scannerSprite.enabled = false;
+            GetPossiblePlanetsToScan("exit");
+        }
     }
 
     private void GetPossiblePlanetsToScan(string enterOrExit)
@@ -134,11 +141,42 @@ public class PlanetScanner : MonoBehaviour {
 
                 float distance = Vector3.Distance(planet.transform.position, playerShip.transform.position);
                 // if the planet is in range and is not already scanned
-                if (ShipStatsUpgradesStatic.GetShipScannerRange() == 0 && (planetInfo.isScanned == false && planetInfo.planetProximityScan == false))
+                if (!planetInfo.planetComplete && planetInfo.planetName != "Home Planet")
                 {
-                    if (distance <= 8f && ShipStatsUpgradesStatic.GetShipScannerRange() == 0)
+                    if (ShipStatsUpgradesStatic.GetShipScannerRange() == 0)
                     {
-                        planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        if (distance <= 8f)
+                        {
+                            planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        }
+                    }
+                    else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 1)
+                    {
+                        if (distance <= 10f)
+                        {
+                            planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        }
+                    }
+                    else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 2)
+                    {
+                        if (distance <= 12f)
+                        {
+                            planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        }
+                    }
+                    else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 3)
+                    {
+                        if (distance <= 14f)
+                        {
+                            planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        }
+                    }
+                    else if (ShipStatsUpgradesStatic.GetShipScannerRange() == 4)
+                    {
+                        if (distance <= 16f)
+                        {
+                            planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetScanSprite;
+                        }
                     }
                 }
             }
@@ -152,7 +190,14 @@ public class PlanetScanner : MonoBehaviour {
                 // if the planet is in range and is not already scanned
                 if (planetInfo.GetComponent<SpriteRenderer>().sprite == planetInfo.unknownPlanetScanSprite)
                 {
-                    planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetSprite;
+                    if (planetInfo.isScanned || planetInfo.planetProximityScan)
+                    {
+                        planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.planetSprite;
+                    }
+                    else
+                    {
+                        planetInfo.GetComponent<SpriteRenderer>().sprite = planetInfo.unknownPlanetSprite;
+                    }
                 }
             }
         }

@@ -38,6 +38,7 @@ public class StoredUpgradeCostsStatic
     public static int partiniliShipSpeedUpgradeCost = 150;
     public static int partiniliScannerUpgradeCost = 100;
     public static int partiniliScannerRangeUpgradeCost = 50;
+    public static int partiniliScannerCostUpgradeCost = 30;
     public static int partiniliUnitCapacityUpgradeCost = 25;
     public static int partiniliFuelCapacityUpgradeCost = 75;
     public static int partiniliTurretDamageUpgradeCost = 100;

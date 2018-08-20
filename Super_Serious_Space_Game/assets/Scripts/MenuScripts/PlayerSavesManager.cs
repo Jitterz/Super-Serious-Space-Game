@@ -23,7 +23,12 @@ public class PlayerSavesManager : MonoBehaviour {
         
     }
 
-	public void CreateNewPlayerSave()
+    private void Update()
+    {
+        
+    }
+
+    public void CreateNewPlayerSave()
     {
         PlayerInfoStatic.PlayerName = newPlayerName.text;
         PlayerInfoStatic.HomePlanetType = newPlanetType.text;

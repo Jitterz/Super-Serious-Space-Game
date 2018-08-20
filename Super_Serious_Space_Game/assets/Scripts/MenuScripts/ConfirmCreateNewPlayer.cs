@@ -32,10 +32,7 @@ public class ConfirmCreateNewPlayer : MonoBehaviour {
         shipName.text = PlayerInfoStatic.CurrentShipName;
         shipSpecialAbility.text = PlayerInfoStatic.CurrentShipSpecialAbility;
         GetCurrentBarValues(PlayerInfoStatic.CurrentShipName);
-        fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
-        powerBar.value = PlayerInfoStatic.CurrentShipPower;
-        unitCapacityBar.value = PlayerInfoStatic.CurrentShipCapacity;
-
+        
         planetImage.sprite = PlayerInfoStatic.HomePlanetSprite;
         planetType.text = PlayerInfoStatic.HomePlanetType;
         playerName.text = PlayerInfoStatic.PlayerName;
@@ -47,9 +44,15 @@ public class ConfirmCreateNewPlayer : MonoBehaviour {
     {
         if (shipName == "Partinili")
         {
-            fuelBarValue.text = PlayerInfoStatic.CurrentShipFuel.ToString() + "/" + Partinili.MaxFuel;
-            powerBarValue.text = PlayerInfoStatic.CurrentShipPower.ToString() + "/" + Partinili.MaxPower;
-            unitCapacityBarValue.text = PlayerInfoStatic.CurrentShipCapacity.ToString() + "/" + Partinili.MaxUnitCapacity;
+            fuelBarValue.text = PlayerInfoStatic.CurrentShipFuel.ToString() + "/" + ShipStatsUpgradesStatic.GetShipFuelCapacity().ToString();
+            powerBarValue.text = PlayerInfoStatic.CurrentShipPower.ToString() + "/" + ShipStatsUpgradesStatic.GetShipPowerCapacity().ToString();
+            unitCapacityBarValue.text = PlayerInfoStatic.CurrentShipCapacity.ToString() + "/" + ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax;
+            fuelBar.value = PlayerInfoStatic.CurrentShipFuel;
+            fuelBar.maxValue = ShipStatsUpgradesStatic.GetShipFuelCapacity();
+            powerBar.value = PlayerInfoStatic.CurrentShipPower;
+            powerBar.maxValue = ShipStatsUpgradesStatic.GetShipPowerCapacity();
+            unitCapacityBar.value = PlayerInfoStatic.CurrentShipCapacity;
+            unitCapacityBar.maxValue = ShipStatsUpgradesStatic.GetShipUnitCapacityMax();
         }
         if (shipName == "Tugarak")
         {

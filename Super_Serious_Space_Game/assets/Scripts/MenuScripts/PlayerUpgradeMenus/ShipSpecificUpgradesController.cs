@@ -58,12 +58,19 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             StoredUpgradeCostsStatic.partiniliScannerRangeUpgradeCost += (int)(StoredUpgradeCostsStatic.partiniliScannerRangeUpgradeCost * upgradeCostIncreaseMultiplier);
             CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerRange, ShipStatsUpgradesStatic.partiniliScannerRangeMax);
         }
+        else if (myName == "PartiniliScannerCostUpgradePanel")
+        {
+            ShipStatsUpgradesStatic.partiniliScannerCostUpgrade += 5;
+            PlayerInfoStatic.CurrentCredits -= upgradeCostControl.myUpgradeCost;
+            StoredUpgradeCostsStatic.partiniliScannerCostUpgradeCost += (int)(StoredUpgradeCostsStatic.partiniliScannerCostUpgradeCost * upgradeCostIncreaseMultiplier);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerCostUpgrade, ShipStatsUpgradesStatic.partiniliScannerCostUpgradeMax);
+        }
         else if (myName == "PartiniliUnitCapacityUpgradePanel")
         {
-            ShipStatsUpgradesStatic.partiniliUnitMaxCapacity += 1;
+            ShipStatsUpgradesStatic.partiniliUnitCapacity += 1;
             PlayerInfoStatic.CurrentCredits -= upgradeCostControl.myUpgradeCost;
             StoredUpgradeCostsStatic.partiniliUnitCapacityUpgradeCost += (int)(StoredUpgradeCostsStatic.partiniliUnitCapacityUpgradeCost * upgradeCostIncreaseMultiplier);
-            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliUnitMaxCapacity, ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliUnitCapacity, ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
         }
         else if (myName == "PartiniliFuelCapacityUpgradePanel")
         {
@@ -154,13 +161,21 @@ public class ShipSpecificUpgradesController : MonoBehaviour {
             upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliScannerRange / (float)ShipStatsUpgradesStatic.partiniliScannerRangeMax);
             CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerRange, ShipStatsUpgradesStatic.partiniliScannerRangeMax);
         }
+        else if (myName == "PartiniliScannerCostUpgradePanel")
+        {
+            upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.partiniliScannerCostUpgradeCost;
+            myValue.text = ShipStatsUpgradesStatic.partiniliScannerCostUpgrade.ToString();
+            myCreditsCost.text = StoredUpgradeCostsStatic.partiniliScannerCostUpgradeCost.ToString();
+            upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliScannerCostUpgrade / (float)ShipStatsUpgradesStatic.partiniliScannerCostUpgradeMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliScannerCostUpgrade, ShipStatsUpgradesStatic.partiniliScannerCostUpgradeMax);
+        }
         else if (myName == "PartiniliUnitCapacityUpgradePanel")
         {
             upgradeCostControl.myUpgradeCost = StoredUpgradeCostsStatic.partiniliUnitCapacityUpgradeCost;
-            myValue.text = ShipStatsUpgradesStatic.partiniliUnitMaxCapacity.ToString();
+            myValue.text = ShipStatsUpgradesStatic.partiniliUnitCapacity.ToString();
             myCreditsCost.text = StoredUpgradeCostsStatic.partiniliUnitCapacityUpgradeCost.ToString();
-            upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliUnitMaxCapacity / (float)ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
-            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliUnitMaxCapacity, ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
+            upgradeBar.fillAmount = ((float)ShipStatsUpgradesStatic.partiniliUnitCapacity / (float)ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
+            CheckIfStatIsMaxed(ShipStatsUpgradesStatic.partiniliUnitCapacity, ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax);
         }
         else if (myName == "PartiniliFuelCapacityUpgradePanel")
         {

@@ -20,6 +20,12 @@ public class ShipSelection : MonoBehaviour {
     public Slider powerBar;
     public Slider unitCapacityBar;
 
+    private void Start()
+    {
+        shipSelectionSlider.value = 0;
+        ChangeShip();
+    }
+
     public void ChangeShip()
     {
         if (shipSelectionSlider.value == 0)
@@ -28,15 +34,15 @@ public class ShipSelection : MonoBehaviour {
             shipImage.sprite = shipSprite[0];
             shipDescription.text = "All around average ship.";
             shipSpecialAbility.text = "Spawn a turret in Defensive zone";
-            fuelBar.value = 150;
-            powerBar.value = 250;
-            unitCapacityBar.value = 15;
-            fuelBarValue.text = fuelBar.value.ToString() + "/" + Partinili.MaxFuel.ToString();
-            powerBarValue.text = powerBar.value.ToString() + "/" + Partinili.MaxPower.ToString();
-            unitCapacityBarValue.text = unitCapacityBar.value.ToString() + "/" + Partinili.MaxUnitCapacity.ToString();
-            fuelBar.maxValue = Partinili.MaxFuel;
-            powerBar.maxValue = Partinili.MaxPower;
-            unitCapacityBar.maxValue = Partinili.MaxUnitCapacity;
+            fuelBar.value = 50f;
+            fuelBar.maxValue = ShipStatsUpgradesStatic.partiniliFuelCapacity;
+            powerBar.value = 50f;
+            powerBar.maxValue = ShipStatsUpgradesStatic.partiniliPowerCapacity;
+            unitCapacityBar.value = 8f;
+            unitCapacityBar.maxValue = ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax;
+            fuelBarValue.text = fuelBar.value.ToString() + "/" + ShipStatsUpgradesStatic.partiniliFuelCapacity;
+            powerBarValue.text = powerBar.value.ToString() + "/" + ShipStatsUpgradesStatic.partiniliPowerCapacity;
+            unitCapacityBarValue.text = unitCapacityBar.value.ToString() + "/" + ShipStatsUpgradesStatic.partiniliUnitMaxCapacityMax;
         }
         if (shipSelectionSlider.value == 1)
         {

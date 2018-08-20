@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ShipController : MonoBehaviour {
-    public float shipSpeed = 10f;
+
     private Vector3 targetPosition;
     public bool isMoving;
 
@@ -69,7 +69,7 @@ public class ShipController : MonoBehaviour {
         newRotation.y = 0.0f;
 
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * 8);
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, shipSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, ShipStatsUpgradesStatic.GetShipSpeed() * Time.deltaTime);
 
         float distance = Vector3.Distance(transform.position, targetPosition);
         if (distance <= 0.5f)

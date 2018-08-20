@@ -33,7 +33,7 @@ public class BattleUIManager : MonoBehaviour {
 	void Update ()
     {
         UpdateResourceMeters();
-        playerUnityCapacityText.text = playerBattleManagerScript.spawnedUnitsCapacityCount.ToString() + " / " + ShipStatsUpgradesStatic.GetPlayerUnitMaxCapacity().ToString();
+        playerUnityCapacityText.text = playerBattleManagerScript.spawnedUnitsCapacityCount.ToString() + " / " + ShipStatsUpgradesStatic.GetShipUnitCapacity().ToString();
 	}
 
     public void PlaceResourceMeter(string resourceName)
