@@ -42,7 +42,7 @@ public class PlayerInfoStatic : MonoBehaviour {
     public static string HomePlanetPositiveEffects;
     public static string HomePlanetNegativeEffects;
     public static string CurrentShipName = "Partinili";
-    public static string CurrentShipSpecialAbility;
+    public static string CurrentShipSpecialAbility = "Turret";
     public static float CurrentShipPower;
     public static float CurrentShipCapacity;
     public static Sprite HomePlanetSprite;

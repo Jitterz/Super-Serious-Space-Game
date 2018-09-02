@@ -167,17 +167,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbdf28ff833d59941ab9712d72663637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardCreditsValue: 0
   health: 200
-  unitCost: 0
+  healthMax: 0
+  unitCost: 100
+  unitCostMax: 0
   unitDamage: 40
-  unitBuildTime: 1
-  imDead: 0
+  unitDamageMax: 0
+  unitBuildTime: 100
+  unitBuildTimeMax: 0
+  unitCapacity: 0
   unitMoveSpeed: 0
+  moveSpeedMax: 0
+  imDead: 0
+  isRanged: 0
   unitCurrentMoveSpeed: 0
   unitTargetRange: 250
   unitAttackRange: 200
   unitAttackSpeed: 1
+  attackSpeedMax: 0
+  unitPowerLevel: 0
   unitName: Turret
+  unitNickName: 
   unitResourceType: Power
 --- !u!114 &114760090448510438
 MonoBehaviour:

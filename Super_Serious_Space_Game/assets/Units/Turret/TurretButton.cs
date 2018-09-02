@@ -17,7 +17,7 @@ public class TurretButton : MonoBehaviour {
     private float startBuilTime;
     private bool isOnCooldown;
     private int myUnitCost;
-    private int myBuildTime;
+    private int myCooldownTimer;
     private GameObject mySpawningTurret;
     private Turret mySpawningTurretScript;
     private bool turretIsSlectedToSpawn;
@@ -34,9 +34,9 @@ public class TurretButton : MonoBehaviour {
 
         // need to set all of my variables based on any upgrades the unit might have
         myUnitCost = myStats.unitCost;
-        myBuildTime = myStats.unitBuildTime;
+        myCooldownTimer = (myStats.unitBuildTime - ShipStatsUpgradesStatic.turretCooldownReduction);
 
-        myCostText.text = myUnitCost.ToString();
+        myCostText.text = (myUnitCost - ShipStatsUpgradesStatic.turretResourceDiscount).ToString();
 
 
         // button starts on cooldown
@@ -51,16 +51,18 @@ public class TurretButton : MonoBehaviour {
     {
         playerResourceAmountMyResource = PlayerInfoStatic.CurrentShipPower;
 
-        DisableOrEnableButton();
-
         if (isOnCooldown)
         {
-            if (AnimateButtonBuildTime())
+            if (StartButtonCooldown())
             {
                 myButton.interactable = true;
                 isOnCooldown = false;
                 cooldownImage.fillAmount = 0;
             }
+        }
+        else
+        {
+            DisableOrEnableButton();
         }
 
         if (turretIsSlectedToSpawn)
@@ -94,7 +96,10 @@ public class TurretButton : MonoBehaviour {
                 GameObject newTurret = Instantiate(myUnit, mySpawningTurret.transform.position, Quaternion.identity);
                 playerBattleManagerScript.EnableDisableDefendArea("disable");
                 turretIsSlectedToSpawn = false;
-                Destroy(mySpawningTurret);                
+                Destroy(mySpawningTurret);
+                isOnCooldown = true;
+                myButton.interactable = false;
+                cooldownImage.fillAmount = 1;
             }
             else
             {
@@ -112,21 +117,22 @@ public class TurretButton : MonoBehaviour {
             startBuilTime = 0;
             cooldownImage.fillAmount = 1;
             isOnCooldown = true;
-            playerBattleManagerScript.SpawnPlayerUnit(myUnit, myBuildTime, myUnitCost);
+            playerBattleManagerScript.SpawnPlayerUnit(myUnit, myCooldownTimer, myUnitCost);
             myButton.interactable = false;
         }
     }
 
-    private bool AnimateButtonBuildTime()
+    private bool StartButtonCooldown()
     {
         startBuilTime += Time.deltaTime;
-        if (startBuilTime >= myBuildTime)
+        if (startBuilTime >= myCooldownTimer)
         {
+            startBuilTime = 0;
             return true;
         }
         else
         {
-            cooldownImage.fillAmount -= Time.deltaTime / myBuildTime;
+            cooldownImage.fillAmount -= Time.deltaTime / myCooldownTimer;
             return false;
         }
     }
